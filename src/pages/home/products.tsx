@@ -1,7 +1,7 @@
 import products from "../../consts/products.json";
 const Products = () => {
   return (
-    <div className="container mx-auto mt-10 lg:mt-20">
+    <div className="container px-4 lg:px-0 mx-auto mt-10 lg:mt-20">
       <div className="text-center">
         The single most sophisticated and reliable boosting services
       </div>

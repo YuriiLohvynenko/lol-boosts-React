@@ -2,7 +2,7 @@ import Videos from "./videos";
 
 const Trailer = () => {
   return (
-    <div className="mt-10 lg:mt-20 container mx-auto">
+    <div className="mt-10 lg:mt-20 container px-4 lg:px-0 mx-auto">
       <div className="text-center max-w-3xl mx-auto">
         Place the video in a prominent position, ideally above the fold, with a
         large play button. Ensure it’s easily accessible on all devices

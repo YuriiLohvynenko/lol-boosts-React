@@ -5,7 +5,7 @@ const Videos = () => {
   return (
     <Carousel
       pauseOnHover
-      indicators={false}
+      // indicators={false}
       className="h-[250px] md:h-[500px]"
     >
       {videos.map((d: any, index: number) => (

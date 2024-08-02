@@ -9,7 +9,7 @@ const Players = () => {
         Player Testimonials and Reviews
       </div>
       <div className="mt-10 lg:mt-20">
-        <div className="container mx-auto flex gap-4 flex-nowrap overflow-hidden w-full">
+        <div className="container px-4 lg:px-0 mx-auto flex gap-4 flex-nowrap overflow-hidden w-full">
           {players.map((d: any, index: number) => {
             return (
               <div

@@ -3,7 +3,7 @@ import faqs from "../../consts/faq.json";
 const FAQ = () => {
   return (
     <div className="mt-10 lg:mt-20">
-      <div className="container mx-auto">
+      <div className="container px-4 lg:px-0 mx-auto">
         <div className="flex flex-col items-center lg:flex-row gap-4">
           <div className="w-full lg:w-2/5 flex-shrink-0">
             <img src="/images/other/3.png" className="w-full" alt="FAQ" />
