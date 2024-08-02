@@ -1,16 +1,29 @@
+import Accordion from "../../components/home/accordian";
+import faqs from "../../consts/faq.json";
 const FAQ = () => {
   return (
     <div className="mt-10 lg:mt-20">
       <div className="container mx-auto">
-        <div className="flex flex-col items-center md:flex-row gap-4">
-          <div className="w-full md:w-2/5">
-            <img src="/images/other/3.png" className="w-full" />
+        <div className="flex flex-col items-center lg:flex-row gap-4">
+          <div className="w-full lg:w-2/5 flex-shrink-0">
+            <img src="/images/other/3.png" className="w-full" alt="FAQ" />
           </div>
-          <div className="flex-grow">
+          <div className="flex-grow w-full lg:w-auto">
             <h1 className="text-5xl font-bold">
               Frequently Asked{" "}
               <span className="text-indigo-600">Questions</span>
             </h1>
+            <div className="mt-6">
+              {faqs.map((d: any, index: number) => {
+                return (
+                  <Accordion
+                    key={index}
+                    title={d.question}
+                    description={d.answer}
+                  />
+                );
+              })}
+            </div>
           </div>
         </div>
       </div>
