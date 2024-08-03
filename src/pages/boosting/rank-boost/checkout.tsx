@@ -1,7 +1,7 @@
 import { ToggleSwitch } from "flowbite-react";
 import { useState } from "react";
 import { FaArrowRight, FaTimesCircle } from "react-icons/fa";
-import classNames from "../../consts/classNames";
+import classNames from "../../../consts/classNames";
 
 const Checkout = () => {
   const [checked, setChecked] = useState(false);

@@ -1,6 +1,6 @@
-import classNames from "../../consts/classNames";
-import materials from "../../data/materials.json";
-import counts from "../../data/counts.json";
+import classNames from "../../../consts/classNames";
+import materials from "../../../data/materials.json";
+import counts from "../../../data/counts.json";
 import { Tooltip } from "flowbite-react";
 const CurrentRank = () => {
   return (

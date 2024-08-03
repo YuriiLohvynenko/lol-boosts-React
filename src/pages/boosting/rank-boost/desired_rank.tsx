@@ -1,6 +1,6 @@
-import classNames from "../../consts/classNames";
-import materials from "../../data/materials.json";
-import counts from "../../data/counts.json";
+import classNames from "../../../consts/classNames";
+import materials from "../../../data/materials.json";
+import counts from "../../../data/counts.json";
 const DesiredRank = () => {
   return (
     <div className=" rounded-lg border p-4  border-indigo-800">

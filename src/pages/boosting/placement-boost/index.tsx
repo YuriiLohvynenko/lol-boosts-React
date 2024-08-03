@@ -1,10 +1,10 @@
-import classNames from "../../consts/classNames";
-import BoostNavbar from "../../layout/boost_navbar";
-import Checkout from "./checkout";
-import CurrentRank from "./current_rank";
-import DesiredRank from "./desired_rank";
+import classNames from "../../../consts/classNames";
+import BoostNavbar from "../boost_navbar";
+import Checkout from "../rank-boost/checkout";
+import CurrentRank from "../rank-boost/current_rank";
+import WinsAmount from "../win-boost/wins_amount";
 
-const RankBoost = () => {
+const PlacementBoost = () => {
   return (
     <div className={`${classNames.containerClass} mt-4 lg:mt-6`}>
       <div className="flex items-center justify-start gap-4">
@@ -18,9 +18,9 @@ const RankBoost = () => {
           />
         </span>
         <div>
-          <h3 className="text-3xl">LoL Rank Boost</h3>
+          <h3 className="text-3xl">LoL Placements Boost</h3>
           <p className="text-gray-400 text-sm">
-            Challenger player will Boost you to your desired rank.
+            Secure your new account with the perfect MMR!
           </p>
         </div>
       </div>
@@ -32,7 +32,7 @@ const RankBoost = () => {
           <div className="w-full lg:w-3/5">
             <CurrentRank />
             <div className="mt-6">
-              <DesiredRank />
+              <WinsAmount />
             </div>
           </div>
           <div className="flex-grow">
@@ -44,4 +44,4 @@ const RankBoost = () => {
   );
 };
 
-export default RankBoost;
+export default PlacementBoost;

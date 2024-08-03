@@ -1,7 +1,18 @@
 [
     {
-        "id": 1,
         "title": "Boosting",
         "link": "boosting"
+    },
+    {
+        "title": "Contact",
+        "link": "contact"
+    },
+    {
+        "title": "FAQ",
+        "link": "faq"
+    },
+    {
+        "title": "Terms & Policy",
+        "link": "terms"
     }
 ]

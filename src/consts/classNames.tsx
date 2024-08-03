@@ -8,4 +8,5 @@ export default {
   btnClass:
     "px-8 py-3 rounded-3xl bg-indigo-700 text-white hover:bg-indigo-800",
   hoverClass: "hover:text-indigo-400",
+  inputClass: "px-4 py-2 w-full rounded-lg bg-transparent",
 };

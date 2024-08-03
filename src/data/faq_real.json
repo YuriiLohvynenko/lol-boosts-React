@@ -1,0 +1,90 @@
+[
+    {
+        "question": "What is your return policy?",
+        "answer": "You can return any item within 30 days of purchase for a full refund."
+    },
+    {
+        "question": "How can I track my order?",
+        "answer": "Once your order has shipped, you will receive an email with a tracking number and a link to track your package."
+    },
+    {
+        "question": "What payment methods do you accept?",
+        "answer": "We accept Visa, MasterCard, American Express, and PayPal."
+    },
+    {
+        "question": "How do I reset my password?",
+        "answer": "Click on 'Forgot Password' on the login page, enter your email, and follow the instructions in the email."
+    },
+    {
+        "question": "Do you ship internationally?",
+        "answer": "Yes, we ship to select countries worldwide. Please check our shipping policy for more details."
+    },
+    {
+        "question": "What should I do if I receive a damaged item?",
+        "answer": "Please contact our customer service within 48 hours of receiving the item, and we will assist you with a replacement or refund."
+    },
+    {
+        "question": "Can I change my order after it has been placed?",
+        "answer": "If your order has not yet shipped, you can contact us to make changes. Once it has shipped, changes cannot be made."
+    },
+    {
+        "question": "How do I contact customer support?",
+        "answer": "You can reach our customer support team via email at support@example.com or by calling 1-800-555-0199."
+    },
+    {
+        "question": "Do you offer gift cards?",
+        "answer": "Yes, we offer gift cards in various amounts. You can purchase them on our website."
+    },
+    {
+        "question": "What is the warranty on your products?",
+        "answer": "We offer a one-year warranty on all products against manufacturing defects."
+    },
+    {
+        "question": "How can I subscribe to your newsletter?",
+        "answer": "You can subscribe to our newsletter by entering your email address in the subscription box on our website."
+    },
+    {
+        "question": "Do you have a physical store?",
+        "answer": "Yes, we have a physical store located at 123 Main Street, Anytown, USA."
+    },
+    {
+        "question": "What is your privacy policy?",
+        "answer": "Our privacy policy outlines how we collect, use, and protect your personal information. You can read it on our website."
+    },
+    {
+        "question": "How can I leave a review?",
+        "answer": "You can leave a review on the product page after making a purchase. Simply click on 'Write a Review.'"
+    },
+    {
+        "question": "What should I do if I forgot my username?",
+        "answer": "If you forgot your username, please use the 'Forgot Username' feature on the login page."
+    },
+    {
+        "question": "Can I order by phone?",
+        "answer": "Yes, you can place an order by calling our customer service at 1-800-555-0199."
+    },
+    {
+        "question": "How long does shipping take?",
+        "answer": "Shipping times vary based on your location and the shipping method selected at checkout."
+    },
+    {
+        "question": "Do you offer bulk discounts?",
+        "answer": "Yes, we offer bulk discounts for large orders. Please contact our sales team for more information."
+    },
+    {
+        "question": "What should I do if I have allergies?",
+        "answer": "Please check the product descriptions for allergen information. If you have specific concerns, contact our customer service."
+    },
+    {
+        "question": "Can I return sale items?",
+        "answer": "Sale items can be returned within 15 days of purchase for store credit only."
+    },
+    {
+        "question": "What if I receive the wrong item?",
+        "answer": "If you receive the wrong item, please contact our customer service within 48 hours, and we will resolve the issue."
+    },
+    {
+        "question": "How do I unsubscribe from the newsletter?",
+        "answer": "You can unsubscribe by clicking the 'Unsubscribe' link at the bottom of any newsletter email."
+    }
+]

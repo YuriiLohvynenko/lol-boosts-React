@@ -1,9 +1,9 @@
 import { Outlet } from "react-router-dom";
-import FAQ from "../pages/home/faq";
-import ServiceBetter from "../pages/home/servicebetter";
-import Players from "../pages/home/players";
-import FastSimple from "../pages/home/fastsimple";
-import BoostContent from "../pages/rank-boost/boostContent";
+import FAQ from "../home/faq";
+import ServiceBetter from "../home/servicebetter";
+import Players from "../home/players";
+import FastSimple from "../home/fastsimple";
+import BoostContent from "./boostContent";
 
 const BoostLayout = () => {
   return (
