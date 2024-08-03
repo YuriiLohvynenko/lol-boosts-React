@@ -10,7 +10,7 @@ const Boosters = () => {
         services.
       </p>
       <div className="mt-10 lg:mt-20">
-        <div className="container mx-auto">
+        <div className="container px-4 lg:px-0 mx-auto">
           <div className="flex flex-nowrap overflow-hidden gap-4">
             {boosters.map((d: any, index: number) => (
               <div className="w-[200px] flex-shrink-0" key={index}>

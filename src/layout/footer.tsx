@@ -3,7 +3,7 @@ import footers from "../data/footer.json";
 const Footer = () => {
   return (
     <footer className="py-10 lg:py-20 border-t border-indigo-800 mt-10 lg:mt-20">
-      <div className="container mx-auto">
+      <div className="container px-4 lg:px-0 mx-auto">
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
           {footers.map((d: any, index: number) => (
             <div key={index}>

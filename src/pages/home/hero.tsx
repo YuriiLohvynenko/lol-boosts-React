@@ -1,16 +1,15 @@
-import { Carousel } from "flowbite-react";
-
 const Hero = () => {
   return (
     <>
-      <div className="h-[300px] sm:h-[450px] xl:h-[550px] 2xl:h-[650px]">
-        <Carousel>
-          <img src="/images/cover/1.jpeg" className="w-full" alt="HERO" />
-          <img src="/images/cover/2.jpg" className="w-full" alt="HERO" />
-          <img src="/images/cover/3.jpeg" className="w-full" alt="HERO" />
-          <img src="/images/cover/4.jpeg" className="w-full" alt="HERO" />
-          <img src="/images/cover/5.jpeg" className="w-full" alt="HERO" />
-        </Carousel>
+      <div className="relative">
+        <img src="/images/cover/1.jpeg" className="w-full blur-sm" alt="HERO" />
+        <div className="absolute top-0 left-0 w-full h-full flex justify-center items-center flex-col gap-6">
+          <h1 className="text-center text-3xl md:text-5xl lg:text-8xl font-bold mt-6 lg:mt-10">
+            THE ALL-IN-ONE <br /> Platform for{" "}
+            <span className="text-indigo-600">LOL</span>{" "}
+            <span className="text-indigo-400">BOOST</span>
+          </h1>
+        </div>
       </div>
     </>
   );

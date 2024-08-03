@@ -12,7 +12,7 @@ const FastSimple = () => {
         </p>
         <Carousel
           indicators={false}
-          className="mt-10 h-[900px] md:h-[900px] lg:h-[700px]"
+          className="mt-10 h-[600px] sm:h-[700px] md:h-[900px] lg:h-[700px]"
         >
           <div className="w-full flex flex-col-reverse lg:flex-row justify-between items-center px-0 md:px-20">
             <div className="">

@@ -1,10 +1,16 @@
+import { useState } from "react";
+
 const Service = () => {
+  const [muted, setMuted] = useState(false);
   return (
     <div className="relative mt-10 lg:mt-20">
       <video
         className="w-full h-[200px] lg:h-[300px] object-cover object-center opacity-50"
         autoPlay
         loop
+        muted={muted}
+        onMouseEnter={() => setMuted(true)}
+        onMouseLeave={() => setMuted(false)}
       >
         <source src="/images/game_player/7.mp4" />
       </video>

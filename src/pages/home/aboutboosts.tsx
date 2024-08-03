@@ -1,13 +1,8 @@
 const AboutBoosts = () => {
   return (
     <div className="mt-10 lg:mt-20">
-      <div className="container mx-auto">
-        <div
-          data-aos="fade-up"
-          data-aos-offset="200"
-          data-aos-easing="ease-in-sine"
-          data-aos-duration="500"
-        >
+      <div className="container px-4 lg:px-0 mx-auto">
+        <div>
           <h1 className="text-center text-3xl lg:text-5xl font-bold">
             ABOUT LOL BOOSTS
           </h1>
