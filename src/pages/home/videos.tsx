@@ -16,7 +16,7 @@ const Videos = () => {
     >
       {videos.map((d: any, index: number) => (
         <video
-          className="w-full rounded-xl object-cover object-center opacity-75 hover:opacity-100"
+          className="w-full rounded-2xl object-cover object-center opacity-75 hover:opacity-100"
           key={index}
           onMouseEnter={(event: any) => handlePlay(event)}
           onMouseLeave={(event: any) => handleStop(event)}

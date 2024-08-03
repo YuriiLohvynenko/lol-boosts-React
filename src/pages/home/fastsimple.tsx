@@ -7,7 +7,7 @@ const FastSimple = () => {
         <h1 className="text-center font-bold text-5xl max-w-2xl mx-auto">
           We Keep it Fast And <span className="text-indigo-700">Simple</span>
         </h1>
-        <p className="text-center mt-6">
+        <p className="text-center mt-6 text-lg text-gray-300">
           Buying accounts, boosting and coaching has never been this easy.
         </p>
         <Carousel
@@ -18,7 +18,9 @@ const FastSimple = () => {
             <div className="">
               <span className="text-indigo-500">Step #1</span>
               <div className="mt-5 text-2xl font-bold">Select Service</div>
-              <p>Pick your desired service and customize your order.</p>
+              <p className="text-lg text-gray-300 mt-3">
+                Pick your desired service and customize your order.
+              </p>
               <div className="mt-5">
                 <button className="px-6 py-3 rounded-3xl bg-purple-400 text-white hover:bg-purple-700">
                   Get Started
@@ -33,7 +35,7 @@ const FastSimple = () => {
             <div className="">
               <span className="text-indigo-500">Step #2</span>
               <div className="mt-5 text-2xl font-bold">Order Completed</div>
-              <p>
+              <p className="text-lg text-gray-300 mt-3">
                 We appreciate your feedback, so dont forget to share your
                 experience with us.
               </p>
@@ -51,7 +53,7 @@ const FastSimple = () => {
             <div className="">
               <span className="text-indigo-500">Step #3</span>
               <div className="mt-5 text-2xl font-bold">Secure Checkout</div>
-              <p>
+              <p className="text-lg text-gray-300 mt-3">
                 We accept all major credit cards, Google Pay, Apple Pay, Crypto
                 and more.
               </p>
@@ -79,7 +81,7 @@ const FastSimple = () => {
               <h2 className="text-2xl font-bold lg:text-4xl">
                 Premium 24/7 support in multiple languages. By 1v9ers for 1v9ers
               </h2>
-              <div className="mt-6">
+              <div className="mt-6 text-lg text-gray-300">
                 Our 1v9 support team is available 24/7 to help you with any
                 questions or issues you may have.
               </div>

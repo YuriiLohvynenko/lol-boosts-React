@@ -32,7 +32,7 @@ const Header = () => {
   return (
     <>
       <header
-        className={`w-full z-50 transition-all duration-100 bg-[#0f1a31] shadow-xl ${
+        className={`w-full relative z-1 z-50 transition-all duration-100 bg-[#0f1a31] shadow-xl ${
           scrolled ? "bg-opacity-90" : "bg-opacity-50"
         }`}
       >

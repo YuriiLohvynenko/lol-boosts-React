@@ -6,7 +6,7 @@ const AboutBoosts = () => {
           <h1 className="text-center text-3xl lg:text-5xl font-bold">
             ABOUT LOL BOOSTS
           </h1>
-          <p className="mt-4 text-center">
+          <p className="mt-4 text-center text-lg text-gray-300">
             What makes us the preferred choice for thousands of players?
           </p>
         </div>

@@ -4,7 +4,7 @@ const ServiceBetter = () => {
       <h1 className="text-3xl lg:text-5xl text-center mx-auto">
         Gaming Services Just Got Better
       </h1>
-      <div className="mt-4 text-center">
+      <div className="mt-4 text-center text-gray-300 text-lg">
         We are setting the new standard in the gaming industry.
       </div>
       <div className="mt-10 lg:mt-20">
