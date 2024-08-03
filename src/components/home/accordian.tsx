@@ -1,8 +1,8 @@
-import { useState } from "react";
-
+import { useEffect, useState } from "react";
 const Accordion = (props: any) => {
   const { title, description } = props;
   const [open, setOpen] = useState(false);
+  useEffect(() => {}, []);
   return (
     <div className="rounded-xl shadow-lg border border-indigo-900 mb-4">
       <div
@@ -16,7 +16,7 @@ const Accordion = (props: any) => {
       </div>
       {open && (
         <div
-          className="border-t border-indigo-900 p-4 text-gray-500"
+          className="border-t border-indigo-900 p-4 text-gray-300"
           data-aos="fade-in"
           data-aos-offset="100"
           data-aos-easing="ease-in-sine"

@@ -8,7 +8,7 @@ const ServiceBetter = () => {
         We are setting the new standard in the gaming industry.
       </div>
       <div className="mt-10 lg:mt-20">
-        <div className="flex gap-4">
+        <div className="flex gap-4 flex-col lg:flex-row">
           <img
             src="/images/other/9-01.jpg"
             className="w-full lg:w-2/5 flex-shrink-0 rounded-3xl shadow-xl border border-indigo-700"
