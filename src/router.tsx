@@ -18,6 +18,8 @@ import Footer from "./layout/footer";
 import Register from "./pages/register";
 import FAQ from "./pages/faq";
 import Terms from "./pages/terms";
+import PrivacyPolicy from "./pages/privacy-policy";
+import Blog from "./pages/blog";
 const Router = () => {
   return (
     <BrowserRouter>
@@ -35,7 +37,9 @@ const Router = () => {
           <Route path="terms" element={<Terms />} />
           <Route path="login" element={<Login />} />
           <Route path="register" element={<Register />} />
-          <Route path="contact" element={<Contact />} />{" "}
+          <Route path="contact" element={<Contact />} />
+          <Route path="privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="blog" element={<Blog />} />
         </Route>
 
         <Route path="*" element={<NotFound />} />

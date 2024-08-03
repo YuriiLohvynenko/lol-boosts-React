@@ -14,5 +14,13 @@
     {
         "title": "Terms & Policy",
         "link": "terms"
+    },
+    {
+        "title": "Privacy & Policy",
+        "link": "privacy-policy"
+    },
+    {
+        "title": "Blog",
+        "link": "blog"
     }
 ]
