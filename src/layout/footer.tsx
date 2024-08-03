@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
 import footers from "../data/footer.json";
+import classNames from "../consts/classNames";
 const Footer = () => {
   return (
     <footer className="py-10 lg:py-20 border-t border-indigo-800 mt-10 lg:mt-20">
-      <div className="container px-4 lg:px-0 mx-auto">
+      <div className={`${classNames.containerClass}`}>
         <div className="grid md:grid-cols-3 xl:grid-cols-6 gap-4">
           {footers.map((d: any, index: number) => (
             <div key={index}>

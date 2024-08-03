@@ -1,6 +1,8 @@
+import classNames from "../../consts/classNames";
+
 const ServiceBetter = () => {
   return (
-    <div className="mt-10 lg:mt-20 container px-4 lg:px-0 mx-auto">
+    <div className={`mt-10 lg:mt-20 ${classNames.containerClass}`}>
       <h1 className="text-3xl lg:text-5xl text-center mx-auto">
         Gaming Services Just Got Better
       </h1>

@@ -1,0 +1,50 @@
+[
+    {
+        "_id": 1,
+        "title": "Iron",
+        "url": "/images/boosting/icon/Iron.webp",
+        "price": 20
+    },
+    {
+        "_id": 2,
+        "title": "Bronze",
+        "url": "/images/boosting/icon/Bronze.webp",
+        "price": 30
+    },
+    {
+        "_id": 3,
+        "title": "Silver",
+        "url": "/images/boosting/icon/Silver.webp",
+        "price": 50
+    },
+    {
+        "_id": 4,
+        "title": "Gold",
+        "url": "/images/boosting/icon/Gold.webp",
+        "price": 100
+    },
+    {
+        "_id": 5,
+        "title": "Platinum",
+        "url": "/images/boosting/icon/Platinum.webp",
+        "price": 200
+    },
+    {
+        "_id": 6,
+        "title": "Emerald",
+        "url": "/images/boosting/icon/Emerald.webp",
+        "price": 300
+    },
+    {
+        "_id": 7,
+        "title": "Diamond",
+        "url": "/images/boosting/icon/Diamond.webp",
+        "price": 500
+    },
+    {
+        "_id": 8,
+        "title": "Master",
+        "url": "/images/boosting/icon/Master.webp",
+        "price": 1000
+    }
+]

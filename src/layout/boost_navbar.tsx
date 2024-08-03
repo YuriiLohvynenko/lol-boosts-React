@@ -18,8 +18,8 @@ const BoostNavbar = () => {
           key={index}
           to={d.link}
           className={({ isActive }) =>
-            `whitespace-nowrap px-4 py-2 rounded-md bg-opacity-50 shadow-md ${
-              isActive ? "bg-gray-700" : "hover:bg-gray-700"
+            `whitespace-nowrap px-4 py-2 rounded-md shadow-md hover:bg-indigo-800 ${
+              isActive ? "bg-indigo-900" : ""
             }`
           }
         >

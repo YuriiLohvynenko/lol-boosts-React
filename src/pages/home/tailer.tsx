@@ -1,8 +1,9 @@
+import classNames from "../../consts/classNames";
 import Videos from "./videos";
 
 const Trailer = () => {
   return (
-    <div className="mt-10 lg:mt-20 container px-4 lg:px-0 mx-auto">
+    <div className={`mt-10 lg:mt-20 ${classNames.containerClass}`}>
       <div className="text-center text-lg text-gray-300 max-w-[75%] mx-auto">
         Place the video in a prominent position, ideally above the fold, with a
         large play button. Ensure it’s easily accessible on all devices

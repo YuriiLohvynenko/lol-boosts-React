@@ -1,9 +1,10 @@
 import { useEffect } from "react";
 import products from "../../data/products.json";
+import classNames from "../../consts/classNames";
 const Products = () => {
   useEffect(() => {}, []);
   return (
-    <div className="container px-4 lg:px-0 mx-auto mt-10 lg:mt-20 relative z-1">
+    <div className={`${classNames.containerClass} mt-10 lg:mt-20 relative z-1`}>
       <h1 className="text-center text-3xl md:text-5xl lg:text-8xl font-bold mt-6 lg:mt-10">
         THE ALL-IN-ONE <br /> Platform for{" "}
         <span className="text-indigo-600">LOL</span>{" "}

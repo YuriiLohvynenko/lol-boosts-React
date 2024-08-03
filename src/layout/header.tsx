@@ -51,7 +51,7 @@ const Header = () => {
         className={`w-full relative z-1 z-50 transition-all duration-100 bg-[#0f1a31] shadow-xl bg-opacity-75`}
       >
         <div className="w-full bg-[#0c1322]">
-          <div className="container px-4 lg:px-0 py-1 mx-auto">
+          <div className={`${classNames.containerClass} py-1`}>
             <div className="flex justify-between items-center">
               <div>
                 <span className="hidden lg:block">
@@ -84,7 +84,7 @@ const Header = () => {
             </div>
           </div>
         </div>
-        <div className="container px-4 lg:px-0 pb-3 mx-auto">
+        <div className={`${classNames.containerClass} pb-3`}>
           <div className="flex justify-between items-en">
             <Link to="/">
               <img
@@ -99,8 +99,8 @@ const Header = () => {
                   key={index}
                   to={d.link}
                   className={({ isActive }) =>
-                    `whitespace-nowrap px-4 py-2 rounded-md bg-opacity-50 shadow-md ${
-                      isActive ? "bg-indigo-500" : "hover:bg-indigo-500"
+                    `whitespace-nowrap px-4 py-2 rounded-md shadow-md hover:bg-indigo-600 ${
+                      isActive ? "bg-indigo-500" : ""
                     }`
                   }
                 >

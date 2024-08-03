@@ -1,10 +1,11 @@
 import { Carousel } from "flowbite-react";
 import { Swiper, SwiperSlide } from "swiper/react";
+import classNames from "../../consts/classNames";
 
 const FastSimple = () => {
   return (
     <div className="mt-10 lg:mt-20">
-      <div className="container px-4 lg:px-0 mx-auto">
+      <div className={`${classNames.containerClass}`}>
         <h1 className="text-center font-bold text-5xl max-w-2xl mx-auto">
           We Keep it Fast And <span className="text-indigo-700">Simple</span>
         </h1>

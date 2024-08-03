@@ -1,7 +1,9 @@
+import classNames from "../../consts/classNames";
+
 const AboutBoosts = () => {
   return (
     <div className="mt-10 lg:mt-20">
-      <div className="container px-4 lg:px-0 mx-auto">
+      <div className={`${classNames.containerClass}`}>
         <div>
           <h1 className="text-center text-3xl lg:text-5xl font-bold">
             ABOUT LOL BOOSTS
