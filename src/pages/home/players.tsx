@@ -15,7 +15,7 @@ const Players = () => {
         <div className="container px-4 lg:px-0 mx-auto flex gap-4 flex-nowrap overflow-hidden w-full">
           <Swiper
             spaceBetween={30}
-            slidesPerView={4}
+            slidesPerView={1}
             breakpoints={{
               // when window width is >= 640px
               640: {

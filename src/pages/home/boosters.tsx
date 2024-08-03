@@ -14,7 +14,7 @@ const Boosters = () => {
         <div className="container px-4 lg:px-0 mx-auto">
           <Swiper
             spaceBetween={30}
-            slidesPerView={6}
+            slidesPerView={1}
             breakpoints={{
               // when window width is >= 640px
               640: {
@@ -28,12 +28,12 @@ const Boosters = () => {
               },
               // when window width is >= 1024px
               1024: {
-                slidesPerView: 4,
+                slidesPerView: 5,
                 spaceBetween: 30,
               },
               // when window width is >= 1280px
               1280: {
-                slidesPerView: 5,
+                slidesPerView: 6,
                 spaceBetween: 30,
               },
             }}
