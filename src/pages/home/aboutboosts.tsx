@@ -2,12 +2,19 @@ const AboutBoosts = () => {
   return (
     <div className="mt-10 lg:mt-20">
       <div className="container mx-auto">
-        <h1 className="text-center text-3xl lg:text-5xl font-bold">
-          ABOUT LOL BOOSTS
-        </h1>
-        <p className="mt-4 text-center">
-          What makes us the preferred choice for thousands of players?
-        </p>
+        <div
+          data-aos="fade-up"
+          data-aos-offset="200"
+          data-aos-easing="ease-in-sine"
+          data-aos-duration="500"
+        >
+          <h1 className="text-center text-3xl lg:text-5xl font-bold">
+            ABOUT LOL BOOSTS
+          </h1>
+          <p className="mt-4 text-center">
+            What makes us the preferred choice for thousands of players?
+          </p>
+        </div>
         <div className="mt-10 grid lg:grid-cols-3 gap-12">
           <div className="mb-4">
             <h6 className="text-2xl font-bold">Security</h6>

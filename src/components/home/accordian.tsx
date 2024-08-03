@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
+const AOS: any = null;
 const Accordion = (props: any) => {
   const { title, description } = props;
   const [open, setOpen] = useState(false);
-  useEffect(() => {}, []);
+  useEffect(() => {
+    AOS?.init();
+  }, []);
   return (
-    <div className="rounded-xl shadow-lg border border-indigo-900 mb-4">
+    <div className="rounded-xl shadow-lg border border-indigo-900 mb-4 transition-all duration-100">
       <div
         className="p-4 flex justify-between items-center cursor-pointer"
         onClick={() => setOpen(!open)}
@@ -16,10 +19,9 @@ const Accordion = (props: any) => {
       </div>
       {open && (
         <div
-          className="border-t border-indigo-900 p-4 text-gray-300"
+          className="border-t border-indigo-900 p-4 text-gray-300 "
           data-aos="fade-in"
-          data-aos-offset="100"
-          data-aos-easing="ease-in-sine"
+          data-aos-offset="200"
         >
           {description}
         </div>

@@ -10,8 +10,11 @@ const FastSimple = () => {
         <p className="text-center mt-6">
           Buying accounts, boosting and coaching has never been this easy.
         </p>
-        <Carousel indicators={false} className="mt-10 h-[900px] lg:h-[800px]">
-          <div className="w-full flex flex-col-reverse lg:flex-row justify-between items-center">
+        <Carousel
+          indicators={false}
+          className="mt-10 h-[900px] md:h-[900px] lg:h-[700px]"
+        >
+          <div className="w-full flex flex-col-reverse lg:flex-row justify-between items-center px-0 md:px-20">
             <div className="">
               <span className="text-indigo-500">Step #1</span>
               <div className="mt-5 text-2xl font-bold">Select Service</div>
@@ -26,7 +29,7 @@ const FastSimple = () => {
               <img src="/images/other/7.png" alt="IMG" className="w-full" />
             </div>
           </div>
-          <div className="w-full flex flex-col-reverse lg:flex-row justify-between items-center">
+          <div className="w-full flex flex-col-reverse lg:flex-row justify-between items-center px-0 md:px-20">
             <div className="">
               <span className="text-indigo-500">Step #2</span>
               <div className="mt-5 text-2xl font-bold">Order Completed</div>
@@ -44,7 +47,7 @@ const FastSimple = () => {
               <img src="/images/other/4.png" alt="IMG" className="w-full" />
             </div>
           </div>
-          <div className="w-full flex flex-col-reverse lg:flex-row justify-between items-center">
+          <div className="w-full flex flex-col-reverse lg:flex-row justify-between items-center px-0 md:px-20">
             <div className="">
               <span className="text-indigo-500">Step #3</span>
               <div className="mt-5 text-2xl font-bold">Secure Checkout</div>
@@ -64,11 +67,11 @@ const FastSimple = () => {
           </div>
         </Carousel>
         <div className="mt-10 lg:mt-20">
-          <div className="flex justify-center items-center flex-col md:flex-row">
-            <div className="p-0 lg:w-full md:w-3/5">
+          <div className="flex justify-center items-center flex-col lg:flex-row gap-6">
+            <div className="p-0 w-full md:w-3/5">
               <img
                 src="/images/other/10.png"
-                className="w-full lg:w-4/5 block mr-auto"
+                className="w-full block mr-auto"
                 alt="IMG"
               />
             </div>

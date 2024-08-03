@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import products from "../../consts/products.json";
+import products from "../../data/products.json";
 const Products = () => {
   useEffect(() => {}, []);
   return (

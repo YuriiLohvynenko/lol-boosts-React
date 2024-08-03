@@ -1,8 +1,8 @@
-import players from "../../consts/players.json";
+import players from "../../data/players.json";
 const Players = () => {
   return (
     <div className="mt-10 lg:mt-20">
-      <h1 className="text-center text-5xl mx-auto max-w-[75%] font-bold">
+      <h1 className="text-center text-3xl lg:text-5xl mx-auto max-w-[75%] font-bold">
         Player Testimonials and Reviews
       </h1>
       <div className="max-w-[65%] mx-auto text-center mt-4">

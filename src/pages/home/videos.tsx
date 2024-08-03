@@ -1,4 +1,4 @@
-import videos from "../../consts/videos.json";
+import videos from "../../data/videos.json";
 import { Carousel } from "flowbite-react";
 
 const Videos = () => {

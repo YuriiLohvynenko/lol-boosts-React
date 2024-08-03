@@ -1,5 +1,5 @@
 import Accordion from "../../components/home/accordian";
-import faqs from "../../consts/faq.json";
+import faqs from "../../data/faq.json";
 const FAQ = () => {
   return (
     <div className="mt-10 lg:mt-20">

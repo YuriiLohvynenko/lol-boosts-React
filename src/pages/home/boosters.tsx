@@ -1,4 +1,4 @@
-import boosters from "../../consts/boosters.json";
+import boosters from "../../data/boosters.json";
 const Boosters = () => {
   return (
     <div className="mt-10 lg:mt-20">
