@@ -1,15 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-import {
-  FaSignInAlt,
-  FaSignOutAlt,
-  FaUserPlus,
-  FaTiktok,
-  FaYoutube,
-  FaDiscord,
-  FaTwitter,
-  FaInstagram,
-} from "react-icons/fa";
+import { FaTiktok, FaYoutube, FaDiscord, FaInstagram } from "react-icons/fa";
+import links from "../data/links.json";
 import classNames from "../consts/classNames";
 
 const Header = () => {
@@ -29,48 +21,65 @@ const Header = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+  const socials = [
+    { title: "", link: "", element: <FaTiktok /> },
+    { title: "", link: "", element: <FaYoutube /> },
+    { title: "", link: "", element: <FaDiscord /> },
+    {
+      title: "",
+      link: "",
+      element: (
+        <svg
+          className="w-4"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+        >
+          <path
+            fill="currentColor"
+            d="M13.8 10.5 20.7 2h-3l-5.3 6.5L7.7 2H1l7.8 11-7.3 9h3l5.7-7 5.1 7H22l-8.2-11.5Zm-2.4 3-1.4-2-5.6-7.9h2.3l4.5 6.3 1.4 2 6 8.5h-2.3l-4.9-7Z"
+          ></path>
+        </svg>
+      ),
+    },
+    { title: "", link: "", element: <FaInstagram /> },
+  ];
   return (
     <>
       <header
-        className={`w-full relative z-1 z-50 transition-all duration-100 bg-[#0f1a31] shadow-xl ${
-          scrolled ? "bg-opacity-90" : "bg-opacity-50"
-        }`}
+        className={`w-full relative z-1 z-50 transition-all duration-100 bg-[#0f1a31] shadow-xl bg-opacity-75`}
       >
         <div className="w-full bg-[#0c1322]">
           <div className="container px-4 lg:px-0 py-1 mx-auto">
             <div className="flex justify-between items-center">
               <div>
                 <span className="hidden lg:block">
-                  Expert LOL Coaching now available on LoL boost.
+                  Expert <span className={`${classNames.textMClass}`}>LOL</span>{" "}
+                  Coaching now available on LoL boost.
                 </span>
               </div>
-              <div className="flex justify-end items-center gap-3">
-                <button className="px-2 py-1 rounded-lg hover:bg-indigo-500 hover:bg-opacity-50">
-                  <FaTiktok />
-                </button>
-                <button className="px-2 py-1 rounded-lg hover:bg-indigo-500 hover:bg-opacity-50">
-                  <FaYoutube />
-                </button>
-                <button className="px-2 py-1 rounded-lg hover:bg-indigo-500 hover:bg-opacity-50">
-                  <FaDiscord />
-                </button>
-                <button className="px-2 py-1 rounded-lg hover:bg-indigo-500 hover:bg-opacity-50">
-                  <svg
-                    className="w-4"
-                    aria-hidden="true"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      fill="currentColor"
-                      d="M13.8 10.5 20.7 2h-3l-5.3 6.5L7.7 2H1l7.8 11-7.3 9h3l5.7-7 5.1 7H22l-8.2-11.5Zm-2.4 3-1.4-2-5.6-7.9h2.3l4.5 6.3 1.4 2 6 8.5h-2.3l-4.9-7Z"
-                    ></path>
-                  </svg>
-                </button>
-                <button className="px-2 py-1 rounded-lg hover:bg-indigo-500 hover:bg-opacity-50">
-                  <FaInstagram />
-                </button>
+              <div className="flex justify-end items-center gap-5">
+                <div className="flex justify-start items-center gap-3">
+                  {socials.map((d: any, index: number) => (
+                    <a
+                      key={index}
+                      href={d.link}
+                      className="px-2 py-1 rounded-lg hover:bg-indigo-500 hover:bg-opacity-50"
+                    >
+                      {d.element}
+                    </a>
+                  ))}
+                </div>
+                <div className="flex items-center gap-2 text-sm">
+                  <Link to={`/login`} className={`${classNames.hoverClass}`}>
+                    Login
+                  </Link>
+                  |
+                  <Link to={`/register`} className={`${classNames.hoverClass}`}>
+                    Register
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
@@ -85,20 +94,19 @@ const Header = () => {
               />
             </Link>
             <div className="flex justify-end items-center gap-6">
-              <NavLink
-                to="/login"
-                className={`flex items-center gap-3 ${classNames.hoverClass}`}
-              >
-                <FaSignInAlt size="22px" />{" "}
-                <span className="hidden md:block">Login</span>
-              </NavLink>
-              <NavLink
-                to="/register"
-                className={`flex items-center gap-3 ${classNames.hoverClass}`}
-              >
-                <FaUserPlus size="22px" />{" "}
-                <span className="hidden md:block">Register</span>
-              </NavLink>
+              {links.map((d: any, index: number) => (
+                <NavLink
+                  key={index}
+                  to={d.link}
+                  className={({ isActive }) =>
+                    `whitespace-nowrap px-4 py-2 rounded-md bg-opacity-50 shadow-md ${
+                      isActive ? "bg-indigo-500" : "hover:bg-indigo-500"
+                    }`
+                  }
+                >
+                  {d.title}
+                </NavLink>
+              ))}
             </div>
           </div>
         </div>
