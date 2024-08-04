@@ -8,11 +8,8 @@ const Register = () => {
       <div className={`${classNames.containerClass}`}>
         <div className="mx-auto max-w-[567px] shadow-sm rounded-lg py-12 bg-indigo-950 bg-opacity-20">
           <div className="max-w-[85%] mx-auto">
-            <h4 className="text-2xl font-bold">Hi, Welcome Back</h4>
-            <p>
-              Hello Again, We have{" "}
-              <span className="text-indigo-800">missed you!</span>
-            </p>
+            <h4 className="text-2xl font-bold">Register</h4>
+
             <div className="mt-10 space-y-8">
               <div className="flex flex-col gap-2">
                 <label>Email</label>
