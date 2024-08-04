@@ -14,7 +14,7 @@ const RankBoost = () => {
           className={`flex w-20 h-20 p-3 ${classNames.bgDarkClass} ${classNames.borderLClass} rounded-full border flex-shrink-0 justify-center items-center`}
         >
           <img
-            src="/images/boosting/icon/LolRankBoost.svg"
+            src="/images/boosting/icon/LoLRankBoost.png"
             className="w-full"
             alt="IMG"
           />
