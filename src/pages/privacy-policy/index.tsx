@@ -2,7 +2,9 @@ import classNames from "../../consts/classNames";
 
 const PrivacyPolicy = () => {
   return (
-    <div className={`${classNames.containerClass} mt-6 lg:mt-10`}>
+    <div
+      className={`${classNames.containerClass} max-w-[1024px] mt-6 lg:mt-10`}
+    >
       <h1 className="text-center text-3xl lg:text-5xl font-bold text-indigo-500">
         Privacy Policy
       </h1>

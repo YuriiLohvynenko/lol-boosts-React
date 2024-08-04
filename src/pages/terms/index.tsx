@@ -2,7 +2,9 @@ import classNames from "../../consts/classNames";
 import terms from "../../data/terms.json";
 const Terms = () => {
   return (
-    <div className={`${classNames.containerClass} mt-6 lg:mt-10`}>
+    <div
+      className={`${classNames.containerClass} max-w-[1024px] mt-6 lg:mt-10`}
+    >
       <span className="text-indigo-500">Legal</span>
       <h1 className="text-2xl font-bold">Terms of Service</h1>
       <span>Terms of Service</span>

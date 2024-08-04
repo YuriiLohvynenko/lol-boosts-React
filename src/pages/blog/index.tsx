@@ -81,8 +81,8 @@ const Blog = () => {
                           {d.caption}
                         </span>
                       </div>
-                      <h2 className="text-xl mt-4">{d?.title}</h2>
-                      <div className="mt-4 text-gray-400 max-h-24 overflow-hidden">
+                      <h2 className="text-xl mt-3">{d?.title}</h2>
+                      <div className="mt-2 text-gray-400 max-h-24 overflow-hidden">
                         {d.description}
                       </div>
                     </div>

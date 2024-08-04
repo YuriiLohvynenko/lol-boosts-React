@@ -16,7 +16,7 @@ const Contact = () => {
             Our 1v9 support team is available 24/7 to help you with any
             questions or issues you may have.
           </p>
-          <div className="mt-6 flex items-center gap-6">
+          <div className="mt-6 flex items-center gap-2 lg:gap-6">
             <a
               href="#"
               className={`bg-indigo-950 ${classNames.btnClass} flex items-center gap-2 justify-center`}

@@ -28,7 +28,7 @@ const PlacementBoost = () => {
         <BoostNavbar />
       </div>
       <div className="mt-4 lg:mt-6">
-        <div className="flex justify-between gap-8">
+        <div className="flex flex-col lg:flex-row justify-between gap-8">
           <div className="w-full lg:w-3/5">
             <CurrentRank />
             <div className="mt-6">

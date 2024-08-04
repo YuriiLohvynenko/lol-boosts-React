@@ -20,6 +20,9 @@ import FAQ from "./pages/faq";
 import Terms from "./pages/terms";
 import PrivacyPolicy from "./pages/privacy-policy";
 import Blog from "./pages/blog";
+import Hiring from "./pages/hiring";
+import TrackOrder from "./pages/track-order";
+import Imprint from "./pages/imprint";
 const Router = () => {
   return (
     <BrowserRouter>
@@ -27,7 +30,7 @@ const Router = () => {
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />{" "}
           {/* This sets Home as the default child route */}
-          <Route path="boosting" element={<BoostLayout />}>
+          <Route path=":game/boosting" element={<BoostLayout />}>
             <Route path="rank-boost" element={<RankBoost />} />
             <Route path="win-boost" element={<WinBoost />} />
             <Route path="placement-boost" element={<PlacementBoost />} />
@@ -40,6 +43,9 @@ const Router = () => {
           <Route path="contact" element={<Contact />} />
           <Route path="privacy-policy" element={<PrivacyPolicy />} />
           <Route path="blog" element={<Blog />} />
+          <Route path="hiring" element={<Hiring />} />
+          <Route path="track-order" element={<TrackOrder />} />
+          <Route path="imprint" element={<Imprint />} />
         </Route>
 
         <Route path="*" element={<NotFound />} />
