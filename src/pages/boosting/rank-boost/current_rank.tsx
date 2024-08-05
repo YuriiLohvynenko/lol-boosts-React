@@ -39,7 +39,7 @@ const CurrentRank = () => {
         </div>
       </div>
       <div className="border-t border-indigo-800 pt-4 mt-4">
-        <div className="flex items-center justify-start gap-4">
+        <div className="flex items-center justify-start gap-4 flex-wrap">
           {data.map((d: any, index: number) => (
             <Tooltip
               key={index}
@@ -48,7 +48,7 @@ const CurrentRank = () => {
               className="flex-shrink-0"
             >
               <button
-                className={`px-4 py-2 rounded-lg bg-indigo-950 hover:bg-indigo-800 bg-opacity-70`}
+                className={`px-4 py-2 flex-shrink-0 rounded-lg bg-indigo-950 hover:bg-indigo-800 bg-opacity-70`}
               >
                 <img src={d?.url} alt="ICO" className="w-8" />
               </button>

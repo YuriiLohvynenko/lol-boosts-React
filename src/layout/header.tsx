@@ -12,12 +12,15 @@ import {
 import links from "../data/links.json";
 import classNames from "../consts/classNames";
 import games from "../data/games.json";
-import { Dropdown, MegaMenuDropdown } from "flowbite-react";
+import { Dropdown } from "flowbite-react";
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const [toggle, setToggle] = useState(false);
   const navRef = useRef<HTMLDivElement | null>(null);
+  const menu = useRef<HTMLButtonElement | null>(null);
+  const toggleRef = useRef<HTMLAnchorElement | null>(null);
+
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 500) {
@@ -57,6 +60,11 @@ const Header = () => {
     },
     { title: "", link: "", element: <FaInstagram /> },
   ];
+  const handleClose = () => {
+    if (toggleRef.current) {
+      toggleRef.current.focus();
+    }
+  };
   return (
     <>
       <header
@@ -101,7 +109,7 @@ const Header = () => {
         <div className={`${classNames.containerClass} py-3`}>
           <div className="flex flex-col lg:flex-row lg:justify-between items-center">
             <div className="flex w-full lg:w-auto items-center gap-4 justify-between lg:justify-start relative flex-shrink-0">
-              <Link to="/">
+              <Link to="/" ref={toggleRef}>
                 <img
                   src="/images/logo/logo-light.png"
                   alt="LOGO"
@@ -119,6 +127,7 @@ const Header = () => {
                       to={d.url}
                       key={index}
                       className={`flex items-center gap-2 py-1 px-3 rounded-xl hover:bg-indigo-800 bg-opacity-70`}
+                      onClick={handleClose}
                     >
                       <img src={d.icon} alt={d.title} /> {d.title}
                     </Link>

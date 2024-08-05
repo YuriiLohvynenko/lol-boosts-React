@@ -20,7 +20,7 @@ const DesiredRank = () => {
   }, []);
   return (
     <div className=" rounded-lg border p-4  border-indigo-800">
-      <div className="flex justify-start items-center gap-4">
+      <div className="flex flex-wrap justify-start items-center gap-4">
         <span
           className={`flex w-16 h-16 p-3 rounded-full border ${classNames.bgDarkClass} ${classNames.borderLClass} flex-shrink-0 justify-center items-center`}
         >
@@ -38,7 +38,7 @@ const DesiredRank = () => {
         </div>
       </div>
       <div className="border-t border-indigo-800 pt-4 mt-4">
-        <div className="flex items-center justify-start gap-4">
+        <div className="flex flex-wrap items-center justify-start gap-4">
           {data.map((d: any, index: number) => (
             <button
               key={index}
