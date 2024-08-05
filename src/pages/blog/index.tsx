@@ -7,7 +7,7 @@ const Blog = () => {
   return (
     <div className={`${classNames.containerClass} mt-10 lg:mt-20`}>
       <h1 className="text-3xl lg:text-5xl font-bold text-center">
-        Read the latest 1v9 Blog & News
+        Read the latest LOL BOOSTs Blog & News
       </h1>
       <p className="text-center text-gray-400 mt-4">
         Your ultimate destination for the latest gaming news, useful tips, and

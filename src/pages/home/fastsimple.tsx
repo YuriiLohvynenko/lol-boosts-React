@@ -18,6 +18,17 @@ const FastSimple = () => {
     }
   };
 
+  const SwiperControl = () => (
+    <div className="flex max-lg:justify-center items-center gap-8 mt-6">
+      <button className="w-12 h-12 rounded-full hover:bg-indigo-400 swiper-btn-prev">
+        &#10094;
+      </button>
+      <button className="w-12 h-12 rounded-full hover:bg-indigo-400 swiper-btn-next">
+        &#10095;
+      </button>
+    </div>
+  );
+
   return (
     <div className="mt-10 lg:mt-20">
       <div className={`${classNames.containerClass}`}>
@@ -34,26 +45,27 @@ const FastSimple = () => {
             delay: 5000,
             disableOnInteraction: false,
           }}
-          pagination={{
-            clickable: true,
+          navigation={{
+            prevEl: ".swiper-btn-prev",
+            nextEl: ".swiper-btn-next",
           }}
-          navigation={true}
           modules={[Autoplay, Pagination, Navigation]}
           onAutoplayTimeLeft={onAutoplayTimeLeft}
           className="mySwiper"
         >
           <SwiperSlide>
             <div className="w-full flex flex-col-reverse lg:flex-row justify-between items-center px-0 lg:pl-16">
-              <div className="">
+              <div className="max-lg:text-center">
                 <span className="text-indigo-500">Step #1</span>
                 <div className="mt-5 text-2xl font-bold">Select Service</div>
                 <p className="text-lg text-gray-300 mt-3">
                   Pick your desired service and customize your order.
                 </p>
                 <div className="mt-5">
-                  <button className="px-6 py-3 rounded-3xl bg-purple-400 text-white hover:bg-purple-700">
+                  <button className={`${classNames.btnClass}`}>
                     Get Started
                   </button>
+                  {SwiperControl()}
                 </div>
               </div>
               <div className="w-full lg:w-2/5">
@@ -63,7 +75,7 @@ const FastSimple = () => {
           </SwiperSlide>
           <SwiperSlide>
             <div className="w-full flex flex-col-reverse lg:flex-row justify-between items-center px-0 lg:pl-16">
-              <div className="">
+              <div className="max-lg:text-center">
                 <span className="text-indigo-500">Step #2</span>
                 <div className="mt-5 text-2xl font-bold">Progress Order</div>
                 <p className="text-lg text-gray-300 mt-3">
@@ -71,9 +83,10 @@ const FastSimple = () => {
                   Crypto and more.
                 </p>
                 <div className="mt-5">
-                  <button className="px-6 py-3 rounded-3xl bg-purple-400 text-white hover:bg-purple-700">
+                  <button className={`${classNames.btnClass}`}>
                     Get Started
                   </button>
+                  {SwiperControl()}
                 </div>
               </div>
               <div className="w-full lg:w-2/5">
@@ -83,7 +96,7 @@ const FastSimple = () => {
           </SwiperSlide>
           <SwiperSlide>
             <div className="w-full flex flex-col-reverse lg:flex-row justify-between items-center px-0 lg:pl-16">
-              <div className="">
+              <div className="max-lg:text-center">
                 <span className="text-indigo-500">Step #3</span>
                 <div className="mt-5 text-2xl font-bold">Order Completed</div>
                 <p className="text-lg text-gray-300 mt-3">
@@ -91,9 +104,10 @@ const FastSimple = () => {
                   experience with us.
                 </p>
                 <div className="mt-5">
-                  <button className="px-6 py-3 rounded-3xl bg-purple-400 text-white hover:bg-purple-700">
+                  <button className={`${classNames.btnClass}`}>
                     Get Started
                   </button>
+                  {SwiperControl()}
                 </div>
               </div>
               <div className="w-full lg:w-2/5">
@@ -111,13 +125,26 @@ const FastSimple = () => {
                 alt="IMG"
               />
             </div>
-            <div>
+            <div className="max-lg:text-center">
               <h2 className="text-2xl font-bold lg:text-4xl">
-                Premium 24/7 support in multiple languages. By 1v9ers for 1v9ers
+                Premium 24/7 support in multiple languages. By LOL BOOSTERS for
+                LOL BOOSTERS
               </h2>
               <div className="mt-6 text-lg text-gray-300">
-                Our 1v9 support team is available 24/7 to help you with any
-                questions or issues you may have.
+                Our LOL BOOST support team is available 24/7 to help you with
+                any questions or issues you may have.
+              </div>
+              <div className="mt-6 flex max-lg:justify-center items-center gap-8">
+                <img
+                  src="/images/flag/de.png"
+                  alt="DE"
+                  className="rounded-xl w-12 h-12"
+                />
+                <img
+                  src="/images/flag/us.webp"
+                  alt="US"
+                  className="rounded-xl w-12 h-12"
+                />
               </div>
               <div className="mt-6">
                 <button className="px-8 py-3 rounded-3xl bg-indigo-500 text-white hover:bg-indigo-800">

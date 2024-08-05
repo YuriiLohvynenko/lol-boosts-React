@@ -10,10 +10,11 @@ const Contact = () => {
         </div>
         <div>
           <h2 className="text-3xl font-bold">
-            Premium 24/7 support in multiple languages. By 1v9ers for 1v9ers
+            Premium 24/7 support in multiple languages. By LOL BOOSTERS for LOL
+            BOOSTERS
           </h2>
           <p className="mt-6 text-gray-300">
-            Our 1v9 support team is available 24/7 to help you with any
+            Our LOL BOOSTS support team is available 24/7 to help you with any
             questions or issues you may have.
           </p>
           <div className="mt-6 flex items-center gap-2 lg:gap-6">

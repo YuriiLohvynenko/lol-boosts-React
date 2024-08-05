@@ -15,7 +15,7 @@ const Hiring = () => {
         </h1>
         <div className="max-w-[65%] text-center mx-auto ">
           Join us as a seller or a booster today and start offering your
-          services and products to our huge 1v9 community. ⚡
+          services and products to our huge LOL BOOSTs community. ⚡
         </div>
         <button
           className={`flex mx-auto ${classNames.btnClass} flex items-center gap-2 justify-center`}

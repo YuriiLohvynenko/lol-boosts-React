@@ -213,7 +213,8 @@ const AmazingSeller = () => {
   return (
     <div className={`${classNames.containerClass} mt-10 lg:mt-20`}>
       <h1 className="text-2xl">
-        Why Sell on 1v9? Grow your Business with Our Amazing Seller Benefits
+        Why Sell on LOL BOOSTs? Grow your Business with Our Amazing Seller
+        Benefits
       </h1>
       <div className="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {data.map((d: any, index: number) => (

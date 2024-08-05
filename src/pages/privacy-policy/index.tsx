@@ -10,42 +10,43 @@ const PrivacyPolicy = () => {
       </h1>
       <div className="mt-5 lg:mt-6">
         <p>
-          At 1v9, accessible from{" "}
-          <a href="https://1v9.gg/" className="text-indigo-500">
-            https://1v9.gg/
+          At LOL BOOSTs, accessible from{" "}
+          <a href="https://LOL BOOSTs.gg/" className="text-indigo-500">
+            https://LOL BOOSTs.gg/
           </a>
           , one of our main priorities is the privacy of our visitors. This
           Privacy Policy document contains types of information that is
-          collected and recorded by 1v9 and how we use it.
+          collected and recorded by LOL BOOSTs and how we use it.
         </p>
         <div className="mt-3">
           <span className="text-xl">
             General Data Protection Regulation (GDPR)
           </span>
           <div className="mt-3">
-            We are a Data Controller of your information. <br /> 1v9 legal basis
-            for collecting and using the personal information described in
+            We are a Data Controller of your information. <br /> LOL BOOSTs
+            legal basis for collecting and using the personal information
+            described in
             <ul className="mt-3">
               <li className="list-inside list-disc">
-                1v9 needs to perform a contract with you
+                LOL BOOSTs needs to perform a contract with you
               </li>
               <li className="list-inside list-disc">
-                You have given 1v9 permission to do so
+                You have given LOL BOOSTs permission to do so
               </li>
               <li className="list-inside list-disc">
-                Processing your personal information is in 1v9 legitimate
+                Processing your personal information is in LOL BOOSTs legitimate
                 interests
               </li>
               <li className="list-inside list-disc">
-                1v9 needs to comply with the law
+                LOL BOOSTs needs to comply with the law
               </li>
             </ul>
           </div>
           <div className="mt-3">
-            1v9 will retain your personal information only for as long as is
-            necessary for the purposes set out in this Privacy Policy. We will
-            retain and use your information to the extent necessary to comply
-            with our legal obligations, resolve disputes, and enforce our
+            LOL BOOSTs will retain your personal information only for as long as
+            is necessary for the purposes set out in this Privacy Policy. We
+            will retain and use your information to the extent necessary to
+            comply with our legal obligations, resolve disputes, and enforce our
             policies. <br />
             If you are a resident of the European Economic Area (EEA), you have
             certain data protection rights. If you wish to be informed what
@@ -75,9 +76,9 @@ const PrivacyPolicy = () => {
           <div>
             <span className="text-xl">Log Files</span>
             <div className="mt-3 text-gray-300">
-              1v9 follows a standard procedure of using log files. These files
-              log visitors when they visit websites. All hosting companies do
-              this and a part of hosting services’ analytics. The information
+              LOL BOOSTs follows a standard procedure of using log files. These
+              files log visitors when they visit websites. All hosting companies
+              do this and a part of hosting services’ analytics. The information
               collected by log files include internet protocol (IP) addresses,
               browser type, Internet Service Provider (ISP), date and time
               stamp, referring/exit pages, and possibly the number of clicks.
@@ -104,22 +105,22 @@ const PrivacyPolicy = () => {
             <span className="text-xl">Privacy Policies</span>
             <div className="mt-3 text-gray-300">
               You may consult this list to find the Privacy Policy for each of
-              the advertising partners of 1v9. Third-party ad servers or ad
-              networks uses technologies like cookies, JavaScript, or Web
+              the advertising partners of LOL BOOSTs. Third-party ad servers or
+              ad networks uses technologies like cookies, JavaScript, or Web
               Beacons that are used in their respective advertisements and links
-              that appear on 1v9, which are sent directly to users’ browser.
-              They automatically receive your IP address when this occurs. These
-              technologies are used to measure the effectiveness of their
-              advertising campaigns and/or to personalize the advertising
-              content that you see on websites that you visit. Note that 1v9 has
-              no access to or control over these cookies that are used by
-              third-party advertisers.
+              that appear on LOL BOOSTs, which are sent directly to users’
+              browser. They automatically receive your IP address when this
+              occurs. These technologies are used to measure the effectiveness
+              of their advertising campaigns and/or to personalize the
+              advertising content that you see on websites that you visit. Note
+              that LOL BOOSTs has no access to or control over these cookies
+              that are used by third-party advertisers.
             </div>
           </div>
           <div>
             <span className="text-xl">Third Party Privacy Policies</span>
             <div className="mt-3 text-gray-300">
-              1v9’s Privacy Policy does not apply to other advertisers or
+              LOL BOOSTs’s Privacy Policy does not apply to other advertisers or
               websites. Thus, we are advising you to consult the respective
               Privacy Policies of these third-party ad servers for more detailed
               information. It may include their practices and instructions about
@@ -133,7 +134,7 @@ const PrivacyPolicy = () => {
           <div>
             <span className="text-xl">Children’s Information</span>
             <div className="mt-3 text-gray-300">
-              1v9 does not knowingly collect any Personal Identifiable
+              LOL BOOSTs does not knowingly collect any Personal Identifiable
               Information from children under the age of 13. If you think that
               your child provided this kind of information on our website, we
               strongly encourage you to contact us immediately and we will do
@@ -146,7 +147,7 @@ const PrivacyPolicy = () => {
             <div className="mt-3 text-gray-300">
               Our Privacy Policy applies only to our online activities and is
               valid for visitors to our website with regards to the information
-              that they shared and/or collect in 1v9. This policy is not
+              that they shared and/or collect in LOL BOOSTs. This policy is not
               applicable to any information collected offline or via channels
               other than this website.
             </div>
