@@ -1,10 +1,34 @@
 import { ToggleSwitch } from "flowbite-react";
 import { useState } from "react";
-import { FaArrowRight, FaTimesCircle } from "react-icons/fa";
+import { FaArrowRight, FaTimes, FaTimesCircle } from "react-icons/fa";
 import classNames from "../../../consts/classNames";
 
 const Checkout = () => {
   const [checked, setChecked] = useState(false);
+  const [discount, setDiscount] = useState(false);
+  const [applycode, setApplycode] = useState(0);
+  let timeout: any = null;
+
+  const handleChange = (event: any) => {
+    switch (event.target.name) {
+      case "applycode":
+        setApplycode(event.target.value);
+        break;
+      default:
+        break;
+    }
+  };
+
+  const handleApply = () => {
+    if (discount) return;
+    if (applycode) {
+      setDiscount(true);
+      timeout = setTimeout(() => {
+        setDiscount(false);
+      }, 3000);
+    }
+  };
+
   return (
     <div className="border border-indigo-800 p-4 rounded-lg">
       <div className="text-center mb-2">
@@ -163,12 +187,33 @@ const Checkout = () => {
             <input
               className="px-3 py-1 w-full rounded-md text-sm bg-indigo-950"
               placeholder="Enter Code BOOST20 to get a 20% discount"
+              name="applycode"
+              onChange={handleChange}
             />
-            <button className="px-3 py-1 bg-indigo-800 text-sm rounded-md">
+            <button
+              className="px-3 py-1 bg-indigo-800 text-sm rounded-md"
+              onClick={handleApply}
+            >
               Apply
             </button>
           </div>
         </div>
+        {discount && (
+          <div
+            className="mt-5 text-center py-4 px-6 border-green-600 border rounded-lg bg-gradient-to-b from-green-900 to-green-[#ddd] relative text-green-400"
+            data-aos="fade-in"
+            data-aos-offset="300"
+            data-aos-easing="ease-in-sine"
+          >
+            -20% discount applied successfully 🎉
+            <button
+              className="absolute top-1/2 right-[10px] hover:text-green-300 -translate-x-1/2 -translate-y-1/2"
+              onClick={() => setDiscount(false)}
+            >
+              <FaTimes />
+            </button>
+          </div>
+        )}
       </div>
       <div className="pb-4">
         <div className="flex justify-between items-center">

@@ -43,7 +43,7 @@ const FastSimple = () => {
           className="mySwiper"
         >
           <SwiperSlide>
-            <div className="w-full flex flex-col-reverse lg:flex-row justify-between items-center">
+            <div className="w-full flex flex-col-reverse lg:flex-row justify-between items-center px-0 lg:pl-16">
               <div className="">
                 <span className="text-indigo-500">Step #1</span>
                 <div className="mt-5 text-2xl font-bold">Select Service</div>
@@ -62,7 +62,7 @@ const FastSimple = () => {
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <div className="w-full flex flex-col-reverse lg:flex-row justify-between items-center">
+            <div className="w-full flex flex-col-reverse lg:flex-row justify-between items-center px-0 lg:pl-16">
               <div className="">
                 <span className="text-indigo-500">Step #2</span>
                 <div className="mt-5 text-2xl font-bold">Progress Order</div>
@@ -82,7 +82,7 @@ const FastSimple = () => {
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <div className="w-full flex flex-col-reverse lg:flex-row justify-between items-center">
+            <div className="w-full flex flex-col-reverse lg:flex-row justify-between items-center px-0 lg:pl-16">
               <div className="">
                 <span className="text-indigo-500">Step #3</span>
                 <div className="mt-5 text-2xl font-bold">Order Completed</div>

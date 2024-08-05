@@ -1,4 +1,5 @@
 import AboutBoosts from "./aboutboosts";
+import BoostNumbers from "./boost_numbers";
 import Boosters from "./boosters";
 import FAQ from "./faq";
 import FastSimple from "./fastsimple";
@@ -28,6 +29,8 @@ const Home = () => {
       <FastSimple />
       {/* SERVICE BETTER */}
       <ServiceBetter />
+      {/* BOOST NUMBERS */}
+      <BoostNumbers />
       {/* BOOSTERS */}
       <Boosters />
       {/* ABOUT LOL BOOSTERS */}

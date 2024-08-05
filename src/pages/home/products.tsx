@@ -22,7 +22,10 @@ const Products = () => {
               {Array(5)
                 .fill(1)
                 .map((_: any, index: number) => (
-                  <span className="p-1 text-sm rounded bg-green-400">
+                  <span
+                    className="p-1 text-sm rounded bg-green-400"
+                    key={index}
+                  >
                     <FaStar />
                   </span>
                 ))}
