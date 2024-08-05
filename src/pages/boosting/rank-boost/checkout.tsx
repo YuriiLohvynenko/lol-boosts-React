@@ -7,6 +7,10 @@ const Checkout = () => {
   const [checked, setChecked] = useState(false);
   const [discount, setDiscount] = useState(false);
   const [applycode, setApplycode] = useState(0);
+  const [champion, setChampion] = useState(false);
+  const [solo, setSolo] = useState(false);
+  const [priority, setPriority] = useState(false);
+  const [stream, setStream] = useState(false);
   let timeout: any = null;
 
   const handleChange = (event: any) => {
@@ -67,8 +71,8 @@ const Checkout = () => {
           <ToggleSwitch
             sizing="sm"
             label=""
-            checked={checked}
-            onChange={() => setChecked(!checked)}
+            checked={champion}
+            onChange={() => setChampion(!champion)}
             color="indigo"
             theme={{
               toggle: {
@@ -90,8 +94,8 @@ const Checkout = () => {
           <ToggleSwitch
             sizing="sm"
             label=""
-            checked={checked}
-            onChange={() => setChecked(!checked)}
+            checked={solo}
+            onChange={() => setSolo(!solo)}
             color="indigo"
             theme={{
               toggle: {
@@ -113,8 +117,8 @@ const Checkout = () => {
           <ToggleSwitch
             sizing="sm"
             label=""
-            checked={checked}
-            onChange={() => setChecked(!checked)}
+            checked={priority}
+            onChange={() => setPriority(!priority)}
             color="indigo"
             theme={{
               toggle: {
@@ -159,8 +163,8 @@ const Checkout = () => {
           <ToggleSwitch
             sizing="sm"
             label=""
-            checked={checked}
-            onChange={() => setChecked(!checked)}
+            checked={stream}
+            onChange={() => setStream(!stream)}
             color="indigo"
             theme={{
               toggle: {
