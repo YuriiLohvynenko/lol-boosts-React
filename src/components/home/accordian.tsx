@@ -9,17 +9,24 @@ const Accordion = (props: any) => {
         onClick={() => setOpen(!open)}
       >
         <strong className="text-xl">{title}</strong>
-        <button className="w-10 h-10 flex-shrink-0 rounded-full bg-indigo-800 bg-opacity-20 hover:bg-indigo-500 rotate-90">
+        <button
+          className={`w-10 h-10 flex-shrink-0 rounded-full hover:bg-indigo-500 transition-all ${
+            open
+              ? "-rotate-90 bg-indigo-400"
+              : "rotate-90 bg-indigo-800 bg-opacity-50"
+          }`}
+        >
           <span className="">&#10095;</span>
         </button>
       </div>
-      <div
-        className={` transition-all duration-200 text-gray-300 overflow-clip ${
-          open ? "h-auto" : "h-0"
-        }`}
-      >
-        <div className={`border-t border-indigo-900 p-4 `}>{description}</div>
-      </div>
+      {open && (
+        <div
+          className={` transition-all duration-200 text-gray-300 overflow-clip`}
+          data-aos="fade-in"
+        >
+          <div className={`border-t border-indigo-900 p-4 `}>{description}</div>
+        </div>
+      )}
     </div>
   );
 };

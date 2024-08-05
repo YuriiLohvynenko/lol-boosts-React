@@ -206,8 +206,6 @@ const Checkout = () => {
           <div
             className="mt-5 text-center py-4 px-6 border-green-600 border rounded-lg bg-gradient-to-b from-green-900 to-green-[#ddd] relative text-green-400"
             data-aos="fade-in"
-            data-aos-offset="300"
-            data-aos-easing="ease-in-sine"
           >
             -20% discount applied successfully 🎉
             <button
