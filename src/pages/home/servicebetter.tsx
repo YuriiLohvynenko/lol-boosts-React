@@ -16,16 +16,16 @@ const ServiceBetter = () => {
             className="w-full lg:w-2/5 flex-shrink-0 rounded-3xl shadow-xl border border-indigo-700"
           />
           <div className="flex-grow grid grid-rows-2 gap-4">
-            <img
-              src="/images/other/8-02.png"
-              className="h-full object-cover object-center rounded-3xl shadow-xl border border-indigo-700"
-            />
-            {/* <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-2 gap-4">
               <img
                 src="/images/other/7-01.png"
-                className="h-full object-cover opacity-0 object-center rounded-3xl shadow-xl border border-indigo-700"
+                className="h-full opacity-0 object-cover object-center rounded-3xl shadow-xl border border-indigo-700"
               />
-            </div> */}
+              <img
+                src="/images/other/8-01.jpg"
+                className="h-full object-cover object-center rounded-3xl shadow-xl border border-indigo-700"
+              />
+            </div>
             <div className="flex-grow">
               <img
                 src="/images/other/6-01.jpg"
