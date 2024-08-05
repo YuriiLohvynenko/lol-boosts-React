@@ -11,6 +11,8 @@ import {
 } from "react-icons/fa";
 import links from "../data/links.json";
 import classNames from "../consts/classNames";
+import games from "../data/games.json";
+import { Dropdown, MegaMenuDropdown } from "flowbite-react";
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -61,7 +63,7 @@ const Header = () => {
         className={`w-full relative z-1 z-50 transition-all duration-100 bg-[#0f1a31] shadow-xl bg-opacity-75`}
       >
         <div className="w-full bg-[#0c1322]">
-          <div className={`${classNames.containerClass} py-1`}>
+          {/* <div className={`${classNames.containerClass} py-1`}>
             <div className="flex justify-between items-center">
               <div>
                 <span className="hidden lg:block">
@@ -94,11 +96,11 @@ const Header = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
-        <div className={`${classNames.containerClass} pb-3`}>
+        <div className={`${classNames.containerClass} py-3`}>
           <div className="flex flex-col lg:flex-row lg:justify-between items-center">
-            <div className="flex w-full lg:w-auto items-center justify-between lg:justify-start relative flex-shrink-0">
+            <div className="flex w-full lg:w-auto items-center gap-4 justify-between lg:justify-start relative flex-shrink-0">
               <Link to="/">
                 <img
                   src="/images/logo/logo-light.png"
@@ -106,6 +108,23 @@ const Header = () => {
                   className="h-16"
                 />
               </Link>
+              <Dropdown
+                label="Select Game"
+                color="transparent"
+                className="bg-[#0f1a31] border-none bg-opacity-90 text-white"
+              >
+                <div className="p-4 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-3 gap-y-1 md:min-w-[600px] lg:min-w-[936px]">
+                  {games.map((d: any, index: number) => (
+                    <Link
+                      to={d.url}
+                      key={index}
+                      className={`flex items-center gap-2 py-1 px-3 rounded-xl hover:bg-indigo-800 bg-opacity-70`}
+                    >
+                      <img src={d.icon} alt={d.title} /> {d.title}
+                    </Link>
+                  ))}
+                </div>
+              </Dropdown>
               <button
                 className="block lg:hidden p-3 rounded-lg hover:bg-indigo-400 bg-indigo-800"
                 onClick={() => {

@@ -23,9 +23,17 @@ const TrackOrder = () => {
             <div className="flex flex-col gap-2">
               <label>Discord ID</label>
               <input
-                type="email"
+                type="text"
                 className={`${classNames.inputClass}`}
                 placeholder="Your Discord ID"
+              />
+            </div>
+            <div className="flex flex-col gap-2">
+              <label>Order ID</label>
+              <input
+                type="text"
+                className={`${classNames.inputClass}`}
+                placeholder="Order Id"
               />
             </div>
             <div className="flex flex-col gap-2">

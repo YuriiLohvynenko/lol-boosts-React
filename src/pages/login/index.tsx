@@ -38,21 +38,11 @@ const Login = () => {
               <Link to="" className="text-gray-500">
                 Forgot Password?
               </Link>
-              <div className="mt-6 flex justify-center items-center gap-2">
-                <button
-                  className={`bg-indigo-900 ${classNames.btnClass} flex justify-center items-center gap-2`}
-                >
-                  <FaGoogle /> Google
-                </button>
-                <button
-                  className={`bg-indigo-900 ${classNames.btnClass} flex justify-center items-center gap-2`}
-                >
-                  <FaDiscord /> Discord
-                </button>
-              </div>
+
               <div className="mt-6 text-center">
                 <Link to="/register" className="text-gray-500">
-                  Don’t have an account? Sign up now!
+                  Don’t have an account?{" "}
+                  <span className="text-white font-bold">Sign up</span> now!
                 </Link>
               </div>
             </div>

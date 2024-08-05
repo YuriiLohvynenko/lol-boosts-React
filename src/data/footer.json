@@ -192,32 +192,35 @@
     },
     {
         "id": 6,
-        "title": "WoW Cataclysm",
-        "icon": "/images/icon/wow-cataclysm.png",
+        "title": "Additional",
         "list": [
             {
-                "link": "#",
-                "title": "Cataclysm Boosting"
+                "link": "faq",
+                "title": "FAQ"
             },
             {
-                "link": "",
-                "title": "Cataclysm Level Boost"
+                "link": "terms",
+                "title": "Terms & Policy"
             },
             {
-                "link": "",
-                "title": "Cataclysm Professions Kits Boost"
+                "link": "privacy-policy",
+                "title": "Privacy & Policy"
             },
             {
-                "link": "",
-                "title": "Cataclysm PvE Gear Boost"
+                "link": "blog",
+                "title": "Blog"
             },
             {
-                "link": "",
-                "title": "Cataclysm PvP Gear Boost"
+                "link": "hiring",
+                "title": "Jobs"
             },
             {
-                "link": "",
-                "title": "Cataclysm Honor Farm Boost"
+                "link": "track-order",
+                "title": "Track Order"
+            },
+            {
+                "link": "imprint",
+                "title": "Imprint"
             }
         ]
     }

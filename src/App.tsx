@@ -1,6 +1,7 @@
 import "./App.css";
 import Router from "./router";
 import "swiper/css";
+import "swiper/css/navigation";
 import "swiper/css/pagination";
 function App() {
   return (

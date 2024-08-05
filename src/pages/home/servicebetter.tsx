@@ -12,20 +12,20 @@ const ServiceBetter = () => {
       <div className="mt-10 lg:mt-20">
         <div className="flex gap-4 flex-col lg:flex-row">
           <img
-            src="/images/other/9-01.jpg"
+            src="/images/other/9-01.png"
             className="w-full lg:w-2/5 flex-shrink-0 rounded-3xl shadow-xl border border-indigo-700"
           />
           <div className="flex-grow grid grid-rows-2 gap-4">
-            <div className="grid grid-cols-2 gap-4">
+            <img
+              src="/images/other/8-02.png"
+              className="h-full object-cover object-center rounded-3xl shadow-xl border border-indigo-700"
+            />
+            {/* <div className="grid grid-cols-2 gap-4">
               <img
                 src="/images/other/7-01.png"
-                className="h-full object-cover object-center rounded-3xl shadow-xl border border-indigo-700"
+                className="h-full object-cover opacity-0 object-center rounded-3xl shadow-xl border border-indigo-700"
               />
-              <img
-                src="/images/other/8-01.jpg"
-                className="h-full object-cover object-center rounded-3xl shadow-xl border border-indigo-700"
-              />
-            </div>
+            </div> */}
             <div className="flex-grow">
               <img
                 src="/images/other/6-01.jpg"

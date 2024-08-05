@@ -30,7 +30,7 @@ const Footer = () => {
           {footers.map((d: any, index: number) => (
             <div key={index}>
               <div className="flex justify-start items-center gap-2">
-                <img src={d.icon} alt={d.title} />
+                {d.icon && <img src={d.icon} alt={d.title} />}
                 <span className="text-lg">{d.title}</span>
               </div>
               <ul className="mt-4 ">

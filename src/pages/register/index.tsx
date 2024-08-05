@@ -57,7 +57,8 @@ const Register = () => {
               </div>
               <div className="mt-6 text-center">
                 <Link to="/login" className="text-gray-500">
-                  Do have an account? Sign in now!
+                  Do have an account?{" "}
+                  <span className="text-white font-bold">Sign in</span> now!
                 </Link>
               </div>
             </div>

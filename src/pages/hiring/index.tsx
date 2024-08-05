@@ -52,7 +52,7 @@ const Hiring = () => {
         </div>
       </div>
       {/* Amazing Seller */}
-      <AmazingSeller />
+      {/* <AmazingSeller /> */}
       {/* FAQ Section */}
       <FAQ />
       {/* REVIEWS */}

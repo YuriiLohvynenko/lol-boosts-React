@@ -12,31 +12,7 @@
         "link": "contact"
     },
     {
-        "title": "FAQ",
-        "link": "faq"
-    },
-    {
-        "title": "Terms & Policy",
-        "link": "terms"
-    },
-    {
-        "title": "Privacy & Policy",
-        "link": "privacy-policy"
-    },
-    {
-        "title": "Blog",
-        "link": "blog"
-    },
-    {
-        "title": "Jobs",
-        "link": "hiring"
-    },
-    {
-        "title": "Track Order",
-        "link": "track-order"
-    },
-    {
-        "title": "Imprint",
-        "link": "imprint"
+        "title": "Login",
+        "link": "login"
     }
 ]
