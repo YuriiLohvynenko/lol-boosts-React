@@ -30,6 +30,7 @@ const WinsAmount = () => {
           id="lg-range"
           color="info"
           sizing="lg"
+          min={1}
           max={5}
           step={1}
           value={win_match}
