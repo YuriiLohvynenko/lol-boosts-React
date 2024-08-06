@@ -3,7 +3,7 @@ const Hero = () => {
     <>
       <div className="absolute top-0 left-0 w-full z-0">
         <img
-          src="/images/cover/1.jpeg"
+          src="/images/cover/5.jpeg"
           className="w-full blur-sm opacity-75"
           alt="HERO"
         />
