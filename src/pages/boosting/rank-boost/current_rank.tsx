@@ -33,7 +33,7 @@ const CurrentRank = (props: any) => {
             setData(materials?.filter((d: any) => d.type !== "tft"));
           }
         } else {
-          setData(materials);
+          setData(materials?.filter((d: any) => d.type !== "tft"));
         }
         dispatch(setCurrentRank(counts[0]));
       }
