@@ -37,7 +37,7 @@ const WinBoost = () => {
       <div className="mt-4 lg:mt-6">
         <div className="flex flex-col lg:flex-row justify-between gap-8">
           <div className="w-full lg:w-3/5">
-            <CurrentRank />
+            <CurrentRank page="win" />
             <div className="mt-6">
               <WinsAmount />
             </div>

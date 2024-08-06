@@ -18,11 +18,7 @@ const DesiredRank = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     if (game != "valorant") {
-      if (game != "league-of-legends") {
-        setData(materials);
-      } else {
-        setData(materials.filter((d: any) => d.type != "tft"));
-      }
+      setData(materials.filter((d: any) => d.type != "tft"));
       setCData(counts);
       if (materials.length) {
         dispatch(setDesiredMaterial(materials[0]));

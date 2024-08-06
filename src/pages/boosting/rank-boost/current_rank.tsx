@@ -12,20 +12,29 @@ import {
   setCurrentRank,
   setCurrentMaterial,
 } from "../../../redux/slice/boostSlice";
-const CurrentRank = () => {
+const CurrentRank = (props: any) => {
+  const { page } = props;
   const { game } = useParams();
   const [data, setData] = useState<any[]>([]);
   const [cdata, setCData] = useState<any[]>([]);
   const dispatch = useDispatch();
   const current_rank = useSelector((d: any) => d.boost.current_rank);
   // initilize variable
-
+  console.log(page);
   // initilize material
   useEffect(() => {
     if (game != "valorant") {
       if (materials.length) {
         dispatch(setCurrentMaterial(materials[0]));
-        setData(materials?.filter((d: any) => d.type !== "tft"));
+        if (game != "league-of-legends") {
+          if (page == "win" || page == "placement") {
+            setData(materials);
+          } else {
+            setData(materials?.filter((d: any) => d.type !== "tft"));
+          }
+        } else {
+          setData(materials);
+        }
         dispatch(setCurrentRank(counts[0]));
       }
       setCData(counts);
