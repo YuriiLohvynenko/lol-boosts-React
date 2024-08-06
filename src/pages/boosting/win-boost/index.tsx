@@ -7,7 +7,11 @@ import WinsAmount from "./wins_amount";
 import Players from "../../home/players";
 import FAQ from "../../home/faq";
 import faq_win_boost from "../../../data/faq_win_boost.json";
+import { useParams } from "react-router-dom";
+import { FAQBoost } from "../../../interface/faq";
 const WinBoost = () => {
+  const { game } = useParams();
+  const faqs = faq_win_boost[game as keyof FAQBoost]?.faqs;
   return (
     <div className={`${classNames.containerClass} mt-4 lg:mt-6`}>
       <div className="flex items-center justify-start gap-4">
@@ -44,7 +48,7 @@ const WinBoost = () => {
         </div>
       </div>
       <Players />
-      <FAQ faqs={faq_win_boost} />
+      <FAQ faqs={faqs} />
     </div>
   );
 };

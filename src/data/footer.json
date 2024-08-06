@@ -56,27 +56,27 @@
         "icon": "/images/icon/valorant.png",
         "list": [
             {
-                "link": "/Valorant/boosting/rank-boost",
+                "link": "/valorant/boosting/rank-boost",
                 "title": "Valorant Accounts"
             },
             {
-                "link": "/Valorant/boosting/rank-boost",
+                "link": "/valorant/boosting/rank-boost",
                 "title": "Valorant Boosting"
             },
             {
-                "link": "/Valorant/boosting/rank-boost",
+                "link": "/valorant/boosting/rank-boost",
                 "title": "Valorant Rank Boost"
             },
             {
-                "link": "/Valorant/boosting/rank-boost",
+                "link": "/valorant/boosting/rank-boost",
                 "title": "Valorant Win Boost"
             },
             {
-                "link": "/Valorant/boosting/rank-boost",
+                "link": "/valorant/boosting/rank-boost",
                 "title": "Valorant Placements Boost"
             },
             {
-                "link": "/Valorant/boosting/rank-boost",
+                "link": "/valorant/boosting/rank-boost",
                 "title": "Valorant Unrated Boost"
             }
         ]
@@ -87,54 +87,60 @@
         "icon": "/images/icon/tft.png",
         "list": [
             {
-                "link": "/Teamfight-tactics/boosting/rank-boost",
+                "link": "/team-fight-tactics/boosting/rank-boost",
                 "title": "TFT Boosting"
             },
             {
-                "link": "/Teamfight-tactics/boosting/rank-boost",
+                "link": "/team-fight-tactics/boosting/rank-boost",
                 "title": "TFT Rank Boost"
             },
             {
-                "link": "/Teamfight-tactics/boosting/rank-boost",
+                "link": "/team-fight-tactics/boosting/rank-boost",
                 "title": "TFT Win Boost"
             },
             {
-                "link": "/Teamfight-tactics/boosting/rank-boost",
+                "link": "/team-fight-tactics/boosting/rank-boost",
                 "title": "TFT Placements Boost"
             },
             {
-                "link": "/Teamfight-tactics/boosting/rank-boost",
+                "link": "/team-fight-tactics/boosting/rank-boost",
                 "title": "TFT Double Up Boost"
             }
         ]
     },
     {
         "id": 4,
-        "title": "Additional",
+        "title": "Company",
         "list": [
+            {
+                "link": "contact",
+                "title": "Contact US"
+            },
             {
                 "link": "faq",
                 "title": "FAQ"
-            },
-            {
-                "link": "terms",
-                "title": "Terms & Policy"
-            },
-            {
-                "link": "privacy-policy",
-                "title": "Privacy & Policy"
-            },
-            {
-                "link": "blog",
-                "title": "Blog"
             },
             {
                 "link": "hiring",
                 "title": "Jobs"
             },
             {
-                "link": "track-order",
-                "title": "Track Order"
+                "link": "blog",
+                "title": "Blog"
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "title": "Legal",
+        "list": [
+            {
+                "link": "terms",
+                "title": "Terms of service"
+            },
+            {
+                "link": "privacy-policy",
+                "title": "Privacy"
             },
             {
                 "link": "imprint",

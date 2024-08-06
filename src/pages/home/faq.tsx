@@ -15,15 +15,16 @@ const FAQ = (props: any) => {
               <span className="text-indigo-600">Questions</span>
             </h1>
             <div className="mt-6">
-              {faqs?.map((d: any, index: number) => {
-                return (
-                  <Accordion
-                    key={index}
-                    title={d.question}
-                    description={d.answer}
-                  />
-                );
-              })}
+              {Array.isArray(faqs) &&
+                faqs?.map((d: any, index: number) => {
+                  return (
+                    <Accordion
+                      key={index}
+                      title={d.question}
+                      description={d.answer}
+                    />
+                  );
+                })}
             </div>
           </div>
         </div>

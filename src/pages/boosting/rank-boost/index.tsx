@@ -7,9 +7,11 @@ import DesiredRank from "./desired_rank";
 import Players from "../../home/players";
 import FAQ from "../../home/faq";
 import faq_rank_boost from "../../../data/faq_rank_boost.json";
+import { FAQBoost } from "../../../interface/faq";
 
 const RankBoost = () => {
   const { game } = useParams();
+  const faqs = faq_rank_boost[game as keyof FAQBoost]?.faqs;
   return (
     <div className={`${classNames.containerClass} mt-4 lg:mt-6`}>
       <div className="flex items-center justify-start gap-4">
@@ -46,7 +48,7 @@ const RankBoost = () => {
         </div>
       </div>
       <Players />
-      <FAQ faqs={faq_rank_boost} />
+      <FAQ faqs={faqs} />
     </div>
   );
 };

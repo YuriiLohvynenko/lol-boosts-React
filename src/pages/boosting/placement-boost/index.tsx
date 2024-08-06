@@ -7,8 +7,12 @@ import Players from "../../home/players";
 import FAQ from "../../home/faq";
 
 import faq_placement_boost from "../../../data/faq_placement_boost.json";
+import { useParams } from "react-router-dom";
+import { FAQBoost } from "../../../interface/faq";
 
 const PlacementBoost = () => {
+  const { game } = useParams();
+  const faqs = faq_placement_boost[game as keyof FAQBoost]?.faqs;
   return (
     <div className={`${classNames.containerClass} mt-4 lg:mt-6`}>
       <div className="flex items-center justify-start gap-4">
@@ -45,7 +49,7 @@ const PlacementBoost = () => {
         </div>
       </div>
       <Players />
-      <FAQ faqs={faq_placement_boost} />
+      <FAQ faqs={faqs} />
     </div>
   );
 };
