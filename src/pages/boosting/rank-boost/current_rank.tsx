@@ -25,9 +25,13 @@ const CurrentRank = () => {
     if (game != "valorant") {
       if (materials.length) {
         dispatch(setCurrentMaterial(materials[0]));
+        if (game != "league-of-legends") {
+          setData(materials);
+        } else {
+          setData(materials?.filter((d: any) => d.type !== "tft"));
+        }
         dispatch(setCurrentRank(counts[0]));
       }
-      setData(materials);
       setCData(counts);
     } else {
       if (materials2.length) {
@@ -61,7 +65,7 @@ const CurrentRank = () => {
         </div>
       </div>
       <div className="border-t border-indigo-800 pt-4 mt-4">
-        <div className="flex items-center justify-start gap-4 flex-wrap">
+        <div className="flex items-center justify-start gap-x-4 gap-y-2 flex-wrap">
           {data.map((d: any, index: number) => (
             <Tooltip
               key={index}

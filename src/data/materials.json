@@ -46,5 +46,19 @@
         "title": "Master",
         "url": "/images/boosting/icon/Master.webp",
         "price": 1000
+    },
+    {
+        "_id": 9,
+        "type": "tft",
+        "title": "Grand Master",
+        "url": "/images/boosting/icon/Grand Master.png",
+        "price": 1000
+    },
+    {
+        "_id": 10,
+        "type": "tft",
+        "title": "Challenger",
+        "url": "/images/boosting/icon/Challenger.png",
+        "price": 1000
     }
 ]

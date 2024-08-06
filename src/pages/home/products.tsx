@@ -37,7 +37,7 @@ const Products = () => {
           </span>
         </div>
       </div>
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mt-6 lg:mt-10">
+      <div className="grid grid-cols-2 lg:max-w-[768px] mx-auto md:grid-cols-3 lg:grid-cols-3 gap-4 mt-6 lg:mt-10">
         {products.map((d: any, index: number) => {
           return (
             <div key={index} className=" hover:scale-105 cursor-pointer group">

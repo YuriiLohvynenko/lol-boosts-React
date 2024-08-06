@@ -62,7 +62,7 @@ const Header = () => {
   ];
   const handleClose = () => {
     if (toggleRef.current) {
-      toggleRef.current.focus();
+      toggleRef.current.click();
     }
   };
   return (
@@ -117,12 +117,34 @@ const Header = () => {
                     className="h-16"
                   />
                 </Link>
-                <Dropdown
-                  label="Select Game"
-                  color="transparent"
-                  className="bg-[#0f1a31] border-none bg-opacity-90 text-white"
-                >
-                  <div className="p-4 space-y-2">
+                <div className="relative">
+                  <button
+                    id="dropdownCheckboxButton"
+                    data-dropdown-toggle="dpSelectGame"
+                    className={`px-4 py-2 rounded-3xl border border-indigo-600 hover:bg-indigo-600 inline-flex items-center`}
+                    type="button"
+                  >
+                    Select Game{" "}
+                    <svg
+                      className="w-2.5 h-2.5 ms-3"
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 10 6"
+                    >
+                      <path
+                        stroke="currentColor"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="m1 1 4 4 4-4"
+                      />
+                    </svg>
+                  </button>
+                  <div
+                    id="dpSelectGame"
+                    className="z-10 hidden bg-indigo-950 bg-opacity-75 rounded-xl p-2 w-56"
+                  >
                     {games.map((d: any, index: number) => (
                       <NavLink
                         to={d.url}
@@ -134,12 +156,16 @@ const Header = () => {
                         }
                         onClick={handleClose}
                       >
-                        <img src={d.icon} alt={d.title} className="w-6" />{" "}
+                        <img
+                          src={d.icon}
+                          alt={d.title}
+                          className="w-6 flex-shrink-0"
+                        />{" "}
                         {d.title}
                       </NavLink>
                     ))}
                   </div>
-                </Dropdown>
+                </div>
                 <span
                   className={`inline-flex border-green-600 justify-center items-center gap-1 px-6 py-2 border rounded-3xl bg-gradient-to-b from-green-900 to-green-[#ddd] max-md:hidden`}
                 >
@@ -164,13 +190,13 @@ const Header = () => {
               ref={navRef}
               // onBlur={() => setToggle(false)}
             >
-              <div className="flex flex-col lg:flex lg:flex-row justify-end items-stretch lg:items-center gap-1">
+              <div className="flex flex-col lg:flex lg:flex-row justify-end items-stretch lg:items-center gap-2">
                 {links.map((d: any, index: number) => (
                   <NavLink
                     key={index}
                     to={d.link}
                     className={({ isActive }) =>
-                      `whitespace-nowrap px-3 py-2 rounded-md shadow-md hover:bg-indigo-600 ${
+                      `whitespace-nowrap px-3 py-2 rounded-3xl border border-indigo-600 shadow-md hover:bg-indigo-600 ${
                         isActive ? "bg-indigo-500" : ""
                       }`
                     }

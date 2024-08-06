@@ -7,6 +7,7 @@ module.exports = {
     "node_modules/@material-tailwind/react/components/**/*.{js,ts,jsx,tsx}",
     "node_modules/@material-tailwind/react/theme/components/**/*.{js,ts,jsx,tsx}",
     flowbite.content(),
+    "./node_modules/flowbite/**/*.js",
   ],
   theme: {
     extend: {},
