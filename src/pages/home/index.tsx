@@ -1,3 +1,4 @@
+import faqs from "../../data/faq.json";
 import AboutBoosts from "./aboutboosts";
 import BoostNumbers from "./boost_numbers";
 import Boosters from "./boosters";
@@ -22,7 +23,7 @@ const Home = () => {
       {/* PLAYERS SECTION */}
       <Players />
       {/* FAQ SECTION */}
-      <FAQ />
+      <FAQ faqs={faqs} />
       {/* SERVICE SECTION */}
       <Service />
       {/* FAST SIMPLE SECTION */}

@@ -57,7 +57,7 @@ const Footer = () => {
   return (
     <footer className="py-10 lg:py-20 border-t border-indigo-800 mt-10 lg:mt-20 space-y-12">
       <div className={`${classNames.containerClass}`}>
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-4">
+        <div className="grid sm:grid-cols-2 md:grid-cols-2 xl:grid-cols-4 gap-4">
           {footers.map((d: any, index: number) => (
             <div key={index}>
               <div className="flex justify-start items-center gap-2">

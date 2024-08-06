@@ -1,0 +1,27 @@
+[
+    {
+        "_id": 1,
+        "question": "How does a LoL Win Boost work?",
+        "answer": "A League of Legends Win Boost is designed to deliver a set number of guaranteed wins. Boosters will continue to play until they achieve the specified number of victories, compensating for any losses with additional wins. This service is perfect for players looking for purchasing a desired amount of guaranteed wins."
+    },
+    {
+        "_id": 2,
+        "question": "How long does a LoL Win Boost usually take?",
+        "answer": "The duration of a League of Legends win boost can vary, typically ranging from 1 to 3 days. Factors influencing the timeframe include your starting rank and desired rank."
+    },
+    {
+        "_id": 3,
+        "question": "What happens if the booster loses a game during the boost?",
+        "answer": "If the booster loses a game during the boosting process, they will make up for it by securing an additional win. For instance, if you initially purchased a boost for 2 wins and the booster loses 1 game, they will then aim to achieve a total of 3 wins to fulfill the order."
+    },
+    {
+        "_id": 4,
+        "question": "Is it safe to buy a LoL Win Boost?",
+        "answer": "Definitely! Yes, LoL Win Boosting is safe with LOL BOOST. Our professional boosters use advanced security measures, including VPNs and strict protocols, to maintain your accounts protected throughout the boost process."
+    },
+    {
+        "_id": 5,
+        "question": "When will my order start?",
+        "answer": "Your order will begin immediately after you place your order, with a booster being assigned promptly to handle your order."
+    }
+]

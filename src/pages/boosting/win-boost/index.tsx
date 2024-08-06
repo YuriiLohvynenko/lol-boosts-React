@@ -4,7 +4,9 @@ import Checkout from "./checkout";
 import CurrentRank from "../rank-boost/current_rank";
 import DesiredRank from "../rank-boost/desired_rank";
 import WinsAmount from "./wins_amount";
-
+import Players from "../../home/players";
+import FAQ from "../../home/faq";
+import faq_win_boost from "../../../data/faq_win_boost.json";
 const WinBoost = () => {
   return (
     <div className={`${classNames.containerClass} mt-4 lg:mt-6`}>
@@ -41,6 +43,8 @@ const WinBoost = () => {
           </div>
         </div>
       </div>
+      <Players />
+      <FAQ faqs={faq_win_boost} />
     </div>
   );
 };

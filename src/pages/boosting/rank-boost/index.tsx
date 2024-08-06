@@ -4,6 +4,9 @@ import BoostNavbar from "../boost_navbar";
 import Checkout from "./checkout";
 import CurrentRank from "./current_rank";
 import DesiredRank from "./desired_rank";
+import Players from "../../home/players";
+import FAQ from "../../home/faq";
+import faq_rank_boost from "../../../data/faq_rank_boost.json";
 
 const RankBoost = () => {
   const { game } = useParams();
@@ -42,6 +45,8 @@ const RankBoost = () => {
           </div>
         </div>
       </div>
+      <Players />
+      <FAQ faqs={faq_rank_boost} />
     </div>
   );
 };

@@ -1,7 +1,7 @@
 import Accordion from "../../components/home/accordian";
 import classNames from "../../consts/classNames";
-import faqs from "../../data/faq.json";
-const FAQ = () => {
+const FAQ = (props: any) => {
+  const { faqs } = props;
   return (
     <div className="mt-10 lg:mt-20">
       <div className={`${classNames.containerClass}`}>
@@ -15,7 +15,7 @@ const FAQ = () => {
               <span className="text-indigo-600">Questions</span>
             </h1>
             <div className="mt-6">
-              {faqs.map((d: any, index: number) => {
+              {faqs?.map((d: any, index: number) => {
                 return (
                   <Accordion
                     key={index}

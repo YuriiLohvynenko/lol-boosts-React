@@ -83,115 +83,33 @@
     },
     {
         "id": 3,
-        "title": "World of Warcraft",
-        "icon": "/images/icon/world-of-warcraft.png",
+        "title": "Teamfight Tactics",
+        "icon": "/images/icon/tft.png",
         "list": [
             {
-                "link": "/World-of-Warcraft/boosting/rank-boost",
-                "title": "WoW Boosting"
+                "link": "/Teamfight-tactics/boosting/rank-boost",
+                "title": "TFT Boosting"
             },
             {
-                "link": "/World-of-Warcraft/boosting/rank-boost",
-                "title": "WoW PvE Boost"
+                "link": "/Teamfight-tactics/boosting/rank-boost",
+                "title": "TFT Rank Boost"
             },
             {
-                "link": "/World-of-Warcraft/boosting/rank-boost",
-                "title": "WoW Mythic+ Boost"
+                "link": "/Teamfight-tactics/boosting/rank-boost",
+                "title": "TFT Win Boost"
             },
             {
-                "link": "/World-of-Warcraft/boosting/rank-boost",
-                "title": "WoW Raid Boost"
+                "link": "/Teamfight-tactics/boosting/rank-boost",
+                "title": "TFT Placements Boost"
             },
             {
-                "link": "/World-of-Warcraft/boosting/rank-boost",
-                "title": "WoW Power Leveling"
-            },
-            {
-                "link": "/World-of-Warcraft/boosting/rank-boost",
-                "title": "WoW PvP Boost"
-            },
-            {
-                "link": "/World-of-Warcraft/boosting/rank-boost",
-                "title": "WoW Arena 2v2 Boost"
-            },
-            {
-                "link": "/World-of-Warcraft/boosting/rank-boost",
-                "title": "WoW Arena 3v3 Boost"
-            },
-            {
-                "link": "/World-of-Warcraft/boosting/rank-boost",
-                "title": "WoW PvP Coaching"
-            },
-            {
-                "link": "/World-of-Warcraft/boosting/rank-boost",
-                "title": "WoW Honor Farming"
-            },
-            {
-                "link": "/World-of-Warcraft/boosting/rank-boost",
-                "title": "WoW Conquest Farming"
+                "link": "/Teamfight-tactics/boosting/rank-boost",
+                "title": "TFT Double Up Boost"
             }
         ]
     },
     {
         "id": 4,
-        "title": "World of Warcraft SoD",
-        "icon": "/images/icon/wow-season-of-discovery.png",
-        "list": [
-            {
-                "link": "/World-of-Warcraft-SoD/boosting/rank-boost",
-                "title": "SoD Boosting"
-            },
-            {
-                "link": "/World-of-Warcraft-SoD/boosting/rank-boost",
-                "title": "SoD Level Boost"
-            },
-            {
-                "link": "/World-of-Warcraft-SoD/boosting/rank-boost",
-                "title": "SoD Runes Farm Boost"
-            },
-            {
-                "link": "/World-of-Warcraft-SoD/boosting/rank-boost",
-                "title": "SoD Raids Boost"
-            },
-            {
-                "link": "/World-of-Warcraft-SoD/boosting/rank-boost",
-                "title": "SoD Profession Level Boost"
-            },
-            {
-                "link": "/World-of-Warcraft-SoD/boosting/rank-boost",
-                "title": "SoD Professions Kits Boost"
-            },
-            {
-                "link": "/World-of-Warcraft-SoD/boosting/rank-boost",
-                "title": "SoD Custom Order"
-            }
-        ]
-    },
-    {
-        "id": 5,
-        "title": "WoW Pandaria Remix",
-        "icon": "/images/icon/wow-remix.png",
-        "list": [
-            {
-                "link": "/WoW-Pandaria-Remix/boosting/rank-boost",
-                "title": "MoP Remix Boosting"
-            },
-            {
-                "link": "/WoW-Pandaria-Remix/boosting/rank-boost",
-                "title": "MoP Remix Bronze Farm Boost"
-            },
-            {
-                "link": "/WoW-Pandaria-Remix/boosting/rank-boost",
-                "title": "MoP Remix Level Boost"
-            },
-            {
-                "link": "/WoW-Pandaria-Remix/boosting/rank-boost",
-                "title": "MoP Remix Transmog Boost"
-            }
-        ]
-    },
-    {
-        "id": 6,
         "title": "Additional",
         "list": [
             {

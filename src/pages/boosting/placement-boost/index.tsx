@@ -3,6 +3,10 @@ import BoostNavbar from "../boost_navbar";
 import Checkout from "./checkout";
 import CurrentRank from "../rank-boost/current_rank";
 import WinsAmount from "../win-boost/wins_amount";
+import Players from "../../home/players";
+import FAQ from "../../home/faq";
+
+import faq_placement_boost from "../../../data/faq_placement_boost.json";
 
 const PlacementBoost = () => {
   return (
@@ -40,6 +44,8 @@ const PlacementBoost = () => {
           </div>
         </div>
       </div>
+      <Players />
+      <FAQ faqs={faq_placement_boost} />
     </div>
   );
 };

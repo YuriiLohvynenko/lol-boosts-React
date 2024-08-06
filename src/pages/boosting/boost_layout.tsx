@@ -9,8 +9,6 @@ const BoostLayout = () => {
   return (
     <>
       <Outlet />
-      <Players />
-      <FAQ />
       <ServiceBetter />
       <FastSimple />
       <BoostContent />
