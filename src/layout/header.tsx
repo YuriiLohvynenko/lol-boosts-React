@@ -109,31 +109,39 @@ const Header = () => {
         <div className={`${classNames.containerClass} py-3`}>
           <div className="flex flex-col lg:flex-row lg:justify-between items-center">
             <div className="flex w-full lg:w-auto items-center gap-4 justify-between lg:justify-start relative flex-shrink-0">
-              <Link to="/" ref={toggleRef}>
-                <img
-                  src="/images/logo/logo-light.png"
-                  alt="LOGO"
-                  className="h-16"
-                />
-              </Link>
-              <Dropdown
-                label="Select Game"
-                color="transparent"
-                className="bg-[#0f1a31] border-none bg-opacity-90 text-white"
-              >
-                <div className="p-4 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-3 gap-y-1 md:min-w-[600px] lg:min-w-[936px]">
-                  {games.map((d: any, index: number) => (
-                    <Link
-                      to={d.url}
-                      key={index}
-                      className={`flex items-center gap-2 py-1 px-3 rounded-xl hover:bg-indigo-800 bg-opacity-70`}
-                      onClick={handleClose}
-                    >
-                      <img src={d.icon} alt={d.title} /> {d.title}
-                    </Link>
-                  ))}
-                </div>
-              </Dropdown>
+              <div className="flex items-center gap-2">
+                <Link to="/" ref={toggleRef}>
+                  <img
+                    src="/images/logo/logo-light.png"
+                    alt="LOGO"
+                    className="h-16"
+                  />
+                </Link>
+                <Dropdown
+                  label="Select Game"
+                  color="transparent"
+                  className="bg-[#0f1a31] border-none bg-opacity-90 text-white"
+                >
+                  <div className="p-4 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-3 gap-y-1 md:min-w-[600px] lg:min-w-[936px]">
+                    {games.map((d: any, index: number) => (
+                      <Link
+                        to={d.url}
+                        key={index}
+                        className={`flex items-center gap-2 py-1 px-3 rounded-xl hover:bg-indigo-800 bg-opacity-70`}
+                        onClick={handleClose}
+                      >
+                        <img src={d.icon} alt={d.title} /> {d.title}
+                      </Link>
+                    ))}
+                  </div>
+                </Dropdown>
+                <span
+                  className={`inline-flex border-green-600 justify-center items-center gap-1 px-6 py-2 border rounded-3xl bg-gradient-to-b from-green-900 to-green-[#ddd] max-md:hidden`}
+                >
+                  <span className="w-4 h-4 rounded-full bg-green-500 border-4 border-green-900"></span>{" "}
+                  183 Activate Partners
+                </span>
+              </div>
               <button
                 className="block lg:hidden p-3 rounded-lg hover:bg-indigo-400 bg-indigo-800"
                 onClick={() => {

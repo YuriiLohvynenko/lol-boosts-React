@@ -12,7 +12,7 @@ const Trailer = () => {
         GAMEPLAY <span className="text-indigo-700">TRAILER</span>
       </h1>
       {/* Trailer Videos */}
-      <div className="mt-6 lg:mt-12">
+      <div className="mt-6 lg:mt-12 max-lg:w-full w-3/5 mx-auto">
         <Videos />
       </div>
     </div>
