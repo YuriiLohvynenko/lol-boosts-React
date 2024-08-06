@@ -23,7 +23,7 @@ const ServiceBetter = () => {
                   className="h-full opacity-0 object-cover object-center rounded-3xl shadow-xl border border-indigo-700"
                 />
                 <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-3xl">
-                  Comming Soon
+                  Coming Soon
                 </span>
               </div>
               <img
