@@ -25,11 +25,7 @@ const CurrentRank = () => {
     if (game != "valorant") {
       if (materials.length) {
         dispatch(setCurrentMaterial(materials[0]));
-        if (game != "league-of-legends") {
-          setData(materials);
-        } else {
-          setData(materials?.filter((d: any) => d.type !== "tft"));
-        }
+        setData(materials?.filter((d: any) => d.type !== "tft"));
         dispatch(setCurrentRank(counts[0]));
       }
       setCData(counts);
