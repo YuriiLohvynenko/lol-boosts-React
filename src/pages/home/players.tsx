@@ -64,7 +64,7 @@ const Players = () => {
             return (
               <SwiperSlide
                 key={index}
-                className="rounded-2xl p-4 shadow-xl border border-indigo-700 flex-shrink-0"
+                className="rounded-2xl p-4 shadow-xl border border-indigo-700 flex-shrink-0 overflow-hidden !h-[260px]"
               >
                 <div className="flex justify-between items-start">
                   <div className="flex justify-start items-center gap-2">
