@@ -12,36 +12,12 @@ const TrackOrder = () => {
           </p>
           <div className="mt-10 space-y-4">
             <div className="flex flex-col gap-2">
-              <label>Email</label>
-              <input
-                type="email"
-                className={`${classNames.inputClass}`}
-                placeholder="Your Email"
-              />
-            </div>
-            <p>or</p>
-            <div className="flex flex-col gap-2">
-              <label>Discord ID</label>
-              <input
-                type="text"
-                className={`${classNames.inputClass}`}
-                placeholder="Your Discord ID"
-              />
-            </div>
-            <div className="flex flex-col gap-2">
               <label>Order ID</label>
               <input
                 type="text"
                 className={`${classNames.inputClass}`}
                 placeholder="Order Id"
               />
-            </div>
-            <div className="flex flex-col gap-2">
-              <label>Description</label>
-              <textarea
-                className={`${classNames.inputClass} min-h-28`}
-                placeholder="For example: I would like a complete boost level 70 Orc Warrior (Arms) with PvP rating of 1800, full honor (467ilvl) and a mount Sunhide Gronnling."
-              ></textarea>
             </div>
             <button className={`rounded-lg w-full ${classNames.btnClass}`}>
               Send

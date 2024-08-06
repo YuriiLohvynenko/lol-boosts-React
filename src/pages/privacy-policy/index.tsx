@@ -8,158 +8,167 @@ const PrivacyPolicy = () => {
       <h1 className="text-center text-3xl lg:text-5xl font-bold text-indigo-500">
         Privacy Policy
       </h1>
-      <div className="mt-5 lg:mt-6">
+      <div className="mt-5 lg:mt-6 space-y-5">
         <p>
-          At LOL BOOSTs, accessible from{" "}
-          <a href="https://LOL BOOSTs.gg/" className="text-indigo-500">
-            https://LOL BOOSTs.gg/
-          </a>
-          , one of our main priorities is the privacy of our visitors. This
-          Privacy Policy document contains types of information that is
-          collected and recorded by LOL BOOSTs and how we use it.
+          LBS SERVICES GLOBAL LTD, a private limited company, founded in Latvia,
+          ("us", "we", or "our") operates the https://lol-boosts.com/ website
+          (the "Service").
         </p>
-        <div className="mt-3">
-          <span className="text-xl">
-            General Data Protection Regulation (GDPR)
-          </span>
-          <div className="mt-3">
-            We are a Data Controller of your information. <br /> LOL BOOSTs
-            legal basis for collecting and using the personal information
-            described in
-            <ul className="mt-3">
-              <li className="list-inside list-disc">
-                LOL BOOSTs needs to perform a contract with you
-              </li>
-              <li className="list-inside list-disc">
-                You have given LOL BOOSTs permission to do so
-              </li>
-              <li className="list-inside list-disc">
-                Processing your personal information is in LOL BOOSTs legitimate
-                interests
-              </li>
-              <li className="list-inside list-disc">
-                LOL BOOSTs needs to comply with the law
-              </li>
-            </ul>
-          </div>
-          <div className="mt-3">
-            LOL BOOSTs will retain your personal information only for as long as
-            is necessary for the purposes set out in this Privacy Policy. We
-            will retain and use your information to the extent necessary to
-            comply with our legal obligations, resolve disputes, and enforce our
-            policies. <br />
-            If you are a resident of the European Economic Area (EEA), you have
-            certain data protection rights. If you wish to be informed what
-            Personal Information we hold about you and if you want it to be
-            removed from our systems, please contact us. <br />
-            In certain circumstances, you have the following data protection
-            rights:
-            <ul className="mt-3">
-              <li className="list-inside list-disc">
-                The right to access, update or to delete the information we have
-                on you.
-              </li>
-              <li className="list-inside list-disc">
-                The right of rectification.
-              </li>
-              <li className="list-inside list-disc">The right to object.</li>
-              <li className="list-inside list-disc">
-                The right to data portability
-              </li>
-              <li className="list-inside list-disc">
-                The right to withdraw consent
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div className="mt-3 space-y-3">
-          <div>
-            <span className="text-xl">Log Files</span>
-            <div className="mt-3 text-gray-300">
-              LOL BOOSTs follows a standard procedure of using log files. These
-              files log visitors when they visit websites. All hosting companies
-              do this and a part of hosting services’ analytics. The information
-              collected by log files include internet protocol (IP) addresses,
-              browser type, Internet Service Provider (ISP), date and time
-              stamp, referring/exit pages, and possibly the number of clicks.
-              These are not linked to any information that is personally
-              identifiable. The purpose of the information is for analyzing
-              trends, administering the site, tracking users’ movement on the
-              website, and gathering demographic information.
-            </div>
-          </div>
-          <div>
-            <span className="text-xl">Cookies and Web Beacons</span>
-            <div className="mt-3 text-gray-300">
-              Some of advertisers on our site may use cookies and web beacons.
-              Our advertising partners are listed below. Each of our advertising
-              partners has their own Privacy Policy for their policies on user
-              data. For easier access, we hyperlinked to their Privacy Policies
-              below.
-              <ul className="list-inside list-disc">
-                <li>Google</li>
-              </ul>
-            </div>
-          </div>
-          <div>
-            <span className="text-xl">Privacy Policies</span>
-            <div className="mt-3 text-gray-300">
-              You may consult this list to find the Privacy Policy for each of
-              the advertising partners of LOL BOOSTs. Third-party ad servers or
-              ad networks uses technologies like cookies, JavaScript, or Web
-              Beacons that are used in their respective advertisements and links
-              that appear on LOL BOOSTs, which are sent directly to users’
-              browser. They automatically receive your IP address when this
-              occurs. These technologies are used to measure the effectiveness
-              of their advertising campaigns and/or to personalize the
-              advertising content that you see on websites that you visit. Note
-              that LOL BOOSTs has no access to or control over these cookies
-              that are used by third-party advertisers.
-            </div>
-          </div>
-          <div>
-            <span className="text-xl">Third Party Privacy Policies</span>
-            <div className="mt-3 text-gray-300">
-              LOL BOOSTs’s Privacy Policy does not apply to other advertisers or
-              websites. Thus, we are advising you to consult the respective
-              Privacy Policies of these third-party ad servers for more detailed
-              information. It may include their practices and instructions about
-              how to opt-out of certain options. <br /> You can choose to
-              disable cookies through your individual browser options. To know
-              more detailed information about cookie management with specific
-              web browsers, it can be found at the browsers’ respective
-              websites.
-            </div>
-          </div>
-          <div>
-            <span className="text-xl">Children’s Information</span>
-            <div className="mt-3 text-gray-300">
-              LOL BOOSTs does not knowingly collect any Personal Identifiable
-              Information from children under the age of 13. If you think that
-              your child provided this kind of information on our website, we
-              strongly encourage you to contact us immediately and we will do
-              our best efforts to promptly remove such information from our
-              records.
-            </div>
-          </div>
-          <div>
-            <span className="text-xl">Online Privacy Policy Only</span>
-            <div className="mt-3 text-gray-300">
-              Our Privacy Policy applies only to our online activities and is
-              valid for visitors to our website with regards to the information
-              that they shared and/or collect in LOL BOOSTs. This policy is not
-              applicable to any information collected offline or via channels
-              other than this website.
-            </div>
-          </div>
-          <div>
-            <span className="text-xl">Consent</span>
-            <div className="mt-3 text-gray-300">
-              By using our website, you hereby consent to our Privacy Policy and
-              agree to its terms.
-            </div>
-          </div>
-        </div>
+        <p>
+          LBS SERVICES GLOBAL LTD, is the Controller of your personal data
+          unless otherwise stated below.
+        </p>
+        <p>
+          We have nominated a Data Protection Officer, and you can contact him
+          at lol-boosts.com or via our postal address. Please mark the envelope
+          ‘Data Protection Officer’. Our postal address is 2, Frederick Street,
+          Kings Cross, London, WC1X 0ND,UNITED KINGDOM
+        </p>
+        <p>
+          This page informs you of our policies regarding the collection, use
+          and disclosure of Personal Information when you use our Service.
+        </p>
+        <p>
+          We will not use or share your information with anyone except as
+          described in this Privacy Policy.
+        </p>
+        <p>
+          We use your Personal Information for providing and improving the
+          Service. By using the Service, you agree to the collection and use of
+          information in accordance with this policy. Unless otherwise defined
+          in this Privacy Policy, terms used in this Privacy Policy have the
+          same meanings as in our Terms and Conditions, accessible at
+          https://lol-boosts.com.
+        </p>
+        <p>
+          Information Collection And Use While using our Service, we may ask you
+          to provide us with certain personally identifiable information that
+          can be used to contact or identify you. Personally identifiable
+          information may include, but is not limited to, your email address,
+          full name, payment information, limited identification data of the
+          device like the communication and correspondence records such as when
+          you engage with our customer service agents or chat with boosters
+          ("Personal Information").
+        </p>
+        <p>
+          We only work with trusted partners and authorities. We only share when
+          there is a proper reason to do so. We limit sharing to only that which
+          is required. We do not sell your personal information.
+        </p>
+        <p>
+          Log Data <br />
+          We may also collect information that your browser sends whenever you
+          visit our Service ("Log Data"). This Log Data may include information
+          such as your computers' Internet Protocol ("IP") address, browser
+          type, browser version, the pages of our Service that you visit, the
+          time and date of your visit, the time spent on those pages and other
+          statistics.
+        </p>
+        <p>
+          In addition, we may use third party services such as Google Analytics
+          that collect, monitor and analyze this type of information. These
+          third party service providers have their own privacy policies
+          addressing how they use such information.
+        </p>
+        <p>
+          Cookies <br /> Cookies are files with small amount of data, which may
+          include an anonymous unique identifier. Cookies are sent to your
+          browser from a web site and stored on your computers' hard drive.
+        </p>
+        <p>
+          Cookies are files with small amount of data, which may include an
+          anonymous unique identifier. Cookies are sent to your browser from a
+          web site and stored on your computers' hard drive.
+        </p>
+        <p>
+          Service Providers <br />
+          We may employ third party companies and individuals to facilitate our
+          Service, to provide the Service on our behalf, to perform
+          Service-related services or to assist us in analyzing how our Service
+          is used.
+        </p>
+        <p>
+          These third parties have access to a portion of your Personal
+          Information only to perform these tasks and are obligated not to
+          disclose or use it for any other purpose.
+        </p>
+        <p>
+          Communications <br />
+          We may use your Personal Information to contact you with transactional
+          emails, newsletters, marketing or promotional materials and other
+          information that may be of interest to you. You may opt out of
+          receiving any, or all, of these communications from us by following
+          the unsubscribe link or instructions provided in any email we send.
+        </p>
+        <p>
+          Security <br />
+          The security of your Personal Information is important to us.
+          Although, no method of transmission over the Internet, or method of
+          electronic storage is 100% secure. While we strive to use commercially
+          acceptable means to protect your Personal Information, we cannot
+          guarantee its absolute security.
+        </p>
+        <p>
+          Any personal data collected in the course of providing our services is
+          transferred to and stored in the data centres of DigitalOcean, LLC,
+          Cloudflare, Inc. and/or Amazon Web Services, Inc., which are located
+          in the territories of Member States of the European Union. Only
+          authorised employees and service providers of LBS SERVICES GLOBAL LTD.
+          and its partners (local subsidiaries, representatives, affiliates,
+          agents etc) have access to the personal data and they may access the
+          data only for the purpose of resolving issues associated with the use
+          of the services (including disputes regarding our services).
+        </p>
+        <p>
+          International Transfer
+          <br />
+          Your information, including Personal Information, may be transferred
+          to, and maintained on, computers located outside of your state,
+          province, country or other governmental jurisdiction where the data
+          protection laws may differ than those from your jurisdiction.
+        </p>
+        <p>
+          Your consent to this Privacy Policy followed by your submission of
+          such information represents your agreement to that transfer.
+        </p>
+        <p>
+          Links To Other Sites
+          <br />
+          Our Service may contain links to other sites that are not operated by
+          us. If you click on a third party link, you will be directed to that
+          third party's site. We strongly advise you to review the Privacy
+          Policy of every site you visit.
+        </p>
+        <p>
+          We have no control over, and assume no responsibility for the content,
+          privacy policies or practices of any third party sites or services.
+        </p>
+        <p>
+          Children's Privacy <br /> Our Service does not address anyone under
+          the age of 13 ("Children").
+        </p>
+        <p>
+          We may update our Privacy Policy from time to time. We will notify you
+          of any changes by posting the new Privacy Policy on this page along
+          with updating the last updated date shown on this page.
+        </p>
+        <p>
+          You are advised to review this Privacy Policy periodically for any
+          changes. Changes to this Privacy Policy are effective when they are
+          posted on this page.
+        </p>
+        <p>
+          Contact Us
+          <br />
+          Disputes relating to the processing of personal data are resolved
+          through customer support in the first instance. You have the right to
+          contact LBS SERVICES GLOBAL LTD Data Protection Officer
+          (info@lol-boosts.com).
+        </p>
+        <p>
+          If you have any questions about this Privacy Policy, please contact us
+          via our email address, live chat or the legal address mentioned above.
+        </p>
       </div>
     </div>
   );

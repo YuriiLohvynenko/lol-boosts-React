@@ -1,6 +1,6 @@
 import classNames from "../../../consts/classNames";
 import BoostNavbar from "../boost_navbar";
-import Checkout from "../rank-boost/checkout";
+import Checkout from "./checkout";
 import CurrentRank from "../rank-boost/current_rank";
 import DesiredRank from "../rank-boost/desired_rank";
 import WinsAmount from "./wins_amount";

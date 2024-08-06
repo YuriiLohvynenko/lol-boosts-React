@@ -2,7 +2,22 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import players from "../../data/players.json";
 import { FaStar } from "react-icons/fa";
 import classNames from "../../consts/classNames";
+import { useRef } from "react";
+import { Autoplay } from "swiper/modules";
 const Players = () => {
+  const progressCircle = useRef<SVGSVGElement | null>(null);
+  const progressContent = useRef<HTMLSpanElement | null>(null);
+  const onAutoplayTimeLeft = (s: any, time: number, progress: number) => {
+    if (progressCircle.current) {
+      progressCircle.current.style.setProperty(
+        "--progress",
+        (1 - progress).toString()
+      );
+    }
+    if (progressContent.current) {
+      progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
+    }
+  };
   return (
     <div className={`mt-10 lg:mt-20 ${classNames.containerClass}`}>
       <h1 className="text-center text-3xl lg:text-5xl mx-auto max-w-[75%] font-bold">
@@ -16,6 +31,12 @@ const Players = () => {
         <Swiper
           spaceBetween={30}
           slidesPerView={1}
+          autoplay={{
+            delay: 5000,
+            disableOnInteraction: false,
+          }}
+          modules={[Autoplay]}
+          onAutoplayTimeLeft={onAutoplayTimeLeft}
           breakpoints={{
             // when window width is >= 640px
             640: {

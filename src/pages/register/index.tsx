@@ -12,6 +12,14 @@ const Register = () => {
 
             <div className="mt-10 space-y-8">
               <div className="flex flex-col gap-2">
+                <label>Name</label>
+                <input
+                  type="text"
+                  className={`${classNames.inputClass}`}
+                  placeholder="Your Name"
+                />
+              </div>
+              <div className="flex flex-col gap-2">
                 <label>Email</label>
                 <input
                   type="email"
@@ -43,18 +51,6 @@ const Register = () => {
               <Link to="" className="text-gray-500">
                 Forgot Password?
               </Link>
-              <div className="mt-6 flex justify-center items-center gap-2">
-                <button
-                  className={`bg-indigo-900 ${classNames.btnClass} flex justify-center items-center gap-2`}
-                >
-                  <FaGoogle /> Google
-                </button>
-                <button
-                  className={`bg-indigo-900 ${classNames.btnClass} flex justify-center items-center gap-2`}
-                >
-                  <FaDiscord /> Discord
-                </button>
-              </div>
               <div className="mt-6 text-center">
                 <Link to="/login" className="text-gray-500">
                   Do have an account?{" "}

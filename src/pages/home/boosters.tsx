@@ -1,7 +1,22 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import boosters from "../../data/boosters.json";
 import classNames from "../../consts/classNames";
+import { Autoplay } from "swiper/modules";
+import { useRef } from "react";
 const Boosters = () => {
+  const progressCircle = useRef<SVGSVGElement | null>(null);
+  const progressContent = useRef<HTMLSpanElement | null>(null);
+  const onAutoplayTimeLeft = (s: any, time: number, progress: number) => {
+    if (progressCircle.current) {
+      progressCircle.current.style.setProperty(
+        "--progress",
+        (1 - progress).toString()
+      );
+    }
+    if (progressContent.current) {
+      progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
+    }
+  };
   return (
     <div className={`mt-10 lg:mt-20 ${classNames.containerClass}`}>
       <h1 className="text-center mx-auto text-3xl lg:text-5xl font-bold">
@@ -15,6 +30,12 @@ const Boosters = () => {
         <Swiper
           spaceBetween={30}
           slidesPerView={1}
+          autoplay={{
+            delay: 5000,
+            disableOnInteraction: false,
+          }}
+          modules={[Autoplay]}
+          onAutoplayTimeLeft={onAutoplayTimeLeft}
           breakpoints={{
             // when window width is >= 640px
             640: {
