@@ -122,16 +122,21 @@ const Header = () => {
                   color="transparent"
                   className="bg-[#0f1a31] border-none bg-opacity-90 text-white"
                 >
-                  <div className="p-4 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-3 gap-y-1 md:min-w-[600px] lg:min-w-[936px]">
+                  <div className="p-4 space-y-2">
                     {games.map((d: any, index: number) => (
-                      <Link
+                      <NavLink
                         to={d.url}
                         key={index}
-                        className={`flex items-center gap-2 py-1 px-3 rounded-xl hover:bg-indigo-800 bg-opacity-70`}
+                        className={({ isActive }) =>
+                          `flex items-center gap-2 py-2 px-3 rounded-xl hover:bg-indigo-500 bg-opacity-70 ${
+                            isActive ? "bg-indigo-500" : ""
+                          }`
+                        }
                         onClick={handleClose}
                       >
-                        <img src={d.icon} alt={d.title} /> {d.title}
-                      </Link>
+                        <img src={d.icon} alt={d.title} className="w-6" />{" "}
+                        {d.title}
+                      </NavLink>
                     ))}
                   </div>
                 </Dropdown>
