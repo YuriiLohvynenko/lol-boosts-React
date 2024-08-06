@@ -17,10 +17,15 @@ const ServiceBetter = () => {
           />
           <div className="flex-grow grid grid-rows-2 gap-4">
             <div className="grid grid-cols-2 gap-4">
-              <img
-                src="/images/other/n8.png"
-                className="h-full object-cover object-center rounded-3xl shadow-xl border border-indigo-700"
-              />
+              <div className="relative rounded-3xl shadow-xl border border-indigo-700">
+                <img
+                  src="/images/other/n8.png"
+                  className="h-full opacity-0 object-cover object-center rounded-3xl shadow-xl border border-indigo-700"
+                />
+                <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-3xl">
+                  Comming Soon
+                </span>
+              </div>
               <img
                 src="/images/other/8-01.jpg"
                 className="h-full object-cover object-center rounded-3xl shadow-xl border border-indigo-700"
