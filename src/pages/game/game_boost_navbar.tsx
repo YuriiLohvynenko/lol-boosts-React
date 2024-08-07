@@ -43,6 +43,18 @@ const BoostNavbar = (props: any) => {
           {d.title}
         </NavLink>
       ))}
+      {game == "league-of-legends" && (
+        <NavLink
+          to={`/${game}/coaching`}
+          className={({ isActive }) =>
+            `whitespace-nowrap px-4 py-2 rounded-md shadow-md hover:bg-indigo-800 ${
+              isActive ? "bg-indigo-900" : ""
+            }`
+          }
+        >
+          Coaching
+        </NavLink>
+      )}
     </div>
   );
 };

@@ -70,7 +70,7 @@ const CurrentRank = (props: any) => {
           ))}
         </div>
         <div className="flex items-center justify-start gap-4 mt-2">
-          {current_rank?.material?.level != "up" &&
+          {!current_rank?.material?.level &&
             counts.map((d: any, index: number) => (
               <button
                 key={index}

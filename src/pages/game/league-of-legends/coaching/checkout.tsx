@@ -41,28 +41,6 @@ const Checkout = () => {
     <div className="border border-indigo-800 p-4 rounded-lg">
       <div className="text-center mb-2">
         <span className="text-xl">Checkout</span>
-        <p className="text-gray-500">Add extra options to your boost.</p>
-      </div>
-      <div className="border-t border-b border-indigo-800 py-4">
-        <div className="flex justify-center items-center gap-6">
-          <div className="flex items-center gap-1">
-            {current_rank && (
-              <img
-                className="w-6"
-                src={current_rank?.material?.url}
-                alt="ICO"
-              />
-            )}
-            {current_rank?.material?.title || ""}{" "}
-            {current_rank?.material?.level && current_rank?.material?.level != 4
-              ? `${current_rank?.current_lp} LP`
-              : current_rank?.rank?.mark}
-          </div>
-          <FaArrowRight />
-          <div className="flex items-center gap-1">
-            {placement_match} <span className="text-gray-400">Matches</span>
-          </div>
-        </div>
       </div>
       <div className="space-y-4 py-4">
         <div className="flex justify-between items-center text-gray-300">

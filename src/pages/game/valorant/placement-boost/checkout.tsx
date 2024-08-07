@@ -53,7 +53,8 @@ const Checkout = () => {
                 alt="ICO"
               />
             )}
-            {current_rank?.material?.title || ""} {current_rank?.rank?.mark}
+            {current_rank?.material?.title || ""}{" "}
+            {current_rank?.material?.level ? "" : current_rank?.rank?.mark}
           </div>
           <FaArrowRight />
           <div className="flex items-center gap-1">

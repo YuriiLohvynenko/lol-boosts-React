@@ -9,6 +9,7 @@ import counts from "../../../../data/counts.json";
 import {
   setCurrentRank,
   setCurrentMaterial,
+  setCurrentLP,
 } from "../../../../redux/slice/boostSlice";
 import Number from "../../../../components/custom/Number";
 const CurrentRank = (props: any) => {
@@ -71,7 +72,7 @@ const CurrentRank = (props: any) => {
           ))}
         </div>
         <div className="flex items-center justify-start gap-4 mt-2">
-          {current_rank?.material?.level != "up" &&
+          {!current_rank?.material?.level &&
             counts.map((d: any, index: number) => (
               <button
                 key={index}
@@ -102,7 +103,12 @@ const CurrentRank = (props: any) => {
             <div className="flex flex-col gap-2">
               <label htmlFor="">{current_rank?.material?.title} LP</label>
               <div className="">
-                <Number />
+                <Number
+                  value={current_rank?.current_lp}
+                  onChange={(newValue: number) =>
+                    dispatch(setCurrentLP(newValue))
+                  }
+                />
               </div>
             </div>
           )}

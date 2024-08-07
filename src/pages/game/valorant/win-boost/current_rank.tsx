@@ -9,7 +9,9 @@ import counts2 from "../../../../data/counts2.json";
 import {
   setCurrentRank,
   setCurrentMaterial,
+  setCurrentLP,
 } from "../../../../redux/slice/boostSlice";
+import Number from "../../../../components/custom/Number";
 const CurrentRank = (props: any) => {
   const [data, setData] = useState<any[]>([]);
   const dispatch = useDispatch();
@@ -70,7 +72,8 @@ const CurrentRank = (props: any) => {
           ))}
         </div>
         <div className="flex items-center justify-start gap-4 mt-2">
-          {current_rank?.material?.level != "up" &&
+          {current_rank?.material?.level != 2 &&
+            current_rank?.material?.level != 3 &&
             counts2.map((d: any, index: number) => (
               <button
                 key={index}
@@ -86,16 +89,31 @@ const CurrentRank = (props: any) => {
             ))}
         </div>
         <div className="mt-6 flex flex-wrap justify-start gap-x-6 gap-y-4">
-          <div className="flex flex-col gap-2">
-            <label htmlFor="">Current RR</label>
-            <select className="bg-indigo-950 rounded-md px-3 py-1 border-none min-w-[125px]">
-              <option value="0-20">0-20 RR</option>
-              <option value="21-40">21-40 RR</option>
-              <option value="41-60">41-60 RR</option>
-              <option value="61-80">61-80 RR</option>
-              <option value="81-100">81-100 RR</option>
-            </select>
-          </div>
+          {!current_rank?.material?.level && (
+            <div className="flex flex-col gap-2">
+              <label htmlFor="">Current RR</label>
+              <select className="bg-indigo-950 rounded-md px-3 py-1 border-none min-w-[125px]">
+                <option value="0-20">0-20 RR</option>
+                <option value="21-40">21-40 RR</option>
+                <option value="41-60">41-60 RR</option>
+                <option value="61-80">61-80 RR</option>
+                <option value="81-100">81-100 RR</option>
+              </select>
+            </div>
+          )}
+          {current_rank?.material?.title == "Immortal" && (
+            <div className="flex flex-col gap-2">
+              <label htmlFor="">{current_rank?.material?.title} LP</label>
+              <div className="">
+                <Number
+                  value={current_rank?.current_lp}
+                  onChange={(newValue: number) =>
+                    dispatch(setCurrentLP(newValue))
+                  }
+                />
+              </div>
+            </div>
+          )}
 
           <div className="flex flex-col gap-2">
             <label htmlFor="">Select Server</label>

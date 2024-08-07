@@ -18,6 +18,9 @@ const Number = (props: Numberprops) => {
       const newValue = currentValue + delta;
       // Call the onChange function with the new value
       ref.current.value = newValue.toString();
+      if (onChange) {
+        onChange(newValue); // Call the onChange function with the new value
+      }
     }
   };
   return (
@@ -34,7 +37,12 @@ const Number = (props: Numberprops) => {
         min={min}
         ref={ref}
         value={value}
-        onChange={onChange}
+        onChange={(e) => {
+          const newValue = parseInt(e.target.value) || 0; // Handle NaN
+          if (onChange) {
+            onChange(newValue); // Call onChange with the new value
+          }
+        }}
       />
       <button
         className="w-6 h-6 flex-shrink-0 rounded-full bg-indigo-600 hover:hg-indigo-500"

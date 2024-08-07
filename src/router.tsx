@@ -24,6 +24,7 @@ import LOL from "./pages/game/league-of-legends";
 import LOLRankBoost from "./pages/game/league-of-legends/rank-boost";
 import LOLWinBoost from "./pages/game/league-of-legends/win-boost";
 import LOLPlacementBoost from "./pages/game/league-of-legends/placement-boost";
+import LOLCoaching from "./pages/game/league-of-legends/coaching";
 import Valorant from "./pages/game/valorant";
 import ValRankBoost from "./pages/game/valorant/rank-boost";
 import ValWinBoost from "./pages/game/valorant/win-boost";
@@ -44,6 +45,7 @@ const Router = () => {
               <Route path="rank-boost" element={<LOLRankBoost />} />
               <Route path="win-boost" element={<LOLWinBoost />} />
               <Route path="placement-boost" element={<LOLPlacementBoost />} />
+              <Route path="coaching" element={<LOLCoaching />} />
               <Route index element={<Navigate to="rank-boost" replace />} />
             </Route>
             <Route path="valorant" element={<Valorant />}>

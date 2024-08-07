@@ -4,6 +4,7 @@ const initialState: any = {
   current_rank: {
     material: null,
     rank: null,
+    current_lp: 0,
   },
   desired_rank: {
     material: null,
@@ -48,6 +49,9 @@ const globalSlice = createSlice({
     setPlacementMatch: (state: any, action: PayloadAction<any>) => {
       state.placement_match = action.payload;
     },
+    setCurrentLP: (state: any, action: PayloadAction<any>) => {
+      state.current_rank.current_lp = action.payload;
+    },
   },
 });
 
@@ -58,6 +62,7 @@ export const {
   setDesiredRank,
   setWinMatch,
   setPlacementMatch,
+  setCurrentLP,
 } = globalSlice.actions;
 
 export default globalSlice.reducer;

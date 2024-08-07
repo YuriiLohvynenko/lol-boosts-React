@@ -67,7 +67,7 @@ const CurrentRank = (props: any) => {
           ))}
         </div>
         <div className="flex items-center justify-start gap-4 mt-2">
-          {current_rank?.material?.level != "up" &&
+          {!current_rank?.material?.level &&
             counts2.map((d: any, index: number) => (
               <button
                 key={index}
@@ -83,21 +83,6 @@ const CurrentRank = (props: any) => {
             ))}
         </div>
         <div className="mt-6 flex flex-wrap justify-start gap-x-6 gap-y-4">
-          {current_rank?.material?.level != "up" ? (
-            <div className="flex flex-col gap-2">
-              <label htmlFor="">Current LP</label>
-              <select className="bg-indigo-950 rounded-md px-3 py-1 border-none min-w-[125px]">
-                <option value="0-20">0-20 LP</option>
-                <option value="21-40">21-40 LP</option>
-                <option value="41-60">41-60 LP</option>
-                <option value="61-80">61-80 LP</option>
-                <option value="81-100">81-100 LP</option>
-              </select>
-            </div>
-          ) : (
-            <></>
-          )}
-
           <div className="flex flex-col gap-2">
             <label htmlFor="">Select Server</label>
             <select className="bg-indigo-950 rounded-md px-3 py-1 border-none min-w-[125px]">
