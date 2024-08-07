@@ -10,7 +10,7 @@ const initialState: any = {
     rank: null,
   },
   win_match: 3,
-  palcement_match: 3,
+  placement_match: 3,
 };
 
 // Then, handle actions in your reducers:

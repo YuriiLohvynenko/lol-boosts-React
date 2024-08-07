@@ -15,7 +15,7 @@ const Checkout = () => {
   let timeout: any = null;
 
   const current_rank = useSelector((d: any) => d.boost?.current_rank);
-  const desired_rank = useSelector((d: any) => d.boost?.desired_rank);
+  const win_match = useSelector((d: any) => d.boost?.win_match);
 
   const handleChange = (event: any) => {
     switch (event.target.name) {
@@ -57,14 +57,7 @@ const Checkout = () => {
           </div>
           <FaArrowRight />
           <div className="flex items-center gap-1">
-            {desired_rank && (
-              <img
-                className="w-6"
-                src={desired_rank?.material?.url}
-                alt="ICO"
-              />
-            )}
-            {desired_rank?.material?.title || ""} {desired_rank?.rank?.mark}
+            {win_match} <span className="text-gray-400">Matches</span>
           </div>
         </div>
       </div>
