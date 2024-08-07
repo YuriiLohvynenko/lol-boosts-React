@@ -42,7 +42,7 @@ const Checkout = () => {
       <div className="text-center mb-2">
         <span className="text-xl">Checkout</span>
       </div>
-      <div className="space-y-4 py-4">
+      <div className="space-y-4 py-4 hidden">
         <div className="flex justify-between items-center text-gray-300">
           <div className="flex items-center gap-2">
             <span className="font-bold">Champion and Role</span>
