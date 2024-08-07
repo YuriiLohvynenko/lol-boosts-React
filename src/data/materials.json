@@ -1,5 +1,12 @@
 [
     {
+        "_id": 0,
+        "title": "Unranked",
+        "url": "/images/boosting/icon/Unranked.png",
+        "price": 0,
+        "level": 4
+    },
+    {
         "_id": 1,
         "title": "Iron",
         "url": "/images/boosting/icon/Iron.webp",
@@ -44,18 +51,21 @@
     {
         "_id": 8,
         "title": "Master",
+        "level": 2,
         "url": "/images/boosting/icon/Master.webp",
         "price": 1000
     },
     {
         "_id": 9,
         "type": "tft",
+        "level": 3,
         "title": "Grand Master",
         "url": "/images/boosting/icon/Grand Master.png",
         "price": 1000
     },
     {
         "_id": 10,
+        "level": 3,
         "type": "tft",
         "title": "Challenger",
         "url": "/images/boosting/icon/Challenger.png",

@@ -1,5 +1,12 @@
 [
     {
+        "_id": 0,
+        "title": "Unranked",
+        "url": "/images/boosting/icon/2-Unranked.png",
+        "price": 0,
+        "level": 4
+    },
+    {
         "_id": 1,
         "title": "Iron",
         "url": "/images/boosting/icon/2-Iron.webp",
@@ -45,6 +52,14 @@
         "_id": 8,
         "title": "Immortal",
         "url": "/images/boosting/icon/2-Immortal.webp",
-        "price": 1000
+        "price": 1000,
+        "level": 2
+    },
+    {
+        "_id": 9,
+        "title": "Radiant",
+        "url": "/images/boosting/icon/2-Radiant.png",
+        "price": 1200,
+        "level": 3
     }
 ]

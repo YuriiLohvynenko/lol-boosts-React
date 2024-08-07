@@ -1,38 +1,29 @@
-import classNames from "../../../consts/classNames";
-import materials from "../../../data/materials.json";
-import materials2 from "../../../data/materials2.json";
-import counts from "../../../data/counts.json";
-import counts2 from "../../../data/counts2.json";
+import classNames from "../../../../consts/classNames";
+import materials from "../../../../data/materials.json";
+import counts from "../../../../data/counts.json";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import {
   setDesiredMaterial,
   setDesiredRank,
-} from "../../../redux/slice/boostSlice";
+} from "../../../../redux/slice/boostSlice";
 const DesiredRank = () => {
-  const { game } = useParams();
   const [data, setData] = useState<any[]>([]);
   const [cdata, setCData] = useState<any[]>([]);
   const desired_rank = useSelector((d: any) => d?.boost?.desired_rank);
   const dispatch = useDispatch();
   useEffect(() => {
-    if (game != "valorant") {
-      setData(materials.filter((d: any) => d.type != "tft"));
-      setCData(counts);
-      if (materials.length) {
-        dispatch(setDesiredMaterial(materials[0]));
-        dispatch(setDesiredRank(counts[0]));
-      }
-    } else {
-      setData(materials2);
-      setCData(counts2);
-      if (materials2.length) {
-        dispatch(setDesiredMaterial(materials2[0]));
-        dispatch(setDesiredRank(counts2[0]));
-      }
-    }
+    setData(materials.filter((d: any) => !d.level));
+    setCData(counts);
+    dispatch(setDesiredRank(counts[0]));
   }, []);
+
+  useEffect(() => {
+    if (data.length) {
+      dispatch(setDesiredMaterial(data[0]));
+    }
+  }, [data]);
+
   return (
     <div className=" rounded-lg border p-4  border-indigo-800">
       <div className="flex flex-wrap justify-start items-center gap-4">

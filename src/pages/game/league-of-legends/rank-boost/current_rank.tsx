@@ -3,50 +3,28 @@ import { Tooltip } from "flowbite-react";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
-import classNames from "../../../consts/classNames";
-import materials from "../../../data/materials.json";
-import materials2 from "../../../data/materials2.json";
-import counts from "../../../data/counts.json";
-import counts2 from "../../../data/counts2.json";
+import classNames from "../../../../consts/classNames";
+import materials from "../../../../data/materials.json";
+import counts from "../../../../data/counts.json";
 import {
   setCurrentRank,
   setCurrentMaterial,
-} from "../../../redux/slice/boostSlice";
+} from "../../../../redux/slice/boostSlice";
 const CurrentRank = (props: any) => {
-  const { page } = props;
-  const { game } = useParams();
   const [data, setData] = useState<any[]>([]);
-  const [cdata, setCData] = useState<any[]>([]);
   const dispatch = useDispatch();
   const current_rank = useSelector((d: any) => d.boost.current_rank);
   // initilize variable
-  console.log(page);
-  // initilize material
   useEffect(() => {
-    if (game != "valorant") {
-      if (materials.length) {
-        dispatch(setCurrentMaterial(materials[0]));
-        if (game != "league-of-legends") {
-          if (page == "win" || page == "placement") {
-            setData(materials);
-          } else {
-            setData(materials?.filter((d: any) => d.type !== "tft"));
-          }
-        } else {
-          setData(materials?.filter((d: any) => d.type !== "tft"));
-        }
-        dispatch(setCurrentRank(counts[0]));
-      }
-      setCData(counts);
-    } else {
-      if (materials2.length) {
-        dispatch(setCurrentMaterial(materials2[0]));
-        dispatch(setCurrentRank(counts2[0]));
-      }
-      setData(materials2);
-      setCData(counts2);
-    }
+    setData(materials?.filter((d: any) => !d.level));
+    dispatch(setCurrentRank(counts[0]));
   }, []);
+
+  useEffect(() => {
+    if (data.length) {
+      dispatch(setCurrentMaterial(data[0]));
+    }
+  }, [data]);
 
   return (
     <div className=" rounded-lg border p-4  border-indigo-800">
@@ -92,7 +70,7 @@ const CurrentRank = (props: any) => {
           ))}
         </div>
         <div className="flex items-center justify-start gap-4 mt-2">
-          {cdata.map((d: any, index: number) => (
+          {counts.map((d: any, index: number) => (
             <button
               key={index}
               className={`px-5 py-2 rounded-lg ${
@@ -110,29 +88,40 @@ const CurrentRank = (props: any) => {
           <div className="flex flex-col gap-2">
             <label htmlFor="">Current LP</label>
             <select className="bg-indigo-950 rounded-md px-3 py-1 border-none min-w-[125px]">
-              <option>0-20 LP</option>
-              <option>21-40 LP</option>
+              <option value="0-20">0-20 LP</option>
+              <option value="21-40">21-40 LP</option>
+              <option value="41-60">41-60 LP</option>
+              <option value="61-80">61-80 LP</option>
+              <option value="81-100">81-100 LP</option>
             </select>
           </div>
           <div className="flex flex-col gap-2">
-            <label htmlFor="">LP Gain</label>
+            <label htmlFor="">Current LP Gains</label>
             <select className="bg-indigo-950 rounded-md px-3 py-1 border-none min-w-[125px]">
-              <option>Normal 23+</option>
-              <option>21-40 LP</option>
+              <option value="verylow">1-18 (Very Low) [+40%]</option>
+              <option value="low">18-22 (Low) [+20%]</option>
+              <option value="normal">22-29 (Normal) [+0%]</option>
+              <option value="high">30+ (High) [-20%]</option>
             </select>
           </div>
           <div className="flex flex-col gap-2">
-            <label htmlFor="">Select Region</label>
+            <label htmlFor="">Select Server</label>
             <select className="bg-indigo-950 rounded-md px-3 py-1 border-none min-w-[125px]">
-              <option>Europe West</option>
-              <option>21-40 LP</option>
-            </select>
-          </div>
-          <div className="flex flex-col gap-2">
-            <label htmlFor="">Queue Type</label>
-            <select className="bg-indigo-950 rounded-md px-3 py-1 border-none min-w-[125px]">
-              <option>Ranked Solo</option>
-              <option>21-40 LP</option>
+              <option value="na">North America</option>
+              <option value="euw">Europe West</option>
+              <option value="eune">Europe Nordic East</option>
+              <option value="oce">Oceania</option>
+              <option value="ru">Russia</option>
+              <option value="tr">Turkey</option>
+              <option value="br">Brazil</option>
+              <option value="lan">Latin America North</option>
+              <option value="las">Latin America South</option>
+              <option value="jp">Japan</option>
+              <option value="vn">Vietnam</option>
+              <option value="ph">Philippines</option>
+              <option value="sg">Singapore</option>
+              <option value="th">Thailand</option>
+              <option value="tw">Taiwan</option>
             </select>
           </div>
         </div>

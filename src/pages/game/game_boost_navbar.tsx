@@ -1,31 +1,31 @@
 import { NavLink, useParams } from "react-router-dom";
 
-const BoostNavbar = () => {
-  const { game } = useParams();
+const BoostNavbar = (props: any) => {
+  const { game } = props;
   const boostLinks = [
-    { _id: 0, title: "Rank Boost", link: `/${game}/boosting/rank-boost` },
-    { _id: 1, title: "Win Boost", link: `/${game}/boosting/win-boost` },
+    { _id: 0, title: "Rank Boost", link: `/${game}/rank-boost` },
+    { _id: 1, title: "Win Boost", link: `/${game}/win-boost` },
     {
       _id: 2,
       title: "Placements Boost",
-      link: `/${game}/boosting/placement-boost`,
+      link: `/${game}/placement-boost`,
     },
-    // { _id: 3, title: "Arena Boost", link: `/${game}/boosting/arena-boost` },
+    // { _id: 3, title: "Arena Boost", link: `/${game}/arena-boost` },
     // {
     //   _id: 4,
     //   title: "Normal Matches",
-    //   link: `/${game}/boosting/normal-matches`,
+    //   link: `/${game}/normal-matches`,
     // },
-    // { _id: 5, title: "Split 2 Boost", link: `/${game}/boosting/split2-boost` },
+    // { _id: 5, title: "Split 2 Boost", link: `/${game}/split2-boost` },
     // {
     //   _id: 6,
     //   title: "Champion Mastery",
-    //   link: `/${game}/boosting/champion-mastery`,
+    //   link: `/${game}/champion-mastery`,
     // },
     // {
     //   _id: 7,
     //   title: "Boost Packages",
-    //   link: `/${game}/boosting/boost-packages`,
+    //   link: `/${game}/boost-packages`,
     // },
   ];
   return (

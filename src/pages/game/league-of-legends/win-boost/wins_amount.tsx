@@ -1,7 +1,7 @@
 import { RangeSlider } from "flowbite-react";
-import classNames from "../../../consts/classNames";
+import classNames from "../../../../consts/classNames";
 import { useDispatch, useSelector } from "react-redux";
-import { setWinMatch } from "../../../redux/slice/boostSlice";
+import { setWinMatch } from "../../../../redux/slice/boostSlice";
 
 const WinsAmount = () => {
   const win_match = useSelector((d: any) => d.boost?.win_match);

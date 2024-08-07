@@ -1,7 +1,7 @@
 import { ToggleSwitch } from "flowbite-react";
 import { useState } from "react";
 import { FaArrowRight, FaTimes, FaTimesCircle } from "react-icons/fa";
-import classNames from "../../../consts/classNames";
+import classNames from "../../../../consts/classNames";
 import { useSelector } from "react-redux";
 
 const Checkout = () => {
@@ -15,7 +15,7 @@ const Checkout = () => {
   let timeout: any = null;
 
   const current_rank = useSelector((d: any) => d.boost?.current_rank);
-  const win_match = useSelector((d: any) => d.boost?.win_match);
+  const desired_rank = useSelector((d: any) => d.boost?.desired_rank);
 
   const handleChange = (event: any) => {
     switch (event.target.name) {
@@ -53,11 +53,18 @@ const Checkout = () => {
                 alt="ICO"
               />
             )}
-            Gold {current_rank?.rank?.mark}
+            {current_rank?.material?.title || ""} {current_rank?.rank?.mark}
           </div>
           <FaArrowRight />
-          <div className="flex items-center gap-1 text-gray-400">
-            <b className="text-white font-bold">{win_match}</b> Matches
+          <div className="flex items-center gap-1">
+            {desired_rank && (
+              <img
+                className="w-6"
+                src={desired_rank?.material?.url}
+                alt="ICO"
+              />
+            )}
+            {desired_rank?.material?.title || ""} {desired_rank?.rank?.mark}
           </div>
         </div>
       </div>

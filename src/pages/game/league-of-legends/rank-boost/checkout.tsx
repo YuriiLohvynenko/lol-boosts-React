@@ -1,7 +1,7 @@
 import { ToggleSwitch } from "flowbite-react";
 import { useState } from "react";
 import { FaArrowRight, FaTimes, FaTimesCircle } from "react-icons/fa";
-import classNames from "../../../consts/classNames";
+import classNames from "../../../../consts/classNames";
 import { useSelector } from "react-redux";
 
 const Checkout = () => {
@@ -53,7 +53,7 @@ const Checkout = () => {
                 alt="ICO"
               />
             )}
-            Gold {current_rank?.rank?.mark}
+            {current_rank?.material?.title || ""} {current_rank?.rank?.mark}
           </div>
           <FaArrowRight />
           <div className="flex items-center gap-1">
@@ -64,7 +64,7 @@ const Checkout = () => {
                 alt="ICO"
               />
             )}
-            Gold {desired_rank?.rank?.mark}
+            {desired_rank?.material?.title || ""} {desired_rank?.rank?.mark}
           </div>
         </div>
       </div>
