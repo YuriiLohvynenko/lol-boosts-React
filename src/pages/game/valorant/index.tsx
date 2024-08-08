@@ -14,9 +14,13 @@ const Valorant = () => {
     <div className={`${classNames.containerClass} mt-4 lg:mt-6`}>
       <div className="flex items-center justify-start gap-4">
         <span
-          className={`flex w-20 h-20 p-5 ${classNames.bgDarkClass} ${classNames.borderLClass} rounded-full border flex-shrink-0 justify-center items-center`}
+          className={`flex w-20 h-20 p-2 ${classNames.bgDarkClass} ${classNames.borderLClass} rounded-full border flex-shrink-0 justify-center items-center`}
         >
-          <img src="/images/icon/valorant.png" className="w-full" alt="IMG" />
+          <img
+            src="/images/boosting/game/valorant.png"
+            className="w-full"
+            alt="IMG"
+          />
         </span>
         <div>
           <h3 className="text-3xl uppercase">VALROANT Boost</h3>
