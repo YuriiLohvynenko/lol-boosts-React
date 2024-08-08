@@ -4,27 +4,37 @@ import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
 import classNames from "../../../../consts/classNames";
-import materials from "../../../../data/materials.json";
-import counts from "../../../../data/counts.json";
-import {
-  setCurrentRank,
-  setCurrentMaterial,
-  setCurrentLP,
-} from "../../../../redux/slice/boostSlice";
+import rank from "../../../../data/game/team-fight-tactics/rank.json";
+import division from "../../../../data/game/team-fight-tactics/division.json";
+import current_lp from "../../../../data/game/team-fight-tactics/current_lp.json";
+import servers from "../../../../data/game/team-fight-tactics/servers.json";
+
 import Number from "../../../../components/custom/Number";
+import {
+  setCurrentDivision,
+  setCurrentLP,
+  setCurrentRank,
+  setLP,
+  setServer,
+} from "../../../../redux/slice/game/tftSlice";
 const CurrentRank = (props: any) => {
   const [data, setData] = useState<any[]>([]);
   const dispatch = useDispatch();
-  const current_rank = useSelector((d: any) => d.boost.current_rank);
+  const current_rank = useSelector((d: any) => d.tft.current_rank);
   // initilize variable
   useEffect(() => {
-    setData(materials.filter((d: any) => !d.level || d.level < 4));
-    dispatch(setCurrentRank(counts[0]));
+    setData(rank.filter((d: any) => !d.level || d.level < 4));
+    dispatch(setCurrentDivision(division[0]));
   }, []);
 
   useEffect(() => {
     if (data.length) {
-      dispatch(setCurrentMaterial(data[0]));
+      dispatch(setCurrentRank(data[0]));
+      dispatch(setCurrentDivision(division[0]));
+      dispatch(setCurrentDivision(division[0]));
+      dispatch(setCurrentLP(current_lp[0]));
+      dispatch(setServer(servers[0]));
+      dispatch(setLP(0));
     }
   }, [data]);
 
@@ -34,11 +44,11 @@ const CurrentRank = (props: any) => {
         <span
           className={`flex w-16 h-16 p-3 rounded-full border ${classNames.bgDarkClass} ${classNames.borderLClass} flex-shrink-0 justify-center items-center`}
         >
-          {current_rank?.material && (
+          {current_rank?.rank && (
             <img
-              src={current_rank?.material?.url}
+              src={current_rank?.rank?.url}
               className="w-full"
-              alt={current_rank?.material?.title}
+              alt={current_rank?.rank?.title}
             />
           )}
         </span>
@@ -60,11 +70,11 @@ const CurrentRank = (props: any) => {
             >
               <button
                 className={`px-4 py-2 flex-shrink-0 rounded-lg ${
-                  current_rank?.material?._id == d?._id
+                  current_rank?.rank?._id == d?._id
                     ? "bg-indigo-800"
                     : "bg-indigo-950"
                 } hover:bg-indigo-800 bg-opacity-70`}
-                onClick={() => dispatch(setCurrentMaterial(d))}
+                onClick={() => dispatch(setCurrentRank(d))}
               >
                 <img src={d?.url} alt="ICO" className="w-8" />
               </button>
@@ -72,42 +82,46 @@ const CurrentRank = (props: any) => {
           ))}
         </div>
         <div className="flex items-center justify-start gap-4 mt-2">
-          {!current_rank?.material?.level &&
-            counts.map((d: any, index: number) => (
+          {!current_rank?.rank?.level &&
+            division.map((d: any, index: number) => (
               <button
                 key={index}
                 className={`px-5 py-2 rounded-lg ${
-                  current_rank?.rank?.value == d.value
+                  current_rank?.division?.value == d.value
                     ? "bg-indigo-800"
                     : "bg-indigo-950"
                 } hover:bg-indigo-800 bg-opacity-70`}
-                onClick={() => dispatch(setCurrentRank(d))}
+                onClick={() => dispatch(setCurrentDivision(d))}
               >
                 {d?.mark}
               </button>
             ))}
         </div>
         <div className="mt-6 flex flex-wrap justify-start gap-x-6 gap-y-4">
-          {!current_rank?.material?.level ? (
+          {!current_rank?.rank?.level ? (
             <div className="flex flex-col gap-2">
               <label htmlFor="">Current LP</label>
-              <select className="bg-indigo-950 rounded-md px-3 py-1 border-none min-w-[125px]">
-                <option value="0-20">0-20 LP</option>
-                <option value="21-40">21-40 LP</option>
-                <option value="41-60">41-60 LP</option>
-                <option value="61-80">61-80 LP</option>
-                <option value="81-100">81-100 LP</option>
+              <select
+                className="bg-indigo-950 rounded-md px-3 py-1 border-none min-w-[125px]"
+                onChange={(event: any) =>
+                  dispatch(setCurrentLP(current_lp[event.target.value]))
+                }
+              >
+                {Array.isArray(current_lp) &&
+                  current_lp?.map((d: any, index: number) => (
+                    <option key={index} value={d._id}>
+                      {d.title}
+                    </option>
+                  ))}
               </select>
             </div>
           ) : (
             <div className="flex flex-col gap-2">
-              <label htmlFor="">Challenger LP</label>
+              <label htmlFor="">{current_rank?.rank?.title} LP</label>
               <div className="">
                 <Number
-                  value={current_rank?.current_lp}
-                  onChange={(newValue: number) =>
-                    dispatch(setCurrentLP(newValue))
-                  }
+                  value={current_rank?.lp}
+                  onChange={(newValue: number) => dispatch(setLP(newValue))}
                 />
               </div>
             </div>
@@ -115,22 +129,18 @@ const CurrentRank = (props: any) => {
 
           <div className="flex flex-col gap-2">
             <label htmlFor="">Select Server</label>
-            <select className="bg-indigo-950 rounded-md px-3 py-1 border-none min-w-[125px]">
-              <option value="na">North America</option>
-              <option value="euw">Europe West</option>
-              <option value="eune">Europe Nordic East</option>
-              <option value="oce">Oceania</option>
-              <option value="ru">Russia</option>
-              <option value="tr">Turkey</option>
-              <option value="br">Brazil</option>
-              <option value="lan">Latin America North</option>
-              <option value="las">Latin America South</option>
-              <option value="jp">Japan</option>
-              <option value="vn">Vietnam</option>
-              <option value="ph">Philippines</option>
-              <option value="sg">Singapore</option>
-              <option value="th">Thailand</option>
-              <option value="tw">Taiwan</option>
+            <select
+              className="bg-indigo-950 rounded-md px-3 py-1 border-none min-w-[125px]"
+              onChange={(event: any) =>
+                dispatch(setServer(servers[event.target.value]))
+              }
+            >
+              {Array.isArray(servers) &&
+                servers?.map((d: any, index: number) => (
+                  <option key={index} value={d._id}>
+                    {d.name}
+                  </option>
+                ))}
             </select>
           </div>
         </div>

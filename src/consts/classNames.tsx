@@ -7,6 +7,8 @@ export default {
   textMClass: "text-indigo-500",
   btnClass:
     "px-4 lg:px-8 py-2 lg:py-3 rounded-3xl bg-indigo-700 text-white hover:bg-indigo-800 overflow-hidden text-ellipsis whitespace-nowrap",
+  btnClass2:
+    "px-4 lg:px-8 py-2 lg:py-3 rounded-lg text-sm bg-indigo-700 text-white hover:bg-indigo-800 overflow-hidden text-ellipsis whitespace-nowrap",
   hoverClass: "hover:text-indigo-400",
   inputClass: "px-4 py-2 w-full rounded-lg bg-transparent",
 };

@@ -15,7 +15,7 @@ const initialState: any = {
 };
 
 // Then, handle actions in your reducers:
-const globalSlice = createSlice({
+const boostSlice = createSlice({
   name: "boost",
   initialState,
   reducers: {
@@ -63,6 +63,6 @@ export const {
   setWinMatch,
   setPlacementMatch,
   setCurrentLP,
-} = globalSlice.actions;
+} = boostSlice.actions;
 
-export default globalSlice.reducer;
+export default boostSlice.reducer;

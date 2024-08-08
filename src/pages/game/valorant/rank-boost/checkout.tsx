@@ -1,21 +1,37 @@
 import { ToggleSwitch } from "flowbite-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FaArrowRight, FaTimes, FaTimesCircle } from "react-icons/fa";
 import classNames from "../../../../consts/classNames";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import extra_features from "../../../../data/game/league-of-legends/extra_features.json";
+
+// Import variable
+import rank from "../../../../data/game/valorant/rank.json";
+import ModalChampionRole from "../../../../components/game/league-of-legends/ModalChampionRole";
+import { setChampions, setRoles } from "../../../../redux/slice/game/lolSlice";
+import { setLoginModal } from "../../../../redux/slice/globalSlice";
+import ModalAgent from "../../../../components/game/valorant/ModalAgent";
+import { setAgents } from "../../../../redux/slice/game/valorantSlice";
 
 const Checkout = () => {
-  const [checked, setChecked] = useState(false);
   const [discount, setDiscount] = useState(false);
   const [applycode, setApplycode] = useState(0);
-  const [champion, setChampion] = useState(false);
-  const [solo, setSolo] = useState(false);
-  const [priority, setPriority] = useState(false);
-  const [stream, setStream] = useState(false);
+  const [extraFeatures, setExtraFeatures] = useState<any[]>([]);
+  const [isOpenAgentModal, setisOpenAgentModal] = useState(false);
   let timeout: any = null;
 
-  const current_rank = useSelector((d: any) => d.boost?.current_rank);
-  const desired_rank = useSelector((d: any) => d.boost?.desired_rank);
+  const dispatch = useDispatch();
+
+  const current_rank = useSelector((d: any) => d.valorant?.current_rank);
+  const desired_rank = useSelector((d: any) => d.valorant?.desired_rank);
+  const server = useSelector((d: any) => d.valorant?.server);
+
+  // Price
+  const [price, setPrice] = useState(0);
+
+  useEffect(() => {
+    setExtraFeatures(extra_features);
+  }, []);
 
   const handleChange = (event: any) => {
     switch (event.target.name) {
@@ -37,6 +53,89 @@ const Checkout = () => {
     }
   };
 
+  const getOriginalPrice = () => {
+    try {
+      if (current_rank?.rank?._id <= desired_rank?.rank?._id) {
+        if (current_rank?.rank?._id == desired_rank?.rank?._id) {
+          if (current_rank?.division?.value >= desired_rank?.division?.value) {
+            return 0;
+          } else {
+            let price = current_rank.rank.price.rank[
+              `${current_rank?.server?.type}`
+            ]
+              .slice(current_rank.division._id, desired_rank.division._id)
+              .reduce((a: any, b: any) => {
+                return a + b;
+              }, 0);
+            return price;
+          }
+        } else {
+          let arr = rank.slice(
+            current_rank?.rank?._id,
+            desired_rank?.rank?._id + 1
+          );
+          let price = 0;
+          arr.map((d: any) => {
+            price += d.price.rank[`${current_rank?.server?.type}`]
+              .slice(0, 3)
+              .reduce((a: any, b: any) => a + b);
+          });
+          current_rank?.rank?.price?.rank[`${current_rank?.server?.type}`].map(
+            (d: any, index: any) => {
+              if (index < current_rank?.division?._id) {
+                price -= d;
+              }
+            }
+          );
+          desired_rank?.rank?.price?.rank[`${current_rank?.server?.type}`].map(
+            (d: any, index: any) => {
+              if (index >= desired_rank?.division?._id && index < 3) {
+                price -= d;
+              }
+            }
+          );
+          return price;
+        }
+      } else {
+        return 0;
+      }
+    } catch (error) {
+      return 0;
+    }
+  };
+
+  const calcTotalPrice = () => {
+    let price = getOriginalPrice();
+    if (current_rank?.current_lp) {
+      price *= current_rank?.current_lp?.rate;
+    }
+
+    // extra features
+    let extra_price = 0;
+    extraFeatures.map((d: any) => {
+      if (d.apply) {
+        extra_price += d.rate * price;
+      }
+    });
+
+    if (current_rank?.agents?.length) {
+      price += price * 0.2;
+    }
+
+    price += extra_price;
+
+    setPrice(Math.round(price * 100) / 100);
+  };
+
+  useEffect(() => {
+    calcTotalPrice();
+  }, [current_rank, desired_rank, server, extraFeatures]);
+
+  const handleBuyBoost = () => {
+    // decide user login or not
+    dispatch(setLoginModal(true));
+  };
+
   return (
     <div className="border border-indigo-800 p-4 rounded-lg">
       <div className="text-center mb-2">
@@ -47,143 +146,76 @@ const Checkout = () => {
         <div className="flex justify-center items-center gap-6">
           <div className="flex items-center gap-1">
             {current_rank && (
-              <img
-                className="w-6"
-                src={current_rank?.material?.url}
-                alt="ICO"
-              />
+              <img className="w-6" src={current_rank?.rank?.url} alt="ICO" />
             )}
-            {current_rank?.material?.title || ""} {current_rank?.rank?.mark}
+            {current_rank?.rank?.title || ""} {current_rank?.division?.mark}
           </div>
           <FaArrowRight />
           <div className="flex items-center gap-1">
             {desired_rank && (
-              <img
-                className="w-6"
-                src={desired_rank?.material?.url}
-                alt="ICO"
-              />
+              <img className="w-6" src={desired_rank?.rank?.url} alt="ICO" />
             )}
-            {desired_rank?.material?.title || ""} {desired_rank?.rank?.mark}
+            {desired_rank?.rank?.title || ""} {desired_rank?.division?.mark}
           </div>
         </div>
       </div>
       <div className="space-y-4 py-4">
-        <div className="flex justify-between items-center text-gray-300">
-          <div className="flex items-center gap-2">
-            <span className="font-bold">Champion and Role</span>
-            <span className=" text-green-500 border rounded-xl border-green-500 px-2 text-sm">
+        <div className="flex justify-between">
+          <div className="flex gap-2 items-center">
+            <span>Agent</span>
+            <span
+              className={`${"text-green-500 border-green-500"} border rounded-xl  px-2 text-sm`}
+            >
               Free
             </span>
           </div>
-          <ToggleSwitch
-            sizing="sm"
-            label=""
-            checked={champion}
-            onChange={() => setChampion(!champion)}
-            color="indigo"
-            theme={{
-              toggle: {
-                checked: {
-                  on: "after:translate-x-full after:border-indigo-900 rtl:after:-translate-x-full",
-                  off: "border-indigo-900 bg-transparent dark:border-indigo-600 dark:bg-indigo-700",
-                },
-              },
-            }}
-          />
+          <button
+            className={`px-2 py-1 text-xs bg-indigo-800 rounded-xl hover:bg-indigo-500`}
+            onClick={() => setisOpenAgentModal(true)}
+          >
+            Pick
+          </button>
         </div>
-        <div className="flex justify-between items-center text-gray-300">
-          <div className="flex items-center gap-2">
-            <span className="font-bold">Solo Only Queue</span>
-            <span className=" text-indigo-500 border rounded-xl border-indigo-500 px-2 text-sm">
-              10%
-            </span>
-          </div>
-          <ToggleSwitch
-            sizing="sm"
-            label=""
-            checked={solo}
-            onChange={() => setSolo(!solo)}
-            color="indigo"
-            theme={{
-              toggle: {
-                checked: {
-                  on: "after:translate-x-full after:border-indigo-900 rtl:after:-translate-x-full",
-                  off: "border-indigo-900 bg-transparent dark:border-indigo-600 dark:bg-indigo-700",
-                },
-              },
-            }}
-          />
-        </div>
-        <div className="flex justify-between items-center text-gray-300">
-          <div className="flex items-center gap-2">
-            <span className="font-bold">Priority Completion</span>
-            <span className=" text-indigo-500 border rounded-xl border-indigo-500 px-2 text-sm">
-              20%
-            </span>
-          </div>
-          <ToggleSwitch
-            sizing="sm"
-            label=""
-            checked={priority}
-            onChange={() => setPriority(!priority)}
-            color="indigo"
-            theme={{
-              toggle: {
-                checked: {
-                  on: "after:translate-x-full after:border-indigo-900 rtl:after:-translate-x-full",
-                  off: "border-indigo-900 bg-transparent dark:border-indigo-600 dark:bg-indigo-700",
-                },
-              },
-            }}
-          />
-        </div>
-        <div className="flex justify-between items-center text-gray-300">
-          <div className="flex items-center gap-2">
-            <span className="font-bold">Stream Games</span>
-            <span className=" text-indigo-500 border rounded-xl border-indigo-500 px-2 text-sm">
-              30%
-            </span>
-          </div>
-          <ToggleSwitch
-            sizing="sm"
-            label=""
-            checked={checked}
-            onChange={() => setChecked(!checked)}
-            color="indigo"
-            theme={{
-              toggle: {
-                checked: {
-                  on: "after:translate-x-full after:border-indigo-900 rtl:after:-translate-x-full",
-                  off: "border-indigo-900 bg-transparent dark:border-indigo-600 dark:bg-indigo-700",
-                },
-              },
-            }}
-          />
-        </div>
-        <div className="flex justify-between items-center text-gray-300">
-          <div className="flex items-center gap-2">
-            <span className="font-bold">Play with booster</span>
-            <span className=" text-indigo-500 border rounded-xl border-indigo-500 px-2 text-sm">
-              50%
-            </span>
-          </div>
-          <ToggleSwitch
-            sizing="sm"
-            label=""
-            checked={stream}
-            onChange={() => setStream(!stream)}
-            color="indigo"
-            theme={{
-              toggle: {
-                checked: {
-                  on: "after:translate-x-full after:border-indigo-900 rtl:after:-translate-x-full",
-                  off: "border-indigo-900 bg-transparent dark:border-indigo-600 dark:bg-indigo-700",
-                },
-              },
-            }}
-          />
-        </div>
+
+        {Array.isArray(extra_features) &&
+          extraFeatures?.map((d: any, index: number) => (
+            <div
+              key={index}
+              className="flex justify-between items-center text-gray-300"
+            >
+              <div className="flex items-center gap-2">
+                <span className="font-bold">{d.title}</span>
+                <span
+                  className={`${
+                    d.rate == 0
+                      ? "text-green-500 border-green-500"
+                      : "text-indigo-500 border-indigo-500"
+                  } border rounded-xl  px-2 text-sm`}
+                >
+                  {d.rate == 0 ? "Free" : `${100 * d.rate}%`}
+                </span>
+              </div>
+              <ToggleSwitch
+                sizing="sm"
+                label=""
+                checked={d.apply}
+                onChange={() => {
+                  let temp = [...extraFeatures];
+                  temp[index] = { ...temp[index], apply: !d.apply };
+                  setExtraFeatures(temp);
+                }}
+                color="indigo"
+                theme={{
+                  toggle: {
+                    checked: {
+                      on: "after:translate-x-full after:border-indigo-900 rtl:after:-translate-x-full",
+                      off: "border-indigo-900 bg-transparent dark:border-indigo-600 dark:bg-indigo-700",
+                    },
+                  },
+                }}
+              />
+            </div>
+          ))}
       </div>
       <div className="border-t border-b border-indigo-800 py-4 flex justify-center items-center gap-2">
         <FaTimesCircle />
@@ -230,14 +262,22 @@ const Checkout = () => {
           <label htmlFor="" className=" text-gray-500">
             Total Price
           </label>
-          <span className="text-2xl font-bold">$11,091</span>
+          <span className="text-2xl font-bold">${price}</span>
         </div>
         <button
           className={`w-full py-2 mt-4 flex items-center gap-4 justify-center rounded-lg ${classNames.btnClass}`}
+          onClick={handleBuyBoost}
         >
           Buy Boost <FaArrowRight />
         </button>
       </div>
+      {/* Agent Modal */}
+      <ModalAgent
+        open={isOpenAgentModal}
+        agents={current_rank?.agents}
+        setAgents={(agents) => dispatch(setAgents(agents))}
+        setOpen={setisOpenAgentModal}
+      />
     </div>
   );
 };

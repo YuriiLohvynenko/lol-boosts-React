@@ -1,26 +1,27 @@
 import classNames from "../../../../consts/classNames";
-import materials2 from "../../../../data/materials2.json";
-import counts2 from "../../../../data/counts2.json";
+import rank from "../../../../data/game/valorant/rank.json";
+import division from "../../../../data/game/valorant/division.json";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
-  setDesiredMaterial,
+  setDesiredDivision,
   setDesiredRank,
-} from "../../../../redux/slice/boostSlice";
+} from "../../../../redux/slice/game/valorantSlice";
+
 const DesiredRank = () => {
   const [data, setData] = useState<any[]>([]);
   const [cdata, setCData] = useState<any[]>([]);
-  const desired_rank = useSelector((d: any) => d?.boost?.desired_rank);
+  const desired_rank = useSelector((d: any) => d?.valorant?.desired_rank);
   const dispatch = useDispatch();
   useEffect(() => {
-    setData(materials2.filter((d: any) => !d.level || d.level < 3));
-    setCData(counts2);
-    dispatch(setDesiredRank(counts2[0]));
+    setData(rank.filter((d: any) => !d.level || d.level < 3));
+    setCData(division);
+    dispatch(setDesiredDivision(division[0]));
   }, []);
 
   useEffect(() => {
     if (data) {
-      dispatch(setDesiredMaterial(data[0]));
+      dispatch(setDesiredRank(data[0]));
     }
   }, [data]);
 
@@ -31,11 +32,7 @@ const DesiredRank = () => {
           className={`flex w-16 h-16 p-3 rounded-full border ${classNames.bgDarkClass} ${classNames.borderLClass} flex-shrink-0 justify-center items-center`}
         >
           {desired_rank && (
-            <img
-              src={desired_rank?.material?.url}
-              className="w-full"
-              alt="IMG"
-            />
+            <img src={desired_rank?.rank?.url} className="w-full" alt="IMG" />
           )}
         </span>
         <div>
@@ -51,11 +48,11 @@ const DesiredRank = () => {
             <button
               key={index}
               className={`px-4 py-2 rounded-lg ${
-                desired_rank?.material?._id == d?._id
+                desired_rank?.rank?._id == d?._id
                   ? "bg-indigo-800"
                   : "bg-indigo-950"
               } flex-shrink-0 hover:bg-indigo-800 bg-opacity-70`}
-              onClick={() => dispatch(setDesiredMaterial(d))}
+              onClick={() => dispatch(setDesiredRank(d))}
             >
               <img src={d.url} alt="ICO" className="w-8" />
             </button>
@@ -66,11 +63,11 @@ const DesiredRank = () => {
             <button
               key={index}
               className={`px-5 py-2 rounded-lg ${
-                desired_rank?.rank?.value == d?.value
+                desired_rank?.division?._id == d?._id
                   ? "bg-indigo-800"
                   : "bg-indigo-950"
               } hover:bg-indigo-800 bg-opacity-70`}
-              onClick={() => dispatch(setDesiredRank(d))}
+              onClick={() => dispatch(setDesiredDivision(d))}
             >
               {d.mark}
             </button>

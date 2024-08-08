@@ -1,10 +1,10 @@
 import { RangeSlider } from "flowbite-react";
 import classNames from "../../../../consts/classNames";
 import { useDispatch, useSelector } from "react-redux";
-import { setWinMatch } from "../../../../redux/slice/boostSlice";
+import { setPlacementMatch } from "../../../../redux/slice/game/valorantSlice";
 
 const MatchAmount = () => {
-  const win_match = useSelector((d: any) => d.boost?.win_match);
+  const placement_match = useSelector((d: any) => d.valorant?.placement_match);
   const dispatch = useDispatch();
   return (
     <div className=" rounded-lg border p-4  border-indigo-800">
@@ -33,8 +33,10 @@ const MatchAmount = () => {
           min={1}
           max={5}
           step={1}
-          value={win_match}
-          onChange={(event: any) => dispatch(setWinMatch(event.target.value))}
+          value={placement_match}
+          onChange={(event: any) =>
+            dispatch(setPlacementMatch(event.target.value))
+          }
         />
       </div>
     </div>

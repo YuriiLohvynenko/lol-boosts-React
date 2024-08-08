@@ -1,10 +1,10 @@
 import { RangeSlider } from "flowbite-react";
 import classNames from "../../../../consts/classNames";
 import { useDispatch, useSelector } from "react-redux";
-import { setWinMatch } from "../../../../redux/slice/boostSlice";
+import { setWinMatch } from "../../../../redux/slice/game/tftSlice";
 
 const WinsAmount = () => {
-  const win_match = useSelector((d: any) => d.boost?.win_match);
+  const win_match = useSelector((d: any) => d.tft?.win_match);
   const dispatch = useDispatch();
   return (
     <div className=" rounded-lg border p-4  border-indigo-800">
