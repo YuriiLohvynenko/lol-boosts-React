@@ -1,11 +1,18 @@
 import { RangeSlider } from "flowbite-react";
 import classNames from "../../../../consts/classNames";
 import { useDispatch, useSelector } from "react-redux";
-import { setWinMatch } from "../../../../redux/slice/boostSlice";
-
+import servers from "../../../../data/game/league-of-legends/servers.json";
+import {
+  setHoursMatch,
+  setServer,
+} from "../../../../redux/slice/game/lolSlice";
+import { useEffect } from "react";
 const HoursAmount = () => {
-  const win_match = useSelector((d: any) => d.boost?.win_match);
+  const hours_match = useSelector((d: any) => d.lol?.hours_match);
   const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(setServer(servers[0]));
+  }, []);
   return (
     <div className=" rounded-lg border p-4  border-indigo-800">
       <div className="flex justify-start items-center gap-4">
@@ -33,29 +40,25 @@ const HoursAmount = () => {
           min={1}
           max={5}
           step={1}
-          value={win_match}
-          onChange={(event: any) => dispatch(setWinMatch(event.target.value))}
+          value={hours_match}
+          onChange={(event: any) => dispatch(setHoursMatch(event.target.value))}
         />
       </div>
       <div className="mt-6 flex flex-wrap justify-start gap-x-6 gap-y-4">
         <div className="flex flex-col gap-2">
           <label htmlFor="">Select Server</label>
-          <select className="bg-indigo-950 rounded-md px-3 py-1 border-none min-w-[125px]">
-            <option value="na">North America</option>
-            <option value="euw">Europe West</option>
-            <option value="eune">Europe Nordic East</option>
-            <option value="oce">Oceania</option>
-            <option value="ru">Russia</option>
-            <option value="tr">Turkey</option>
-            <option value="br">Brazil</option>
-            <option value="lan">Latin America North</option>
-            <option value="las">Latin America South</option>
-            <option value="jp">Japan</option>
-            <option value="vn">Vietnam</option>
-            <option value="ph">Philippines</option>
-            <option value="sg">Singapore</option>
-            <option value="th">Thailand</option>
-            <option value="tw">Taiwan</option>
+          <select
+            className="bg-indigo-950 rounded-md px-3 py-1 border-none min-w-[125px]"
+            onChange={(event: any) =>
+              dispatch(setServer(servers[event.target.value]))
+            }
+          >
+            {Array.isArray(servers) &&
+              servers?.map((d: any, index: number) => (
+                <option key={index} value={d._id}>
+                  {d.name}
+                </option>
+              ))}
           </select>
         </div>
       </div>

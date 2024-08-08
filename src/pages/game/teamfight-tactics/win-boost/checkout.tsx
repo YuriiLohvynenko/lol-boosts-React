@@ -4,7 +4,7 @@ import { FaArrowRight, FaTimes, FaTimesCircle } from "react-icons/fa";
 import classNames from "../../../../consts/classNames";
 import { useDispatch, useSelector } from "react-redux";
 import extra_features from "../../../../data/game/team-fight-tactics/extra_features.json";
-
+import _lpExtra from "../../../../data/game/team-fight-tactics/lpExtra.json";
 // Import variable
 import { setLoginModal } from "../../../../redux/slice/globalSlice";
 
@@ -66,7 +66,8 @@ const Checkout = () => {
     // }
 
     if (current_rank?.rank?.level) {
-      price += 0.05 * current_rank?.lp;
+      let lpExtra: any = { _lpExtra };
+      price += lpExtra[`${current_rank?.server?.type}`] * current_rank?.lp;
     }
 
     price *= win_match;

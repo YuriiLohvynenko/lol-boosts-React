@@ -7,6 +7,7 @@ import extra_features from "../../../../data/game/league-of-legends/extra_featur
 
 // Import variable
 import rank from "../../../../data/game/league-of-legends/rank.json";
+import _lpExtra from "../../../../data/game/league-of-legends/lpExtra.json";
 import ModalChampionRole from "../../../../components/game/league-of-legends/ModalChampionRole";
 import { setChampions, setRoles } from "../../../../redux/slice/game/lolSlice";
 import { setLoginModal } from "../../../../redux/slice/globalSlice";
@@ -70,7 +71,8 @@ const Checkout = () => {
     // }
 
     if (current_rank?.rank?.level) {
-      price += 0.05 * current_rank?.lp;
+      let lpExtra: any = { ..._lpExtra };
+      price += lpExtra[`${current_rank?.server?.type}`] * current_rank?.lp;
     }
 
     price *= win_match;

@@ -1,21 +1,36 @@
 import { ToggleSwitch } from "flowbite-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FaArrowRight, FaTimes, FaTimesCircle } from "react-icons/fa";
 import classNames from "../../../../consts/classNames";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+
+// Import variable
+import rank from "../../../../data/game/league-of-legends/rank.json";
+import ModalChampionRole from "../../../../components/game/league-of-legends/ModalChampionRole";
+import { setChampions, setRoles } from "../../../../redux/slice/game/lolSlice";
+import { setLoginModal } from "../../../../redux/slice/globalSlice";
+import _coaching from "../../../../data/game/league-of-legends/coaching.json";
 
 const Checkout = () => {
-  const [checked, setChecked] = useState(false);
   const [discount, setDiscount] = useState(false);
   const [applycode, setApplycode] = useState(0);
-  const [champion, setChampion] = useState(false);
-  const [solo, setSolo] = useState(false);
-  const [priority, setPriority] = useState(false);
-  const [stream, setStream] = useState(false);
+  const [isOpenChampionRoleModal, setisOpenChampionRoleModal] = useState(false);
+  const [coaching, setCoaching] = useState<any>();
+
   let timeout: any = null;
 
-  const current_rank = useSelector((d: any) => d.boost?.current_rank);
-  const placement_match = useSelector((d: any) => d.boost?.placement_match);
+  const dispatch = useDispatch();
+
+  const current_rank = useSelector((d: any) => d.lol?.current_rank);
+  const hours_match = useSelector((d: any) => d.lol.hours_match);
+  const desired_rank = useSelector((d: any) => d.lol?.desired_rank);
+
+  useEffect(() => {
+    setCoaching(_coaching);
+  }, [_coaching]);
+
+  // Price
+  const [price, setPrice] = useState(0);
 
   const handleChange = (event: any) => {
     switch (event.target.name) {
@@ -37,126 +52,58 @@ const Checkout = () => {
     }
   };
 
+  const getOriginalPrice = () => {
+    try {
+      return coaching[`${current_rank?.server?.type}`] * hours_match;
+    } catch (error) {
+      console.log(error);
+      return 0;
+    }
+  };
+
+  const calcTotalPrice = () => {
+    let price = getOriginalPrice();
+
+    // extra features
+
+    if (current_rank?.champions?.length) {
+      price += price * 0.2;
+    }
+
+    setPrice(Math.round(price * 100) / 100);
+  };
+
+  useEffect(() => {
+    calcTotalPrice();
+  }, [current_rank, hours_match]);
+
+  const handleBuyBoost = () => {
+    // decide user login or not
+    dispatch(setLoginModal(true));
+  };
+
   return (
     <div className="border border-indigo-800 p-4 rounded-lg">
       <div className="text-center mb-2">
         <span className="text-xl">Checkout</span>
+        <p className="text-gray-500">Add extra options to your boost.</p>
       </div>
-      <div className="space-y-4 py-4 hidden">
-        <div className="flex justify-between items-center text-gray-300">
-          <div className="flex items-center gap-2">
-            <span className="font-bold">Champion and Role</span>
-            <span className=" text-green-500 border rounded-xl border-green-500 px-2 text-sm">
+      <div className="space-y-4 py-4">
+        <div className="flex justify-between ">
+          <div className="flex gap-2 items-center">
+            <span>Champion&Role</span>
+            <span
+              className={`${"text-green-500 border-green-500"} border rounded-xl  px-2 text-sm`}
+            >
               Free
             </span>
           </div>
-          <ToggleSwitch
-            sizing="sm"
-            label=""
-            checked={champion}
-            onChange={() => setChampion(!champion)}
-            color="indigo"
-            theme={{
-              toggle: {
-                checked: {
-                  on: "after:translate-x-full after:border-indigo-900 rtl:after:-translate-x-full",
-                  off: "border-indigo-900 bg-transparent dark:border-indigo-600 dark:bg-indigo-700",
-                },
-              },
-            }}
-          />
-        </div>
-        <div className="flex justify-between items-center text-gray-300">
-          <div className="flex items-center gap-2">
-            <span className="font-bold">Solo Only Queue</span>
-            <span className=" text-indigo-500 border rounded-xl border-indigo-500 px-2 text-sm">
-              10%
-            </span>
-          </div>
-          <ToggleSwitch
-            sizing="sm"
-            label=""
-            checked={solo}
-            onChange={() => setSolo(!solo)}
-            color="indigo"
-            theme={{
-              toggle: {
-                checked: {
-                  on: "after:translate-x-full after:border-indigo-900 rtl:after:-translate-x-full",
-                  off: "border-indigo-900 bg-transparent dark:border-indigo-600 dark:bg-indigo-700",
-                },
-              },
-            }}
-          />
-        </div>
-        <div className="flex justify-between items-center text-gray-300">
-          <div className="flex items-center gap-2">
-            <span className="font-bold">Priority Completion</span>
-            <span className=" text-indigo-500 border rounded-xl border-indigo-500 px-2 text-sm">
-              20%
-            </span>
-          </div>
-          <ToggleSwitch
-            sizing="sm"
-            label=""
-            checked={priority}
-            onChange={() => setPriority(!priority)}
-            color="indigo"
-            theme={{
-              toggle: {
-                checked: {
-                  on: "after:translate-x-full after:border-indigo-900 rtl:after:-translate-x-full",
-                  off: "border-indigo-900 bg-transparent dark:border-indigo-600 dark:bg-indigo-700",
-                },
-              },
-            }}
-          />
-        </div>
-        <div className="flex justify-between items-center text-gray-300">
-          <div className="flex items-center gap-2">
-            <span className="font-bold">Stream Games</span>
-            <span className=" text-indigo-500 border rounded-xl border-indigo-500 px-2 text-sm">
-              30%
-            </span>
-          </div>
-          <ToggleSwitch
-            sizing="sm"
-            label=""
-            checked={checked}
-            onChange={() => setChecked(!checked)}
-            color="indigo"
-            theme={{
-              toggle: {
-                checked: {
-                  on: "after:translate-x-full after:border-indigo-900 rtl:after:-translate-x-full",
-                  off: "border-indigo-900 bg-transparent dark:border-indigo-600 dark:bg-indigo-700",
-                },
-              },
-            }}
-          />
-        </div>
-        <div className="flex justify-between items-center text-gray-300">
-          <div className="flex items-center gap-2">
-            <span className="font-bold">Play with booster</span>
-            <span className=" text-indigo-500 border rounded-xl border-indigo-500 px-2 text-sm">
-              50%
-            </span>
-          </div>
-          <ToggleSwitch
-            sizing="sm"
-            label=""
-            checked={stream}
-            onChange={() => setStream(!stream)}
-            color="indigo"
-            theme={{
-              toggle: {
-                checked: {
-                  on: "after:translate-x-full after:border-indigo-900 rtl:after:-translate-x-full",
-                  off: "border-indigo-900 bg-transparent dark:border-indigo-600 dark:bg-indigo-700",
-                },
-              },
-            }}
-          />
+          <button
+            className={`px-2 py-1 text-xs bg-indigo-800 rounded-xl hover:bg-indigo-500`}
+            onClick={() => setisOpenChampionRoleModal(true)}
+          >
+            Pick
+          </button>
         </div>
       </div>
       <div className="border-t border-b border-indigo-800 py-4 flex justify-center items-center gap-2">
@@ -204,14 +151,24 @@ const Checkout = () => {
           <label htmlFor="" className=" text-gray-500">
             Total Price
           </label>
-          <span className="text-2xl font-bold">$11,091</span>
+          <span className="text-2xl font-bold">${price}</span>
         </div>
         <button
           className={`w-full py-2 mt-4 flex items-center gap-4 justify-center rounded-lg ${classNames.btnClass}`}
+          onClick={handleBuyBoost}
         >
           Buy Boost <FaArrowRight />
         </button>
       </div>
+      {/* Champion & Role Modal */}
+      <ModalChampionRole
+        open={isOpenChampionRoleModal}
+        setOpen={setisOpenChampionRoleModal}
+        roles={current_rank?.roles}
+        champions={current_rank?.champions}
+        setRoles={(roles: any) => dispatch(setRoles(roles))}
+        setChampions={(champions: any) => dispatch(setChampions(champions))}
+      />
     </div>
   );
 };

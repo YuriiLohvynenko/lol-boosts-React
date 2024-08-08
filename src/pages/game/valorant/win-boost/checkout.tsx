@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import extra_features from "../../../../data/game/league-of-legends/extra_features.json";
 
 // Import variable
+import _lpExtra from "../../../../data/game/valorant/lpExtra.json";
 
 import { setLoginModal } from "../../../../redux/slice/globalSlice";
 import ModalAgent from "../../../../components/game/valorant/ModalAgent";
@@ -70,7 +71,8 @@ const Checkout = () => {
     // }
 
     if (current_rank?.rank?.level) {
-      price += 0.05 * current_rank?.lp;
+      let lpExtra: any = { _lpExtra };
+      price += lpExtra[`${current_rank?.server?.type}`] * current_rank?.lp;
     }
 
     price *= win_match;

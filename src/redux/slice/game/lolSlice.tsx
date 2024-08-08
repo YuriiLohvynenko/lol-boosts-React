@@ -17,6 +17,7 @@ const initialState: any = {
   },
   win_match: 3,
   placement_match: 3,
+  hours_match: 3,
 };
 
 // Then, handle actions in your reducers:
@@ -55,6 +56,9 @@ const lolSlice = createSlice({
     setPlacementMatch: (state: any, action: PayloadAction<any>) => {
       state.placement_match = action.payload;
     },
+    setHoursMatch: (state: any, action: PayloadAction<any>) => {
+      state.hours_match = action.payload;
+    },
     setLP: (state: any, action: PayloadAction<any>) => {
       state.current_rank.lp = action.payload;
     },
@@ -82,6 +86,7 @@ export const {
   setDesiredRank,
   setDesiredDivision,
   setWinMatch,
+  setHoursMatch,
   setPlacementMatch,
   setLP,
   setCurrentLP,
