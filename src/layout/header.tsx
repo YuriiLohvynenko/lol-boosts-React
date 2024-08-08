@@ -68,7 +68,9 @@ const Header = () => {
   return (
     <>
       <header
-        className={`w-full relative z-1 z-50 transition-all duration-100 bg-[#0f1a31] shadow-xl bg-opacity-75`}
+        className={`w-full ${
+          scrolled ? "fixed" : "relative"
+        } top-0 z-1 z-50 transition-all duration-100 bg-[#0f1a31] shadow-xl bg-opacity-75`}
       >
         <div className="w-full bg-[#0c1322]">
           {/* <div className={`${classNames.containerClass} py-1`}>

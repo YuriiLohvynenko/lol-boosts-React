@@ -100,7 +100,7 @@ const Footer = () => {
       </div>
       {scrolled && (
         <button
-          className="w-16 h-16 rounded-full flex items-center justify-center hover:bg-indigo-950 bg-indigo-500 shadow-2xl fixed bottom-16 end-12 z-10"
+          className="w-16 h-16 rounded-full flex items-center justify-center transition-all hover:bg-indigo-950 bg-indigo-500 shadow-2xl fixed bottom-16 -right-7 hover:right-2 z-10"
           onClick={goToTop}
         >
           <FaArrowUp />
