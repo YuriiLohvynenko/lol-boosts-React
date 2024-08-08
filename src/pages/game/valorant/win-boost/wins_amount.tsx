@@ -13,7 +13,7 @@ const WinsAmount = () => {
           className={`flex w-16 h-16 p-3 rounded-full border ${classNames.bgDarkClass} ${classNames.borderLClass} flex-shrink-0 justify-center items-center`}
         >
           <img
-            src="/images/boosting/icon/LoLRankBoost.png"
+            src="/images/logo/logo-mobile.png"
             className="w-full"
             alt="IMG"
           />
