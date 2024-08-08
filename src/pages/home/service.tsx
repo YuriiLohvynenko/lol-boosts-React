@@ -9,7 +9,7 @@ const Service = () => {
         loop
         muted
       >
-        <source src="/images/game_player/7.mp4" />
+        <source src="/images/game_player/1.webm" />
       </video>
       <div className="absolute w-full h-full left-0 top-0 flex flex-col justify-center items-center gap-2 lg:gap-4">
         <h1 className="mx-auto text-3xl max-w-[75%] lg:text-5xl lg:max-w-[75%] text-center">

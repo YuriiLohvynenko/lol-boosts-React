@@ -14,10 +14,10 @@ const LOL = () => {
     <div className={`${classNames.containerClass} mt-4 lg:mt-6`}>
       <div className="flex items-center justify-start gap-4">
         <span
-          className={`flex w-20 h-20 p-3 ${classNames.bgDarkClass} ${classNames.borderLClass} rounded-full border flex-shrink-0 justify-center items-center`}
+          className={`flex w-20 h-20 p-5 ${classNames.bgDarkClass} ${classNames.borderLClass} rounded-full border flex-shrink-0 justify-center items-center`}
         >
           <img
-            src="/images/logo/logo-mobile.png"
+            src="/images/icon/league-of-legends.png"
             className="w-full"
             alt="IMG"
           />
