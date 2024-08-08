@@ -20,11 +20,10 @@ const Boosters = () => {
   return (
     <div className={`mt-10 lg:mt-20 ${classNames.containerClass}`}>
       <h1 className="text-center mx-auto text-3xl lg:text-5xl font-bold">
-        THE BEST LOL ELO BOOSTERS
+        Meet our hand-selected, expert boosters!
       </h1>
       <p className="mt-6 text-center text-lg text-gray-300">
-        Why choose us for LoL Boosting? Because we provide the best boosting
-        services.
+        Have lol-boosts drag you out of the elo hell!
       </p>
       <div className="mt-10 lg:mt-20">
         <Swiper

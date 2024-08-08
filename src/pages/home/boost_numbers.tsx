@@ -5,30 +5,30 @@ const BoostNumbers = () => {
   const data = [
     {
       icon: <FaUsers />,
-      number: 350000,
-      title: "Gamers we Empowered",
-      description:
-        "Proudly serving a thriving community of passionate gamers worldwide!",
+      number: 5000,
+      title: "Orders successfully completed!",
+      description: "Boosting, Coaching, Accounts & More!",
     },
     {
       icon: <FaRocket />,
-      number: 480000,
-      title: "Orders Completed",
+      number: 10000,
+      title: "Gamers we’ve empowered!",
       description:
-        "Accounts, Boosting, Coaching and we're just getting started.",
+        "Even after completing your order, our community provides valuable insights...",
     },
     {
       icon: <FaCalendar />,
-      number: 2018,
-      title: "Operating Since",
+      number: 2020,
+      title: "Since",
       description:
-        "That's all it took us to revolutionize the game services industry.",
+        "Since our startup, we’ve managed to attain hand-picked professional boosters, some with over 10 years of experience!",
     },
     {
       icon: <FaChartBar />,
-      number: 1500,
+      number: 100,
       title: "Partners",
-      description: "The very best partners stand ready to fulfill your orders.",
+      description:
+        "Our team at lol-boosts is the most sophisticated in the industry! ",
     },
   ];
   return (
@@ -37,17 +37,11 @@ const BoostNumbers = () => {
         className={` flex flex-col  lg:flex-row justify-between items-center lg:items-end gap-4`}
       >
         <h1 className="text-3xl lg:text-4xl font-bold max-lg:text-center">
-          GameBoost in <br /> Numbers
+          LOL-BOOSTS in <br /> Numbers!
         </h1>
         <div className="max-lg:text-center text-gray-400">
-          Our team has united the most experienced people in the gaming
-          industry,
+          These numbers truly reflect companies success!
           <br />
-          from all over the world, with one mission:
-          <br />
-          <p className="text-white">
-            ‟To truly change the life of every day gamers.”
-          </p>
         </div>
       </div>
       <div className="mt-8 grid md:grid-cols-2 lg:grid-cols-4 gap-4">

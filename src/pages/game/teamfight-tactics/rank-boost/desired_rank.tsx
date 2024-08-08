@@ -53,7 +53,6 @@ const DesiredRank = () => {
                   : "bg-indigo-950"
               } flex-shrink-0 hover:bg-indigo-800 bg-opacity-70`}
               onClick={() => {
-                console.log(d);
                 dispatch(setDesiredRank(d));
               }}
             >

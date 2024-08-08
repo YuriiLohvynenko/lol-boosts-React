@@ -222,7 +222,7 @@ const Checkout = () => {
           <label htmlFor="" className=" text-gray-500">
             Total Price
           </label>
-          <span className="text-2xl font-bold">${price}</span>
+          <span className="text-2xl font-bold">{price}€</span>
         </div>
         <button
           className={`w-full py-2 mt-4 flex items-center gap-4 justify-center rounded-lg ${classNames.btnClass}`}

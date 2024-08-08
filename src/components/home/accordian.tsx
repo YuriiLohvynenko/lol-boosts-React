@@ -24,7 +24,10 @@ const Accordion = (props: any) => {
           className={` transition-all duration-200 text-gray-300 overflow-clip`}
           data-aos="fade-in"
         >
-          <div className={`border-t border-indigo-900 p-4 `}>{description}</div>
+          <div
+            className={`border-t border-indigo-900 p-4 `}
+            dangerouslySetInnerHTML={{ __html: description }}
+          ></div>
         </div>
       )}
     </div>

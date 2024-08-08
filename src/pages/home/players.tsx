@@ -21,12 +21,8 @@ const Players = () => {
   return (
     <div className={`mt-10 lg:mt-20 ${classNames.containerClass}`}>
       <h1 className="text-center text-3xl lg:text-5xl mx-auto max-w-[75%] font-bold">
-        Player Testimonials and Reviews
+        Check out what some out of our thousands of customers say
       </h1>
-      <div className="max-w-[65%] text-xl text-gray-400 mx-auto text-center mt-4">
-        Use a slider or cards to display testimonials. Incorporate star ratings
-        or review scores if available
-      </div>
       <div className="mt-10 lg:mt-20">
         <Swiper
           spaceBetween={30}

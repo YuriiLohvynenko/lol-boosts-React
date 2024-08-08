@@ -1,8 +1,15 @@
 import { Outlet } from "react-router-dom";
 import classNames from "../../../consts/classNames";
 import BoostNavbar from "../game_boost_navbar";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { setGame } from "../../../redux/slice/globalSlice";
 
 const LOL = () => {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(setGame("lol"));
+  }, []);
   return (
     <div className={`${classNames.containerClass} mt-4 lg:mt-6`}>
       <div className="flex items-center justify-start gap-4">

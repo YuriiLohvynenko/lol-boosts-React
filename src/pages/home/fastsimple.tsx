@@ -32,11 +32,11 @@ const FastSimple = () => {
   return (
     <div className="mt-10 lg:mt-20">
       <div className={`${classNames.containerClass}`}>
-        <h1 className="text-center font-bold text-5xl max-w-2xl mx-auto">
-          We Keep it Fast And <span className="text-indigo-700">Simple</span>
+        <h1 className="text-center font-bold text-5xl max-w-[75%] mx-auto">
+          We process your order smoothly, regardless of the service!
         </h1>
         <p className="text-center mt-6 text-lg text-gray-300">
-          Buying accounts, boosting and coaching has never been this easy.
+          Achieving your dream rank…literally as easy as 1, 2, 3!
         </p>
         <Swiper
           spaceBetween={30}
@@ -57,9 +57,12 @@ const FastSimple = () => {
             <div className="w-full flex flex-col-reverse lg:flex-row justify-between items-center px-0 lg:pl-16">
               <div className="max-lg:text-center">
                 <span className="text-indigo-500">Step #1</span>
-                <div className="mt-5 text-2xl font-bold">Select Service</div>
+                <div className="mt-5 text-2xl font-bold">
+                  Select & Customize Your Service
+                </div>
                 <p className="text-lg text-gray-300 mt-3">
-                  Pick your desired service and customize your order.
+                  Tailor one of our many services to fit your personal
+                  desires…completely free of charge!
                 </p>
                 <div className="mt-5">
                   <button className={`${classNames.btnClass}`}>
@@ -77,10 +80,12 @@ const FastSimple = () => {
             <div className="w-full flex flex-col-reverse lg:flex-row justify-between items-center px-0 lg:pl-16">
               <div className="max-lg:text-center">
                 <span className="text-indigo-500">Step #2</span>
-                <div className="mt-5 text-2xl font-bold">Progress Order</div>
+                <div className="mt-5 text-2xl font-bold">
+                  Headache Free Payment Process
+                </div>
                 <p className="text-lg text-gray-300 mt-3">
                   We accept all major credit cards, Google Pay, Apple Pay,
-                  Crypto and more.
+                  Crypto and many more!
                 </p>
                 <div className="mt-5">
                   <button className={`${classNames.btnClass}`}>
@@ -98,10 +103,11 @@ const FastSimple = () => {
             <div className="w-full flex flex-col-reverse lg:flex-row justify-between items-center px-0 lg:pl-16">
               <div className="max-lg:text-center">
                 <span className="text-indigo-500">Step #3</span>
-                <div className="mt-5 text-2xl font-bold">Order Completed</div>
+                <div className="mt-5 text-2xl font-bold">
+                  That’s it! Start conquering with our expert team!
+                </div>
                 <p className="text-lg text-gray-300 mt-3">
-                  We appreciate your feedback, so dont forget to share your
-                  experience with us.
+                  Psst…don’t forget to leave us a review!!
                 </p>
                 <div className="mt-5">
                   <button className={`${classNames.btnClass}`}>
@@ -127,12 +133,13 @@ const FastSimple = () => {
             </div>
             <div className="max-lg:text-center">
               <h2 className="text-2xl font-bold lg:text-4xl">
-                Premium 24/7 support in multiple languages. By LOL BOOSTERS for
-                LOL BOOSTERS
+                Clarity is key... that's why we offer premium, bot-less 24/7
+                support to fulfill all your needs and questions.
               </h2>
               <div className="mt-6 text-lg text-gray-300">
-                Our LOL BOOST support team is available 24/7 to help you with
-                any questions or issues you may have.
+                Also, join our community! Read our reviews and see how we’ve
+                provided thousands of other gamers with the most satisfying
+                service possible!
               </div>
               <div className="mt-6 flex max-lg:justify-center items-center gap-8">
                 <img
@@ -148,7 +155,7 @@ const FastSimple = () => {
               </div>
               <div className="mt-6">
                 <button className="px-8 py-3 rounded-3xl bg-indigo-500 text-white hover:bg-indigo-800">
-                  Join Discord
+                  Join our Discord!
                 </button>
               </div>
             </div>

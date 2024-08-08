@@ -7,13 +7,12 @@ const Products = () => {
   return (
     <div className={`${classNames.containerClass} mt-10 lg:mt-20 relative z-1`}>
       <h1 className="text-center text-3xl md:text-5xl lg:text-6xl font-bold mt-6 lg:mt-10">
-        THE ALL-IN-ONE <br /> Platform for{" "}
-        <span className="text-indigo-600">LOL</span>{" "}
-        <span className="text-indigo-400">BOOST</span>
+        The Fastest, Smoothest, Leading All-in-One Boosting Services Provider
       </h1>
       <div className="mt-6 lg:mt-10">
         <p className="text-center mx-auto max-w-[75%]">
-          High-Quality Accounts ⸱ Premium Gaming Services ⸱ Expert Coaching
+          Top-Tier Accounts ⸱ Premium Gaming Services ⸱ Expert Coaching by
+          Seasoned Pro’s
         </p>
         <div className="mt-4 text-center">
           <span className="inline-flex border-green-600 justify-center items-center gap-2 px-6 py-2 border rounded-lg bg-gradient-to-b from-green-900 to-green-[#ddd]">

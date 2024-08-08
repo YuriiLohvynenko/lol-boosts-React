@@ -170,7 +170,7 @@ const Header = () => {
                   className={`inline-flex border-green-600 justify-center items-center gap-1 px-6 py-2 border rounded-3xl bg-gradient-to-b from-green-900 to-green-[#ddd] max-md:hidden`}
                 >
                   <span className="w-4 h-4 rounded-full bg-green-500 border-4 border-green-900"></span>{" "}
-                  74 Activate Partners
+                  74 Active Partners
                 </span>
               </div>
               <button
