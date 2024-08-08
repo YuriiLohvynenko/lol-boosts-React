@@ -10,13 +10,9 @@ const MatchAmount = () => {
     <div className=" rounded-lg border p-4  border-indigo-800">
       <div className="flex justify-start items-center gap-4">
         <span
-          className={`flex w-16 h-16 p-3 rounded-full border ${classNames.bgDarkClass} ${classNames.borderLClass} flex-shrink-0 justify-center items-center`}
+          className={`flex w-16 h-16 text-3xl p-3 rounded-full border ${classNames.bgDarkClass} ${classNames.borderLClass} flex-shrink-0 justify-center items-center`}
         >
-          <img
-            src="/images/logo/logo-mobile.png"
-            className="w-full"
-            alt="IMG"
-          />
+          {placement_match}
         </span>
         <div>
           <h3 className="text-xl">Match Amount</h3>
