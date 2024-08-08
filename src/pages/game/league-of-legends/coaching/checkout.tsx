@@ -15,7 +15,6 @@ const Checkout = () => {
   const [discount, setDiscount] = useState(false);
   const [applycode, setApplycode] = useState(0);
   const [isOpenChampionRoleModal, setisOpenChampionRoleModal] = useState(false);
-  const [coaching, setCoaching] = useState<any>();
 
   let timeout: any = null;
 
@@ -24,10 +23,6 @@ const Checkout = () => {
   const current_rank = useSelector((d: any) => d.lol?.current_rank);
   const hours_match = useSelector((d: any) => d.lol.hours_match);
   const desired_rank = useSelector((d: any) => d.lol?.desired_rank);
-
-  useEffect(() => {
-    setCoaching(_coaching);
-  }, [_coaching]);
 
   // Price
   const [price, setPrice] = useState(0);
@@ -54,6 +49,7 @@ const Checkout = () => {
 
   const getOriginalPrice = () => {
     try {
+      let coaching: any = { ..._coaching };
       return coaching[`${current_rank?.server?.type}`] * hours_match;
     } catch (error) {
       console.log(error);

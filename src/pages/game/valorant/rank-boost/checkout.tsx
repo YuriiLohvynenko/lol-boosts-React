@@ -100,6 +100,7 @@ const Checkout = () => {
         return 0;
       }
     } catch (error) {
+      console.log(error);
       return 0;
     }
   };

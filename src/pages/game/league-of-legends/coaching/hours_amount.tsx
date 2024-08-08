@@ -38,7 +38,7 @@ const HoursAmount = () => {
           color="info"
           sizing="lg"
           min={1}
-          max={5}
+          max={10}
           step={1}
           value={hours_match}
           onChange={(event: any) => dispatch(setHoursMatch(event.target.value))}

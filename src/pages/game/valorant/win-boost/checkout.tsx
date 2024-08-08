@@ -70,8 +70,10 @@ const Checkout = () => {
     //   price *= current_rank?.current_lp?.rate;
     // }
 
+    console.log(price);
+
     if (current_rank?.rank?.level) {
-      let lpExtra: any = { _lpExtra };
+      let lpExtra: any = { ..._lpExtra };
       price += lpExtra[`${current_rank?.server?.type}`] * current_rank?.lp;
     }
 

@@ -25,6 +25,7 @@ const CurrentRank = (props: any) => {
     setData(rank.filter((d: any) => !d.level));
     dispatch(setCurrentDivision(division[0]));
     dispatch(setCurrentLP(current_lp[0]));
+    dispatch(setServer(servers[0]));
   }, []);
 
   useEffect(() => {

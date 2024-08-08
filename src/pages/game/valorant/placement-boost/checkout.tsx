@@ -55,7 +55,7 @@ const Checkout = () => {
   const getOriginalPrice = () => {
     if (current_rank?.rank) {
       let price =
-        current_rank?.rank?.price?.win[`${current_rank?.server?.type}`][
+        current_rank?.rank?.price?.place[`${current_rank?.server?.type}`][
           current_rank?.division?._id
         ];
       return price;
@@ -68,11 +68,6 @@ const Checkout = () => {
     // if (current_rank?.current_lp) {
     //   price *= current_rank?.current_lp?.rate;
     // }
-
-    if (current_rank?.rank?.level) {
-      price += 0.05 * current_rank?.lp;
-    }
-
     price *= placement_match;
 
     // extra features
