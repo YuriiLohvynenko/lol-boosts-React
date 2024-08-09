@@ -59,7 +59,7 @@ const Blog = () => {
       <div className="mt-6 lg:mt-8">
         <h4 className="text-xl lg:text-2xl px-4">Latest Posts</h4>
         <div className="flex flex-col lg:flex-row gap-6 mt-4 flex-shrink-0">
-          <div className="w-full lg:w-3/5">
+          <div className="w-full lg:w-3/5 flex-shrink-0">
             {latest_posts?.map((d: any, index: number) => (
               <div
                 key={index}

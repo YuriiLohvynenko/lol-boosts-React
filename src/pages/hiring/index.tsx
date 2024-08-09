@@ -4,6 +4,7 @@ import jobs from "../../data/jobs.json";
 import AmazingSeller from "./amazing_seller";
 import FAQ from "../home/faq";
 import Players from "../home/players";
+import faqs from "../../data/faq.json";
 
 const Hiring = () => {
   return (
@@ -22,32 +23,34 @@ const Hiring = () => {
         >
           <FaDiscord /> Join Discord
         </button>
-        <div className="max-w-[75%] mx-auto flex justify-center py-8 flex-wrap gap-2 lg:gap-3">
-          {new Array(27).fill(0).map((d: any, index: number) => (
-            <img
+        <div className="max-w-[75%] mx-auto flex justify-center py-8 flex-wrap gap-8 lg:gap-3">
+          {["lol", "valorant", "tft"].map((d: any, index: number) => (
+            <span
               key={index}
-              src={`/images/hiring/icon/ico-s (${Number(index + 2)}).webp`}
-              className="flex-shrink-0 w-12"
-              alt="ico"
-            />
+              className="flex-shrink-0 w-16 h-16 rounded-full bg-indigo-600 flex items-center justify-center p-3"
+            >
+              <img
+                key={index}
+                src={`/images/boosting/game/${d}.png`}
+                className="w-full"
+                alt="ico"
+              />
+            </span>
           ))}
         </div>
       </div>
       <div className="mt-6">
         <h4 className="text-xl">Available Job Offers (6)</h4>
-        <div className="mt-4 space-y-4">
+        <div className="mt-4 grid grid-cols-2 lg:grid-cols-3 gap-4">
           {jobs?.map((d: any, index: number) => (
             <div
-              className="rounded-lg bg-indigo-950 bg-opacity-25 px-4 py-3 flex items-center justify-start gap-2 hover:text-indigo-500 cursor-pointer"
+              className={`rounded-lg bg-indigo-950 bg-opacity-25 px-4 py-12 flex flex-col items-center justify-between gap-6`}
               key={index}
             >
-              <div className={`flex-shrink-0 w-[120px] lg:w-[25%]`}>
-                <img src={d.icon} className="w-[70px]" alt={d.title} />
-              </div>
-              <div>
-                <h6 className="text-xl">{d.title}</h6>
-                {d.description && <div>{d.description}</div>}
-              </div>
+              <h6 className="text-xl max-w-[75%] mx-auto text-center">
+                {d.title}
+              </h6>
+              <button className={`${classNames.btnClass}`}>Apply Now</button>
             </div>
           ))}
         </div>
@@ -55,7 +58,7 @@ const Hiring = () => {
       {/* Amazing Seller */}
       {/* <AmazingSeller /> */}
       {/* FAQ Section */}
-      <FAQ />
+      {/* <FAQ faqs={faqs} /> */}
       {/* REVIEWS */}
       <Players />
     </div>
