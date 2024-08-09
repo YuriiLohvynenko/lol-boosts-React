@@ -11,8 +11,8 @@ const Hiring = () => {
     <div className={`${classNames.containerClass} mt-10 lg:mt-20`}>
       <div className="space-y-8">
         <h1 className="max-w-[75%] text-center mx-auto text-3xl lg:text-5xl font-bold">
-          Start making money as a{" "}
-          <span className="text-indigo-500">LOL BOOSTER</span>
+          Start making money on{" "}
+          <span className="text-indigo-500">LOL-BOOSTS</span>
         </h1>
         <div className="max-w-[65%] text-center mx-auto ">
           Join us as a seller or a booster today and start offering your
@@ -47,9 +47,15 @@ const Hiring = () => {
               className={`rounded-lg bg-indigo-950 bg-opacity-25 px-4 py-12 flex flex-col items-center justify-between gap-6`}
               key={index}
             >
-              <h6 className="text-xl max-w-[75%] mx-auto text-center">
-                {d.title}
-              </h6>
+              <div className="space-y-2">
+                <h6 className="text-2xl font-bold mx-auto text-center">
+                  {d.title}
+                </h6>
+                <div
+                  className="text-center"
+                  dangerouslySetInnerHTML={{ __html: d.description }}
+                ></div>
+              </div>
               <button className={`${classNames.btnClass}`}>Apply Now</button>
             </div>
           ))}
