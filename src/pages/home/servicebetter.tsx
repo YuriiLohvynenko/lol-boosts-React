@@ -23,15 +23,6 @@ const ServiceBetter = () => {
               <span className="text-xl lg:text-2xl font-bold">
                 Premium, instant 24/7 Human Support
               </span>
-              <div className="space-y-1 text-gray-300">
-                WINDOW EXAMPLE QUESTIONS :
-                <ul className="text-gray-400">
-                  <li>-Custom order…?</li>
-                  <li>-Order status…?</li>
-                  <li>-.</li>
-                  <li>-.</li>
-                </ul>
-              </div>
             </div>
           </div>
           <div className="flex-grow max-md:flex max-md:flex-col md:grid md:grid-rows-2 gap-4">

@@ -7,7 +7,8 @@ const Products = () => {
   return (
     <div className={`${classNames.containerClass} mt-10 lg:mt-20 relative z-1`}>
       <h1 className="text-center text-3xl md:text-5xl lg:text-6xl font-bold mt-6 lg:mt-10">
-        The Fastest, Smoothest, Leading All-in-One Boosting Services Provider
+        Fastest, Smoothest, <span className="text-indigo-500">All-in-One</span>{" "}
+        Boosting Services Provider
       </h1>
       <div className="mt-6 lg:mt-10">
         <p className="text-center mx-auto max-w-[75%]">
