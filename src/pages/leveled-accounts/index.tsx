@@ -5,10 +5,9 @@ import FastSimple from "../home/fastsimple";
 import FAQ from "../home/faq";
 import faqs from "../../data/faq.json";
 import Players from "../home/players";
-import agents from "../../data/game/agents.json";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay } from "swiper/modules";
-import { useRef } from "react";
+import skinAccounts from "../../data/skin-accounts.json";
+import ModalSkinSelect from "../../components/level-account/ModalSkinSelect";
+import { useState } from "react";
 const LeveledAccounts = () => {
   const headData = [
     {
@@ -30,19 +29,7 @@ const LeveledAccounts = () => {
         "If you ever lose access to the account, you can recover it. (On Request)",
     },
   ];
-  const progressCircle = useRef<SVGSVGElement | null>(null);
-  const progressContent = useRef<HTMLSpanElement | null>(null);
-  const onAutoplayTimeLeft = (s: any, time: number, progress: number) => {
-    if (progressCircle.current) {
-      progressCircle.current.style.setProperty(
-        "--progress",
-        (1 - progress).toString()
-      );
-    }
-    if (progressContent.current) {
-      progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
-    }
-  };
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <>
       <div className={`${classNames.containerClass} mt-10 lg:mt-20`}>
@@ -118,66 +105,15 @@ const LeveledAccounts = () => {
             <label htmlFor="" className="text-xl">
               Select Skin
             </label>
-            {/* POPULAR SKIN */}
-            <div className="space-y-2">
-              <label htmlFor="">Popular Skin</label>
-              <Swiper
-                spaceBetween={30}
-                slidesPerView={1}
-                autoplay={{
-                  delay: 5000,
-                  disableOnInteraction: false,
-                }}
-                modules={[Autoplay]}
-                onAutoplayTimeLeft={onAutoplayTimeLeft}
-                breakpoints={{
-                  // when window width is >= 640px
-                  640: {
-                    slidesPerView: 2.5,
-                    spaceBetween: 10,
-                  },
-                  // when window width is >= 768px
-                  768: {
-                    slidesPerView: 4.5,
-                    spaceBetween: 20,
-                  },
-                  // when window width is >= 1024px
-                  1024: {
-                    slidesPerView: 5.5,
-                    spaceBetween: 30,
-                  },
-                  // when window width is >= 1280px
-                  1280: {
-                    slidesPerView: 7.5,
-                    spaceBetween: 30,
-                  },
-                }}
-              >
-                {agents.map((d: any, index: number) => {
-                  return (
-                    <SwiperSlide key={index} className="">
-                      <img
-                        src={d.image}
-                        alt="IMG"
-                        className="w-full opacity-75 hover:opacity-100 cursor-pointer"
-                      />
-                    </SwiperSlide>
-                  );
-                })}
-              </Swiper>
-            </div>
-            <div className="mt-8 lg:mt-16 grid gap-x-8 gap-y-4 md:grid-cols-2 lg:grid-cols-3">
-              {agents?.map((d: any, index: number) => (
-                <div
-                  className="flex justify-start cursor-pointer items-center rounded-tl-full rounded-bl-full rounded-tr-2xl bg-gray-900 hover:bg-gray-800"
+            <div className="flex justify-start items-center gap-4">
+              {skinAccounts.slice(0, 10)?.map((d: any, index: number) => (
+                <img
+                  src={d.image}
+                  alt={d.name}
                   key={index}
-                >
-                  <img
-                    src={d.image}
-                    className="w-20 h-20 rounded-full border-4 border-indigo-500"
-                  />
-                  <div className="flex-1 text-center text-xl">{d.name}</div>
-                </div>
+                  className="w-20 h-20 rounded-full border-4 border-indigo-500 cursor-pointer"
+                  onClick={() => setIsOpen(true)}
+                />
               ))}
             </div>
           </div>
@@ -241,6 +177,9 @@ const LeveledAccounts = () => {
           </div>
         </div>
       </div>
+
+      {/* SELECT SKIN MODAL */}
+      <ModalSkinSelect isOpen={isOpen} setOpen={setIsOpen} />
     </>
   );
 };
