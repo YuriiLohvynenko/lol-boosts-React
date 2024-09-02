@@ -52,6 +52,41 @@ const LeveledAccounts = () => {
   useEffect(() => {
     setChampionData(champions);
   }, [champions]);
+  const _champions = [
+    {
+      img: "https://rankedready.com/assets/img/icons/lol-character-skin-03-min.jpg",
+      champion: "Riven",
+    },
+    {
+      img: "https://rankedready.com/assets/img/icons/lol-character-skin-06-min.jpg",
+      champion: "Yasuo",
+    },
+    {
+      img: "https://rankedready.com/assets/img/icons/lol-character-skin-02-min.jpg",
+      champion: "Ezreal",
+    },
+    {
+      img: "https://rankedready.com/assets/img/icons/lol-character-skin-04-min.jpg",
+      champion: "Draven",
+    },
+    {
+      img: "https://rankedready.com/assets/img/icons/lol-character-skin-01-min.jpg",
+      champion: "Vayne",
+    },
+    {
+      img: "https://rankedready.com/assets/img/icons/lol-character-skin-07-min.jpg",
+      champion: "Zed",
+    },
+    {
+      img: "https://rankedready.com/assets/img/icons/lol-character-skin-05-min.jpg",
+      champion: "Hecarim",
+    },
+    {
+      img: "https://rankedready.com/assets/img/icons/lol-character-skin-08-min.jpg",
+      champion: "Kai'Sa",
+    },
+  ];
+
   return (
     <>
       <div className={`${classNames.containerClass} mt-10 lg:mt-20`}>
@@ -140,17 +175,18 @@ const LeveledAccounts = () => {
               </div>
               <div className="flex flex-wrap justify-start items-center gap-4">
                 {championData &&
-                  Object.keys(championData.data)
-                    .slice(0, 10)
-                    ?.map((d: any, index: number) => (
-                      <img
-                        src={d.image}
-                        alt={d.name}
-                        key={index}
-                        className="w-20 h-20 rounded-full border-4 border-indigo-500 cursor-pointer"
-                        onClick={() => setIsOpen(true)}
-                      />
-                    ))}
+                  _champions?.map((d: any, index: number) => (
+                    <img
+                      src={d.img}
+                      alt={d.champion}
+                      key={index}
+                      className="w-20 h-20 rounded-full border-4 border-indigo-500 cursor-pointer"
+                      onClick={() => {
+                        setIsOpen(true);
+                        setCategory(d.champion);
+                      }}
+                    />
+                  ))}
               </div>
             </div>
           </div>

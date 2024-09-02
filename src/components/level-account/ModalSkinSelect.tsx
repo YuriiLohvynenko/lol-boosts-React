@@ -134,6 +134,7 @@ const ModalSkinSelect = (props: any) => {
               <select
                 className={`${classNames.inputClass} !bg-indigo-950 lg:w-72 border border-indigo-500`}
                 onChange={(e) => setCategory(e.target.value)}
+                defaultValue={category}
               >
                 <option value="">Select Option</option>
                 {Object.keys(data.data).map((key: any, index: number) => (
@@ -148,14 +149,21 @@ const ModalSkinSelect = (props: any) => {
                 {filteredData?.length &&
                   filteredData?.map((d: any, index: number) => (
                     <div
-                      className="flex justify-start cursor-pointer items-center rounded-tl-full rounded-bl-full rounded-tr-2xl bg-gray-900 hover:bg-gray-800"
+                      className="flex justify-start cursor-pointer"
                       key={index}
                     >
-                      <img
-                        src={`https://www.rankedready.com/assets/img/lol-skins/${d.id}.jpg`}
-                        className="w-20 h-20 rounded-full border-4 border-indigo-500"
-                      />
-                      <div className="flex-1 text-center text-xl">{d.name}</div>
+                      <div className="w-20 h-20 rounded-l-full bg-indigo-900">
+                        <img
+                          src={`https://www.rankedready.com/assets/img/lol-skins/${d.id}.jpg`}
+                          className="w-20 h-20 rounded-full border-4 border-indigo-500"
+                        />
+                      </div>
+                      <div className="flex-1 flex flex-col items-center  justify-center text-center text-xl rounded-r-2xl bg-indigo-900">
+                        <div className="text-xl">{d.name}</div>
+                        <div className="opacity-70">
+                          {d?.chromas ? "Available" : "Unavailable"}
+                        </div>
+                      </div>
                     </div>
                   ))}
               </div>
