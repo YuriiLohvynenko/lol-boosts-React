@@ -1,14 +1,26 @@
 import classNames from "../../consts/classNames";
 import data from "../../data/leveled-accounts.json";
-import AccountCard from "../../components/level-account/accountCard";
 import FastSimple from "../home/fastsimple";
 import FAQ from "../home/faq";
 import faqs from "../../data/faq.json";
 import Players from "../home/players";
-import skinAccounts from "../../data/skin-accounts.json";
+import champions from "../../data/championFull.json";
 import ModalSkinSelect from "../../components/level-account/ModalSkinSelect";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import {
+  FaAngleRight,
+  FaCheckCircle,
+  FaFire,
+  FaGem,
+  FaGlobe,
+  FaLevelUpAlt,
+  FaMoneyBill,
+  FaRegStar,
+  FaSearch,
+  FaTrophy,
+} from "react-icons/fa";
 const LeveledAccounts = () => {
+  const [order, setOrder] = useState<any>(null);
   const headData = [
     {
       _id: 0,
@@ -30,6 +42,16 @@ const LeveledAccounts = () => {
     },
   ];
   const [isOpen, setIsOpen] = useState(false);
+  const [category, setCategory] = useState(null);
+  const [championData, setChampionData] = useState<any>(null);
+  // ORDER DATA
+  const [server, setServer] = useState<any>(null);
+  const [MMR, setMMR] = useState<any>(null);
+  const [level, setLevel] = useState<any>(null);
+
+  useEffect(() => {
+    setChampionData(champions);
+  }, [champions]);
   return (
     <>
       <div className={`${classNames.containerClass} mt-10 lg:mt-20`}>
@@ -59,62 +81,127 @@ const LeveledAccounts = () => {
             </div>
           ))}
         </div>
-        <div className="mt-12 lg:mt-24">
-          <div className="space-y-4">
-            <label htmlFor="" className="text-xl">
-              Select Server
-            </label>
-            <div className=" flex justify-start flex-wrap items-center gap-2">
-              {data?.servers?.map((d: any, index: number) => (
-                <button className={`${classNames.btnClass2}`} key={index}>
-                  {d.name}
-                </button>
-              ))}
+        <div className="flex max-lg:flex-col justify-between items-start gap-12 mt-12 lg:mt-24">
+          <div className="">
+            <div className="space-y-4">
+              <label htmlFor="" className="text-xl">
+                Select Server
+              </label>
+              <div className=" flex justify-start flex-wrap items-center gap-2">
+                {data?.servers?.map((d: any, index: number) => (
+                  <button
+                    className={`${classNames.btnClass2}`}
+                    key={index}
+                    onClick={() => setServer(d)}
+                  >
+                    {d.name}
+                  </button>
+                ))}
+              </div>
             </div>
-          </div>
-          <div className="space-y-4 mt-4">
-            <label htmlFor="" className="text-xl">
-              MMR
-            </label>
-            <div className=" flex justify-start flex-wrap items-center gap-2">
-              {data?.MMR?.map((d: any, index: number) => (
-                <button key={index} className={`${classNames.btnClass2}`}>
-                  {d.title}
-                </button>
-              ))}
+            <div className="space-y-4 mt-4">
+              <label htmlFor="" className="text-xl">
+                MMR
+              </label>
+              <div className=" flex justify-start flex-wrap items-center gap-2">
+                {data?.MMR?.map((d: any, index: number) => (
+                  <button key={index} className={`${classNames.btnClass2}`}>
+                    {d.title}
+                  </button>
+                ))}
+              </div>
             </div>
-          </div>
-          <div className="space-y-4 mt-4">
-            <label htmlFor="" className="text-xl">
-              Level
-            </label>
-            <div className=" flex justify-start flex-wrap items-center gap-2">
-              {data?.levels?.map((d: any, index: number) => (
-                <button key={index} className={`${classNames.btnClass2}`}>
-                  {d.level}
-                </button>
-              ))}
+            <div className="space-y-4 mt-4">
+              <label htmlFor="" className="text-xl">
+                Level
+              </label>
+              <div className=" flex justify-start flex-wrap items-center gap-2">
+                {data?.levels?.map((d: any, index: number) => (
+                  <button key={index} className={`${classNames.btnClass2}`}>
+                    {d.level}
+                  </button>
+                ))}
+              </div>
             </div>
-          </div>
-          {/* <div className="mt-8 lg:mt-16 grid gap-x-8 gap-y-4 md:grid-cols-2 lg:grid-cols-4">
+            {/* <div className="mt-8 lg:mt-16 grid gap-x-8 gap-y-4 md:grid-cols-2 lg:grid-cols-4">
             {data?.accounts?.map((d: any, index: number) => (
               <AccountCard {...d} key={index} />
             ))}
           </div> */}
-          <div className="space-y-4 mt-4">
-            <label htmlFor="" className="text-xl">
-              Select Skin
-            </label>
-            <div className="flex justify-start items-center gap-4">
-              {skinAccounts.slice(0, 10)?.map((d: any, index: number) => (
-                <img
-                  src={d.image}
-                  alt={d.name}
-                  key={index}
-                  className="w-20 h-20 rounded-full border-4 border-indigo-500 cursor-pointer"
-                  onClick={() => setIsOpen(true)}
+            <div className="space-y-4 mt-4">
+              <label htmlFor="" className="text-xl block">
+                Select Skin
+              </label>
+              <div
+                className="inline-flex justify-between items-center gap-2 border-b-2 pb-1 cursor-pointer border-indigo-500"
+                onClick={() => setIsOpen(true)}
+              >
+                <span>Show All Skins</span> <FaSearch />
+              </div>
+              <div className="flex flex-wrap justify-start items-center gap-4">
+                {championData &&
+                  Object.keys(championData.data)
+                    .slice(0, 10)
+                    ?.map((d: any, index: number) => (
+                      <img
+                        src={d.image}
+                        alt={d.name}
+                        key={index}
+                        className="w-20 h-20 rounded-full border-4 border-indigo-500 cursor-pointer"
+                        onClick={() => setIsOpen(true)}
+                      />
+                    ))}
+              </div>
+            </div>
+          </div>
+          {/* CHECKOUT SECTION */}
+          <div className="border border-indigo-500 overflow-clip rounded-2xl lg:w-[400px]">
+            <div className=" bg-indigo-900 p-4 flex justify-start items-center gap-2 text-xl">
+              <FaAngleRight /> ORDER DETAILS
+            </div>
+            <div className="p-4">
+              <ul className="space-y-4">
+                <li className="flex justify-start items-center gap-4">
+                  <FaMoneyBill className="text-xl text-indigo-500" /> Price:
+                  {order?.price || 7.9} EUR
+                </li>
+                <li className="flex justify-start items-center gap-3">
+                  <FaGem className="text-indigo-500 text-xl" /> BE:{" "}
+                  {order?.beTitle || "40,000 +"}
+                </li>
+                <li className="flex justify-start items-center gap-3">
+                  <FaGlobe className="text-indigo-500 text-xl" /> Server:{" "}
+                  {order?.server || "NA"}
+                </li>
+                <li className="flex justify-start items-center gap-3">
+                  <FaTrophy className="text-indigo-500 text-xl" /> Rank:{" "}
+                  {order?.MMR || "2300"}
+                </li>
+                <li className="flex justify-start items-center gap-3">
+                  <FaLevelUpAlt className="text-indigo-500 text-xl" />{" "}
+                  {order?.level || "HAND LVLD"}
+                </li>
+                <li className="flex justify-start items-center gap-3">
+                  <FaFire className="text-indigo-500 text-xl" />{" "}
+                  {order?.lifeTime || "Lifetime Warranty"}
+                </li>
+                <li className="flex justify-start items-center gap-3">
+                  <FaCheckCircle className="text-indigo-500 text-xl" />
+                  {false ? "Verified" : "Unverified"}
+                </li>
+              </ul>
+              <div className="mt-4 flex justify-between gap-2">
+                <input
+                  className={`${classNames.inputClass} !border !border-indigo-500`}
+                  placeholder="Coupon Code"
                 />
-              ))}
+                <button className={`${classNames.btnClass2}`}>APPLY</button>
+              </div>
+            </div>
+            <div className="p-2">
+              <button className={`${classNames.btnClass} !w-full`}>
+                BUY NOW
+              </button>
             </div>
           </div>
         </div>
@@ -179,7 +266,12 @@ const LeveledAccounts = () => {
       </div>
 
       {/* SELECT SKIN MODAL */}
-      <ModalSkinSelect isOpen={isOpen} setOpen={setIsOpen} />
+      <ModalSkinSelect
+        isOpen={isOpen}
+        setOpen={setIsOpen}
+        category={category}
+        setCategory={setCategory}
+      />
     </>
   );
 };
