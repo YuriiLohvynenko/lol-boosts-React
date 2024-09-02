@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import classNames from "../../consts/classNames";
 import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -9,6 +9,14 @@ const ModalSkinSelect = (props: any) => {
   const { isOpen, setOpen } = props;
   const progressCircle = useRef<SVGSVGElement | null>(null);
   const progressContent = useRef<HTMLSpanElement | null>(null);
+  const [filteredData, setFilteredData] = useState(skinAccounts);
+  const [keyword, setKeyword] = useState("");
+  useEffect(() => {
+    const filtered = skinAccounts.filter((account) =>
+      account.name.toLowerCase().includes(keyword.toLowerCase())
+    );
+    setFilteredData(filtered);
+  }, [keyword]);
 
   const onAutoplayTimeLeft = (s: any, time: number, progress: number) => {
     if (progressCircle.current) {
@@ -98,11 +106,12 @@ const ModalSkinSelect = (props: any) => {
                 <input
                   className={`${classNames.inputClass} !ps-10 lg:w-72 border border-indigo-500`}
                   placeholder={`Search through ${skinAccounts.length} champions...`}
+                  onChange={(e) => setKeyword(e.target.value)}
                 />
               </div>
             </div>
             <div className="mt-8 grid gap-x-8 gap-y-4 md:grid-cols-2 lg:grid-cols-3">
-              {skinAccounts?.map((d: any, index: number) => (
+              {filteredData?.map((d: any, index: number) => (
                 <div
                   className="flex justify-start cursor-pointer items-center rounded-tl-full rounded-bl-full rounded-tr-2xl bg-gray-900 hover:bg-gray-800"
                   key={index}
