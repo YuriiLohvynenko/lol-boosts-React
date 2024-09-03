@@ -17,6 +17,7 @@ import {
   FaMoneyBill,
   FaRegStar,
   FaSearch,
+  FaTimes,
   FaTrophy,
 } from "react-icons/fa";
 const LeveledAccounts = () => {
@@ -44,6 +45,8 @@ const LeveledAccounts = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [category, setCategory] = useState(null);
   const [championData, setChampionData] = useState<any>(null);
+  const [applycode, setApplycode] = useState(0);
+
   // ORDER DATA
   // Default selections
   const [server, setServer] = useState(data?.servers[0]);
@@ -52,6 +55,24 @@ const LeveledAccounts = () => {
   const [skin, setSkin] = useState(null);
 
   const [price, setPrice] = useState(7.9); // Default price
+  const [discount, setDiscount] = useState(false);
+
+  const handleChange = (event: any) => {
+    switch (event.target.name) {
+      case "applycode":
+        setApplycode(event.target.value);
+        break;
+      default:
+        break;
+    }
+  };
+
+  const handleApply = () => {
+    if (discount) return;
+    if (applycode) {
+      setDiscount(true);
+    }
+  };
 
   // Update price based on MMR and level selection
   useEffect(() => {
@@ -67,9 +88,12 @@ const LeveledAccounts = () => {
     if (skin === "Skin 1350RP") basePrice += 1;
     if (skin === "Skin 1820RP") basePrice += 2;
     if (skin === "Skin 3250RP") basePrice += 5;
+    if (discount) {
+      basePrice -= basePrice * 0.2;
+    }
 
     setPrice(basePrice);
-  }, [MMR, level, skin]);
+  }, [MMR, level, skin, discount]);
 
   useEffect(() => {
     setChampionData(champions);
@@ -264,13 +288,27 @@ const LeveledAccounts = () => {
                   {false ? "Verified" : "Unverified"}
                 </li>
               </ul>
-              <div className="mt-4 flex justify-between gap-2">
-                <input
-                  className={`${classNames.inputClass} !border !border-indigo-500`}
-                  placeholder="Coupon Code"
-                />
-                <button className={`${classNames.btnClass2}`}>APPLY</button>
-              </div>
+              {!discount ? (
+                <div className="mt-4 flex justify-between gap-2">
+                  <input
+                    className={`${classNames.inputClass} !border !border-indigo-500`}
+                    name="applycode"
+                    placeholder="Coupon Code"
+                    onChange={handleChange}
+                  />
+                  <button className={`${classNames.btnClass2}`} onClick={handleApply}>APPLY</button>
+                </div>
+              ) : (
+                <div className="mt-5 text-center py-4 px-6 border-green-600 border rounded-lg bg-gradient-to-b from-green-900 to-green-[#ddd] relative text-green-400">
+                  -20% discount applied successfully 🎉
+                  <button
+                    className="absolute top-1/2 right-[10px] hover:text-green-300 -translate-x-1/2 -translate-y-1/2"
+                    onClick={() => setDiscount(false)}
+                  >
+                    <FaTimes />
+                  </button>
+                </div>
+              )}
             </div>
             <div className="p-2">
               <button className={`${classNames.btnClass} !w-full`}>
