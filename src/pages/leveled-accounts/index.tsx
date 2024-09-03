@@ -88,11 +88,12 @@ const LeveledAccounts = () => {
       basePrice = 7.9;
       isSmurfSelected = true;
       setMMR(data?.MMR[0]);
+    } else {
+      if (MMR?.title === "2300") basePrice += 30;
+      if (MMR?.title === "Fresh") basePrice += 20;
+      else if (MMR?.title === "2400") basePrice += 40;
+      else if (MMR?.title === "2500") basePrice += 50;
     }
-    if (MMR?.title === "2300") basePrice += 30;
-    if (MMR?.title === "Fresh") basePrice += 20;
-    else if (MMR?.title === "2400") basePrice += 40;
-    else if (MMR?.title === "2500") basePrice += 50;
 
     // Add extra skins price
     if (skin === "Skin 1350RP") basePrice += 1;
