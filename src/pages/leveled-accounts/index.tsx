@@ -19,7 +19,9 @@ import {
   FaSearch,
   FaTimes,
   FaTrophy,
+  FaUser,
 } from "react-icons/fa";
+import SvgColor from "../../components/custom/SvgColor";
 const LeveledAccounts = () => {
   const [order, setOrder] = useState<any>(null);
   const headData = [
@@ -42,18 +44,18 @@ const LeveledAccounts = () => {
         "If you ever lose access to the account, you can recover it. (On Request)",
     },
   ];
+  const [servers, setServers] = useState<any[]>();
   const [isOpen, setIsOpen] = useState(false);
   const [category, setCategory] = useState(null);
   const [championData, setChampionData] = useState<any>(null);
   const [applycode, setApplycode] = useState(0);
-
+  const [isSmurf, setIsSmurf] = useState(false);
   // ORDER DATA
   // Default selections
   const [server, setServer] = useState(data?.servers[0]);
   const [MMR, setMMR] = useState(data?.MMR[0]);
   const [level, setLevel] = useState(data?.levels[0]);
-  const [skin, setSkin] = useState(null);
-
+  const [skin, setSkin] = useState<any>(null);
   const [price, setPrice] = useState(7.9); // Default price
   const [discount, setDiscount] = useState(false);
 
@@ -73,16 +75,24 @@ const LeveledAccounts = () => {
       setDiscount(true);
     }
   };
+  useEffect(() => {
+    
+  }, [])
 
   // Update price based on MMR and level selection
   useEffect(() => {
     let basePrice = 7.9; // Smurf price
+    let isSmurfSelected = false;
+    if (level?.level === "Handlevel") basePrice += 20;
+    if (level?.level === "SMURF") {
+      basePrice = 7.9;
+      isSmurfSelected = true;
+      setMMR(data?.MMR[0]);
+    }
     if (MMR?.title === "2300") basePrice += 30;
     if (MMR?.title === "Fresh") basePrice += 20;
     else if (MMR?.title === "2400") basePrice += 40;
     else if (MMR?.title === "2500") basePrice += 50;
-
-    if (level?.level === "Fresh Handlevel") basePrice += 20;
 
     // Add extra skins price
     if (skin === "Skin 1350RP") basePrice += 1;
@@ -91,47 +101,13 @@ const LeveledAccounts = () => {
     if (discount) {
       basePrice -= basePrice * 0.2;
     }
-
+    setIsSmurf(isSmurfSelected);
     setPrice(basePrice);
   }, [MMR, level, skin, discount]);
 
   useEffect(() => {
     setChampionData(champions);
   }, [champions]);
-  const _champions = [
-    {
-      img: "https://rankedready.com/assets/img/icons/lol-character-skin-03-min.jpg",
-      champion: "Riven",
-    },
-    {
-      img: "https://rankedready.com/assets/img/icons/lol-character-skin-06-min.jpg",
-      champion: "Yasuo",
-    },
-    {
-      img: "https://rankedready.com/assets/img/icons/lol-character-skin-02-min.jpg",
-      champion: "Ezreal",
-    },
-    {
-      img: "https://rankedready.com/assets/img/icons/lol-character-skin-04-min.jpg",
-      champion: "Draven",
-    },
-    {
-      img: "https://rankedready.com/assets/img/icons/lol-character-skin-01-min.jpg",
-      champion: "Vayne",
-    },
-    {
-      img: "https://rankedready.com/assets/img/icons/lol-character-skin-07-min.jpg",
-      champion: "Zed",
-    },
-    {
-      img: "https://rankedready.com/assets/img/icons/lol-character-skin-05-min.jpg",
-      champion: "Hecarim",
-    },
-    {
-      img: "https://rankedready.com/assets/img/icons/lol-character-skin-08-min.jpg",
-      champion: "Kai'Sa",
-    },
-  ];
 
   return (
     <>
@@ -172,35 +148,37 @@ const LeveledAccounts = () => {
                 {data?.servers?.map((d, index) => (
                   <button
                     key={index}
-                    className={`${classNames.btnClass2} ${
+                    className={`${classNames.btnClass2} flex justify-center gap-2 items-center  ${
                       server === d ? "!bg-indigo-900" : ""
                     }`}
                     onClick={() => setServer(d)}
                   >
+                    <SvgColor src={`/images/icon/skin/${d.name.toLowerCase()}.svg`} />
                     {d.name}
                   </button>
                 ))}
               </div>
             </div>
-
-            <div className="space-y-4 mt-4">
-              <label htmlFor="" className="text-xl">
-                MMR
-              </label>
-              <div className="flex justify-start flex-wrap items-center gap-2">
-                {data?.MMR?.map((d, index) => (
-                  <button
-                    key={index}
-                    className={`${classNames.btnClass2} ${
-                      MMR === d ? "!bg-indigo-900" : ""
-                    }`}
-                    onClick={() => setMMR(d)}
-                  >
-                    {d.title}
-                  </button>
-                ))}
+            {level.level !== "SMURF" && (
+              <div className="space-y-4 mt-4">
+                <label htmlFor="" className="text-xl">
+                  MMR
+                </label>
+                <div className="flex justify-start flex-wrap items-center gap-2">
+                  {data?.MMR?.map((d, index) => (
+                    <button
+                      key={index}
+                      className={`${classNames.btnClass2} ${
+                        MMR === d ? "!bg-indigo-900" : ""
+                      }`}
+                      onClick={() => setMMR(d)}
+                    >
+                      {d.title}
+                    </button>
+                  ))}
+                </div>
               </div>
-            </div>
+            )}
 
             <div className="space-y-4 mt-4">
               <label htmlFor="" className="text-xl">
@@ -237,18 +215,22 @@ const LeveledAccounts = () => {
               </div>
               <div className="flex flex-wrap justify-start items-center gap-4">
                 {championData &&
-                  _champions?.map((d: any, index: number) => (
-                    <img
-                      src={d.img}
-                      alt={d.champion}
-                      key={index}
-                      className="w-20 h-20 rounded-full border-4 border-indigo-500 cursor-pointer"
-                      onClick={() => {
-                        setIsOpen(true);
-                        setCategory(d.champion);
-                      }}
-                    />
-                  ))}
+                  Object.keys(championData?.data)
+                    .slice(0, 10)
+                    ?.map((key: any, index: number) => (
+                      <img
+                        src={`/images/skin/${
+                          championData?.data[`${key}`]?.skins[1]["id"]
+                        }.jpg`}
+                        alt={key}
+                        key={index}
+                        className="w-20 h-20 rounded-full border-4 border-indigo-500 cursor-pointer"
+                        onClick={() => {
+                          setIsOpen(true);
+                          setCategory(key);
+                        }}
+                      />
+                    ))}
               </div>
             </div>
           </div>
@@ -272,20 +254,26 @@ const LeveledAccounts = () => {
                   {server?.name || "NA"}
                 </li>
                 <li className="flex justify-start items-center gap-3">
-                  <FaTrophy className="text-indigo-500 text-xl" /> Rank:{" "}
+                  <FaTrophy className="text-indigo-500 text-xl" /> MMR:{" "}
                   {MMR?.title || "2300"}
                 </li>
                 <li className="flex justify-start items-center gap-3">
                   <FaLevelUpAlt className="text-indigo-500 text-xl" />{" "}
-                  {level?.level || "HAND LVLD"}
+                  {level?.level ||
+                    "Handlevel                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 "}
                 </li>
                 <li className="flex justify-start items-center gap-3">
                   <FaFire className="text-indigo-500 text-xl" />{" "}
-                  {order?.lifeTime || "Lifetime Warranty"}
+                  {isSmurf ? "14 Days Warranty" : "Lifetime Warranty"}
                 </li>
                 <li className="flex justify-start items-center gap-3">
                   <FaCheckCircle className="text-indigo-500 text-xl" />{" "}
                   {false ? "Verified" : "Unverified"}
+                </li>
+                <li className="flex justify-start items-center gap-3">
+                  <FaUser className="text-indigo-500 text-xl" />
+                  Skin:
+                  {skin ? skin?.name : ""}
                 </li>
               </ul>
               {!discount ? (
@@ -296,7 +284,12 @@ const LeveledAccounts = () => {
                     placeholder="Coupon Code"
                     onChange={handleChange}
                   />
-                  <button className={`${classNames.btnClass2}`} onClick={handleApply}>APPLY</button>
+                  <button
+                    className={`${classNames.btnClass2}`}
+                    onClick={handleApply}
+                  >
+                    APPLY
+                  </button>
                 </div>
               ) : (
                 <div className="mt-5 text-center py-4 px-6 border-green-600 border rounded-lg bg-gradient-to-b from-green-900 to-green-[#ddd] relative text-green-400">
