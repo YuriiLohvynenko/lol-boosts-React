@@ -6,7 +6,7 @@ import { FaSearch, FaTimes } from "react-icons/fa";
 import champions from "../../data/championFull.json";
 
 const ModalSkinSelect = (props: any) => {
-  const { isOpen, setOpen, category, setCategory } = props;
+  const { isOpen, setOpen, category, setCategory, skin, setSkin } = props;
   const progressCircle = useRef<SVGSVGElement | null>(null);
   const progressContent = useRef<HTMLSpanElement | null>(null);
   const [data, setData] = useState<any>(null);
@@ -151,10 +151,11 @@ const ModalSkinSelect = (props: any) => {
                     <div
                       className="flex justify-start cursor-pointer"
                       key={index}
+                      onClick={() => { setSkin(d); setOpen(false) }}
                     >
                       <div className="w-20 h-20 rounded-l-full bg-indigo-900">
                         <img
-                          src={`https://www.rankedready.com/assets/img/lol-skins/${d.id}.jpg`}
+                          src={`/images/skin/${d.id}.jpg`}
                           className="w-20 h-20 rounded-full border-4 border-indigo-500"
                         />
                       </div>

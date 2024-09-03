@@ -45,9 +45,31 @@ const LeveledAccounts = () => {
   const [category, setCategory] = useState(null);
   const [championData, setChampionData] = useState<any>(null);
   // ORDER DATA
-  const [server, setServer] = useState<any>(null);
-  const [MMR, setMMR] = useState<any>(null);
-  const [level, setLevel] = useState<any>(null);
+  // Default selections
+  const [server, setServer] = useState(data?.servers[0]);
+  const [MMR, setMMR] = useState(data?.MMR[0]);
+  const [level, setLevel] = useState(data?.levels[0]);
+  const [skin, setSkin] = useState(null);
+
+  const [price, setPrice] = useState(7.9); // Default price
+
+  // Update price based on MMR and level selection
+  useEffect(() => {
+    let basePrice = 7.9; // Smurf price
+    if (MMR?.title === "2300") basePrice += 30;
+    if (MMR?.title === "Fresh") basePrice += 20;
+    else if (MMR?.title === "2400") basePrice += 40;
+    else if (MMR?.title === "2500") basePrice += 50;
+
+    if (level?.level === "Fresh Handlevel") basePrice += 20;
+
+    // Add extra skins price
+    if (skin === "Skin 1350RP") basePrice += 1;
+    if (skin === "Skin 1820RP") basePrice += 2;
+    if (skin === "Skin 3250RP") basePrice += 5;
+
+    setPrice(basePrice);
+  }, [MMR, level, skin]);
 
   useEffect(() => {
     setChampionData(champions);
@@ -122,11 +144,13 @@ const LeveledAccounts = () => {
               <label htmlFor="" className="text-xl">
                 Select Server
               </label>
-              <div className=" flex justify-start flex-wrap items-center gap-2">
-                {data?.servers?.map((d: any, index: number) => (
+              <div className="flex justify-start flex-wrap items-center gap-2">
+                {data?.servers?.map((d, index) => (
                   <button
-                    className={`${classNames.btnClass2}`}
                     key={index}
+                    className={`${classNames.btnClass2} ${
+                      server === d ? "!bg-indigo-900" : ""
+                    }`}
                     onClick={() => setServer(d)}
                   >
                     {d.name}
@@ -134,25 +158,39 @@ const LeveledAccounts = () => {
                 ))}
               </div>
             </div>
+
             <div className="space-y-4 mt-4">
               <label htmlFor="" className="text-xl">
                 MMR
               </label>
-              <div className=" flex justify-start flex-wrap items-center gap-2">
-                {data?.MMR?.map((d: any, index: number) => (
-                  <button key={index} className={`${classNames.btnClass2}`}>
+              <div className="flex justify-start flex-wrap items-center gap-2">
+                {data?.MMR?.map((d, index) => (
+                  <button
+                    key={index}
+                    className={`${classNames.btnClass2} ${
+                      MMR === d ? "!bg-indigo-900" : ""
+                    }`}
+                    onClick={() => setMMR(d)}
+                  >
                     {d.title}
                   </button>
                 ))}
               </div>
             </div>
+
             <div className="space-y-4 mt-4">
               <label htmlFor="" className="text-xl">
                 Level
               </label>
-              <div className=" flex justify-start flex-wrap items-center gap-2">
-                {data?.levels?.map((d: any, index: number) => (
-                  <button key={index} className={`${classNames.btnClass2}`}>
+              <div className="flex justify-start flex-wrap items-center gap-2">
+                {data?.levels?.map((d, index) => (
+                  <button
+                    key={index}
+                    className={`${classNames.btnClass2} ${
+                      level === d ? "!bg-indigo-900" : ""
+                    }`}
+                    onClick={() => setLevel(d)}
+                  >
                     {d.level}
                   </button>
                 ))}
@@ -191,15 +229,15 @@ const LeveledAccounts = () => {
             </div>
           </div>
           {/* CHECKOUT SECTION */}
-          <div className="border border-indigo-500 overflow-clip rounded-2xl lg:w-[400px]">
-            <div className=" bg-indigo-900 p-4 flex justify-start items-center gap-2 text-xl">
+          <div className="border border-indigo-500 overflow-clip rounded-2xl lg:w-[400px] mt-4">
+            <div className="bg-indigo-900 p-4 flex justify-start items-center gap-2 text-xl">
               <FaAngleRight /> ORDER DETAILS
             </div>
             <div className="p-4">
               <ul className="space-y-4">
                 <li className="flex justify-start items-center gap-4">
-                  <FaMoneyBill className="text-xl text-indigo-500" /> Price:
-                  {order?.price || 7.9} EUR
+                  <FaMoneyBill className="text-xl text-indigo-500" /> Price:{" "}
+                  {price.toFixed(2)} EUR
                 </li>
                 <li className="flex justify-start items-center gap-3">
                   <FaGem className="text-indigo-500 text-xl" /> BE:{" "}
@@ -207,22 +245,22 @@ const LeveledAccounts = () => {
                 </li>
                 <li className="flex justify-start items-center gap-3">
                   <FaGlobe className="text-indigo-500 text-xl" /> Server:{" "}
-                  {order?.server || "NA"}
+                  {server?.name || "NA"}
                 </li>
                 <li className="flex justify-start items-center gap-3">
                   <FaTrophy className="text-indigo-500 text-xl" /> Rank:{" "}
-                  {order?.MMR || "2300"}
+                  {MMR?.title || "2300"}
                 </li>
                 <li className="flex justify-start items-center gap-3">
                   <FaLevelUpAlt className="text-indigo-500 text-xl" />{" "}
-                  {order?.level || "HAND LVLD"}
+                  {level?.level || "HAND LVLD"}
                 </li>
                 <li className="flex justify-start items-center gap-3">
                   <FaFire className="text-indigo-500 text-xl" />{" "}
                   {order?.lifeTime || "Lifetime Warranty"}
                 </li>
                 <li className="flex justify-start items-center gap-3">
-                  <FaCheckCircle className="text-indigo-500 text-xl" />
+                  <FaCheckCircle className="text-indigo-500 text-xl" />{" "}
                   {false ? "Verified" : "Unverified"}
                 </li>
               </ul>
@@ -307,6 +345,8 @@ const LeveledAccounts = () => {
         setOpen={setIsOpen}
         category={category}
         setCategory={setCategory}
+        skin={skin}
+        setSkin={setSkin}
       />
     </>
   );
