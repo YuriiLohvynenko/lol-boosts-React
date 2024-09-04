@@ -83,14 +83,14 @@ const LeveledAccounts = () => {
   useEffect(() => {
     let basePrice = 7.9; // Smurf price
     let isSmurfSelected = false;
-    if (level?.level === "Handlevel") basePrice += 20;
+    if (level?.level === "Handlevel") basePrice = 20;
     if (level?.level === "SMURF") {
       basePrice = 7.9;
       isSmurfSelected = true;
       setMMR(data?.MMR[0]);
     } else {
       if (MMR?.title === "2300") basePrice += 30;
-      if (MMR?.title === "Fresh") basePrice += 20;
+      // if (MMR?.title === "Fresh") basePrice += 20;
       else if (MMR?.title === "2400") basePrice += 40;
       else if (MMR?.title === "2500") basePrice += 50;
     }
