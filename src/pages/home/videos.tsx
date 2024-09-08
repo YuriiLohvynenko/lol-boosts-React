@@ -40,7 +40,7 @@ const Videos = () => {
       // indicators={false}
     >
       {videos.map((d: any, index: number) => (
-        <SwiperSlide key={index}>
+        <SwiperSlide key={index} className="space-y-8">
           <video
             className="w-full rounded-2xl object-cover object-center opacity-75 hover:opacity-100"
             onMouseEnter={(event: any) => handlePlay(event)}
@@ -48,6 +48,9 @@ const Videos = () => {
           >
             <source src={d.url} />
           </video>
+          <div className="text-center text-2xl font-bold text-indigo-500">
+            {d.description}
+          </div>
         </SwiperSlide>
       ))}
     </Swiper>

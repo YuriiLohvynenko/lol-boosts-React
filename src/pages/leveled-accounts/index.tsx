@@ -2,7 +2,7 @@ import classNames from "../../consts/classNames";
 import data from "../../data/leveled-accounts.json";
 import FastSimple from "../home/fastsimple";
 import FAQ from "../home/faq";
-import faqs from "../../data/faq.json";
+import faqs from "../../data/faq_level_accounts.json";
 import Players from "../home/players";
 import champions from "../../data/championFull.json";
 import ModalSkinSelect from "../../components/level-account/ModalSkinSelect";
@@ -312,7 +312,6 @@ const LeveledAccounts = () => {
           </div>
         </div>
       </div>
-      <FastSimple />
       <FAQ faqs={faqs} />
       <Players />
       <div className={`mt-10 lg:mt-20 ${classNames.containerClass}`}>

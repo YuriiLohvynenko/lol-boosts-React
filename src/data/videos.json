@@ -1,11 +1,11 @@
 [
     {
         "url": "/images/game_player/1.webm",
-        "description": ""
+        "description": "Booster League of Legends"
     },
     {
         "url": "/images/game_player/2.webm",
-        "description": ""
+        "description": "Booster Valorant"
     },
     {
         "url": "/images/game_player/3.webm",
@@ -13,18 +13,18 @@
     },
     {
         "url": "/images/game_player/4.webm",
-        "description": ""
+        "description": "Booster Teamfight Tactics"
     },
     {
         "url": "/images/game_player/5.mp4",
-        "description": ""
+        "description": "Booster League of Legends"
     },
     {
         "url": "/images/game_player/6.mp4",
-        "description": ""
+        "description": "Booster Valorant"
     },
     {
         "url": "/images/game_player/7.mp4",
-        "description": ""
+        "description": "Booster Teamfight Tactics"
     }
 ]
