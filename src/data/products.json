@@ -1,14 +1,17 @@
 [
     {
         "url": "/images/products/1.png",
-        "title": "TEAMFIGHT TACTICS"
+        "title": "TEAMFIGHT TACTICS",
+        "link": "team-fight-tactics"
     },
     {
         "url": "/images/products/2.png",
-        "title": "LEAGUE OF LEGENDS"
+        "title": "LEAGUE OF LEGENDS",
+        "link": "league-of-legends"
     },
     {
         "url": "/images/products/3.png",
-        "title": "VALORANT"
+        "title": "VALORANT",
+        "link": "valorant"
     }
 ]
